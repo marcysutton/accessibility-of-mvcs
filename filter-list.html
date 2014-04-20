@@ -13,8 +13,8 @@
 	</header>
 	<main>
 		<section id="search-results">
-			<ul>
-				<li ng-repeat="result in dataModel | filter:query | orderBy:'name'">
+			<ul result-list aria-live="polite" aria-relevant="{{relevant}}">
+				<li ng-repeat="result in filtered = (dataModel | filter:query | orderBy:'name')">
 					<h2>{{result.name}}</h2>
 					<p>{{result.bio}}</p>
 				</li>

@@ -14,11 +14,24 @@ angular.module('a11yApp', [])
       "bio" : "Best nickname ever"
     }];
   })
-  .directive('userInput', [function(){
+  .directive('resultList', [function(){
     return {
-      restrict: 'E',
+      restrict: 'A',
       link: function($scope, $element, $attrs) {
-        
+        $scope.$watch('filtered.length', function(length){
+          if($scope.numItems !== undefined){
+            if(length < $scope.numItems){
+              // if we're removing items
+              console.log('removing items: '+length);
+              $scope.relevant = 'removals';
+            }
+            else if(length > $scope.numItems){
+              console.log('adding items: '+length);
+              $scope.relevant = 'additions';
+            }
+          }
+          $scope.numItems = length;
+        });
       }
     }
   }]);
