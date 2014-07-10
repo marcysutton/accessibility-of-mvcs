@@ -141,7 +141,7 @@ body {
   	text-transform: $headingTextTransform;
   	text-shadow: $headingTextShadow;
   }
-  p, small, ul, ol, div.large-tag, figcaption {
+  p, small, ul, ol, div.large-tag, figcaption, blockquote {
     text-shadow: $paragraphTextShadow;
   }
   h1, h2.h1-style {
@@ -156,7 +156,7 @@ body {
   h3,
   h2.h3-style,
   p.h3-style {
-    font-size: 1,75em;
+    font-size: 1.75em;
   }
   small {
     font-size: 0.75em;
@@ -164,10 +164,18 @@ body {
     text-transform: none;
   }
   blockquote {
-    text-shadow: $paragraphTextShadow;
+    background-color: transparent;
+    font-style: italic;
+    line-height: 100%;
+    font-size: 2em;
 
+    &.large {
+      font-size: 3em;
+      margin-bottom: 0.75em;
+    }
     strong {
-      color: $linkColor;
+      // color: $linkColor;
+      font-weight: normal;
       font-size: 115%;
     }
   }
@@ -339,14 +347,20 @@ body {
       background-color: transparent;
       border-width: 0;
       box-shadow: none;
+
+      &:hover, &:focus {
+        background-color: rgba(207, 241, 16, 0.5);
+      }
     }
   }
 
-	a:hover img {
-		background: rgba(255,255,255,0.2);
-		border-color: $linkColor;
+	a:hover, a:focus {
+    img {
+  		background: rgba(255,255,255,0.2);
+  		border-color: $linkColor;
 
-		box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  		box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+    }
 	}
 }
 
@@ -542,21 +556,26 @@ body {
     }
   }
   .image-headline {
-    background-size: 100% auto;
     border: 4px solid $mainColor;
     margin-bottom: 10px;
-    min-height: 635px;
-    width: 100%;
 
-    &#the-project {
-      background: transparent url(../../img/workstation.jpg) no-repeat center center;
+    &#lemur {
+      background: transparent url(../../img/lemur.jpg) no-repeat center top;
+      background-size: 100% auto;
+      max-width: 700px;
+      margin: 0.5em auto 0;
+      padding-top: 38%;
+      position: relative;
     }
-    &#the-presentation {
-      background: transparent url(../../img/meeting-room.jpg) no-repeat center center;
-    }
-    h2 {
-      font-size: 2.75em;
-      padding-top: 0.5em;
+
+    h2, h3 {
+      bottom: 0;
+      color: #000;
+      font-size: 2.5em;
+      position: absolute;
+      text-align: center;
+      text-shadow: 2px 2px 3px #fff;
+      width: 100%;
     }
   }
 }

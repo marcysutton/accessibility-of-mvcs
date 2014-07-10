@@ -56,33 +56,104 @@
 			    	<span class="w7" style="position: absolute; left: 375px; top: 237px;">Payments</span>
 			    	<span class="w6" style="position: absolute; left: 0; top: 300px;">Travel</span>
 			    	<span class="w5" style="position: absolute; left: 1026px; top: 340px;">Fitness Tracking</span>
-			    	<span class="w3" style="position: absolute; left: 980px; top: 170px;">Whiskey</span></div>
+			    	<span class="w3" style="position: absolute; left: 980px; top: 170px;">Drinking</span></div>
 				</section>
 
 				<section>
 					<h1>ARIA was made for this.</h1>
-					<h2>Accessibility of JavaScript MVCs</h2>
+					<h2>Accessibility of JavaScript MV*s</h2>
 					<p>
 						<small>Created by <a href="http://marcysutton.com">Marcy Sutton</a> / <a href="http://twitter.com/marcysutton">@marcysutton</a></small>
 					</p>
 				</section>
 
 				<section>
-					<h2>MVC Popularity</h2>
-					<div style="background-color: #fff">
-						<script src="//www.google.com/trends/embed.js?hl=en-US&cat=0-5-31&q=Ember+JS,+Backbone+JS,+React+JS,+AngularJS&date=6/2012+25m&cmpt=q&content=1&cid=TIMESERIES_GRAPH_AVERAGES_CHART&export=5&w=1280&h=500"></script>
+					<h2 class="h1-style">Best framework?</h2>
+				</section>
+
+				<section>
+					<div class="image-headline" id="lemur">
+						<h2>Calm down.</h2>
 					</div>
 				</section>
 
-				<!-- <section>
-					<h2></h2>
-					<p>
-						
-					</p>
+				<section>
+					<h2 class="h3-style"><a href="http://todomvc.com" target="_blank" title="Link opens in a new window">Let's Demo</a></h2>
+					<a href="http://todomvc.com" target="_blank" title="Link opens in a new window"><img src="img/todo-mvc.png" alt="TodoMVC" style="max-height: 740px;"></a>
+				</section>
 
-					<aside class="notes">
-					</aside>
-				</section> -->
+				<section>
+					<h2>Custom Tags</h2>
+				</section>
+
+				<section>
+					<h2>"As Rendered"</h2>
+				</section>
+
+				<section>
+				<!-- find a human element for an energy change -->
+				</section>
+
+				<section>
+					<h2>Keyboard</h2>
+					<ul>
+						<li>Focus indicators</li>
+						<li>Navigation order</li>
+						<li>Non-navigable elements</li>
+						<li>Scripted elements &amp; widgets</li>
+						<li>Lengthy navigation</li>
+					</ul>
+				</section>
+
+				<section>
+					<a href="http://virginamerica.com" target="_blank" title="Link opens in a new window"><img src="img/virgin-america.png" alt="VirginAmerica.com" class="plain"></a>
+				</section>
+
+				<section>
+					<blockquote class="large">&ldquo;Super slick UX&rdquo;</blockquote>
+					<blockquote class="fragment">&ldquo;We hope everyone else will copy it.&rdquo;</blockquote>
+				</section>
+
+				<section>
+					<h2>Focus Styles</h2>
+				</section>
+
+				<section>
+					<h2>Tab Index</h2>
+				</section>
+
+				<section>
+					<h2>Focus Management</h2>
+				</section>
+
+				<section>
+					<h2>Application Mode</h2>
+				</section>
+
+				<section>
+					<h2>Dialog vs. In-page</h2>
+				</section>
+
+				<section>
+					<h2>Voice-Over vs. Jaws vs. Others</h2>
+				</section>
+
+				<section>
+					<h2>Angular Directive ARIA Live Region</h2>
+				</section>
+
+				<section>
+					<h2>Ember Custom Tag</h2>
+				</section>
+
+				<section>
+					<h2>Backbone?</h2>
+				</section>
+
+				<section>
+					<h2>Conclusion</h2>
+				</section>
+
 			</div>
 
 		</div>
@@ -113,7 +184,7 @@
 		    maxScale: 1.0,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
@@ -126,7 +197,8 @@
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/accessibility-helpers/accessibility-helpers.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
