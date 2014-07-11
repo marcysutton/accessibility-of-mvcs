@@ -83,18 +83,16 @@
 				</section>
 
 				<section>
-					<h2>Custom Tags</h2>
+					<h2>Accessibility challenges <br>in single-page apps</h2>
+					<ul>
+						<li class="fragment">Interactivity</li>
+						<li class="fragment">Update notification</li>
+						<li class="fragment">Focus management</li>
+						<li class="fragment">Graceful degradation</li>
+					</ul>
 				</section>
 
-				<section>
-					<h2>"As Rendered"</h2>
-				</section>
-
-				<section>
-				<!-- find a human element for an energy change -->
-				</section>
-
-				<section>
+				<!--<section>
 					<h2>Keyboard</h2>
 					<ul>
 						<li>Focus indicators</li>
@@ -103,6 +101,57 @@
 						<li>Scripted elements &amp; widgets</li>
 						<li>Lengthy navigation</li>
 					</ul>
+				</section>-->
+
+				<section>
+					<h2>Interactivity</h2>
+					<p>Responding to input</p>
+					<img src="img/interactive.gif" alt="Skittles hold your finger here surprise cat-guy licking gif" style="min-height: 400px;">
+				</section>
+
+				<section>
+					<h2>(Not) Focusable</h2>
+					<pre><code class="html">
+	&lt;div class="hamburger-button"&gt;&lt;/div&gt;
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Focusable</h2>
+					<pre><code class="html">
+	&lt;button class="hamburger-helper"&gt;Let's Go&lt;button&gt;
+					</code></pre>
+					<p>or</p>
+					<pre><code class="html">
+	&lt;div class="button" role="button" tabIndex="0"&gt;Bike&lt;/div&gt;
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>(Not) Submittable</h2>
+					<pre><code class="html">
+  &lt;material-item ng-repeat="component in COMPONENTS" 
+	ng-click="goToComponent(component);"&gt;
+    Button
+  &lt;/material-item&gt;
+					</code></pre>
+					<p><small>AngularJS</small></p>
+				</section>
+
+				<section>
+					<h2>Submittable</h2>
+					<pre><code class="html">
+  &lt;material-item 
+	ng-click="doStuff()" ng-keydown="doStuff()" tabIndex="0"&gt;
+    Button
+  &lt;/material-item&gt;
+					</code></pre>
+					<p><small>AngularJS</small></p>
+				</section>
+
+				<section>
+					<h2>Visual Feedback</h2>
+					<img src="img/cat-mirror2.gif" style="min-height:500px;" alt="Cat freaking out in mirror">
 				</section>
 
 				<section>
@@ -110,8 +159,14 @@
 				</section>
 
 				<section>
-					<blockquote class="large">&ldquo;Super slick UX&rdquo;</blockquote>
-					<blockquote class="fragment">&ldquo;We hope everyone else will copy it.&rdquo;</blockquote>
+					<blockquote class="large">
+						&ldquo;Super slick UX&rdquo;
+						<span>-Wired</span>
+					</blockquote>
+					<blockquote class="fragment">
+						&ldquo;We hope everyone else will copy it.&rdquo;
+						<span>-Fast.co Design</span>
+					</blockquote>
 				</section>
 
 				<section>
@@ -151,7 +206,8 @@
 				</section>
 
 				<section>
-					<h2>Conclusion</h2>
+					<h2>The End</h2>
+					<iframe width="1280" height="720" src="//www.youtube.com/embed/ztCxilMDyDo?rel=0" frameborder="0" allowfullscreen></iframe>
 				</section>
 
 			</div>

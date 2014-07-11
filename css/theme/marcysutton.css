@@ -94,7 +94,7 @@ body {
     .reveal pre code {
       background-color: black;
       color: #cccccc;
-      font-size: 1.15em;
+      font-size: 1.45em;
       line-height: 1.45em;
       max-height: 500px; }
   .reveal footer {
@@ -165,17 +165,22 @@ body {
 .reveal p.h3-style {
   font-size: 1.75em; }
 .reveal small {
-  font-size: 0.75em;
+  font-size: 0.85em;
   letter-spacing: 0;
   text-transform: none; }
 .reveal blockquote {
   background-color: transparent;
   font-style: italic;
   line-height: 100%;
-  font-size: 2em; }
+  font-size: 2em;
+  text-align: left; }
   .reveal blockquote.large {
     font-size: 3em;
     margin-bottom: 0.75em; }
+  .reveal blockquote span {
+    display: block;
+    font-size: 75%;
+    text-align: right; }
   .reveal blockquote strong {
     font-weight: normal;
     font-size: 115%; }
@@ -230,7 +235,7 @@ body {
   font-size: 1.5em;
   line-height: 1.25em;
   list-style: none;
-  margin: 0;
+  margin: 0.5em 0;
   text-align: center; }
   .reveal ul li {
     margin-bottom: 0.25em; }
@@ -300,10 +305,12 @@ body {
     box-shadow: none; }
     .reveal section img.plain:hover, .reveal section img.plain:focus {
       background-color: rgba(207, 241, 16, 0.5); }
-.reveal a:hover img, .reveal a:focus img {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: #cff110;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+.reveal a:hover, .reveal a:focus {
+  outline: none; }
+  .reveal a:hover img, .reveal a:focus img {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #cff110;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * NAVIGATION CONTROLS
