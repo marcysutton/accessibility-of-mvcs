@@ -132,7 +132,7 @@
 					<pre><code class="html">
   &lt;material-item ng-repeat="component in COMPONENTS" 
 	ng-click="goToComponent(component);"&gt;
-    Button
+    Buttons
   &lt;/material-item&gt;
 					</code></pre>
 					<p><small>AngularJS</small></p>
@@ -141,9 +141,11 @@
 				<section>
 					<h2>Submittable</h2>
 					<pre><code class="html">
-  &lt;material-item 
-	ng-click="doStuff()" ng-keydown="doStuff()" tabIndex="0"&gt;
-    Button
+					// NEEDS TESTING
+  &lt;material-item role="link" tabIndex="0"
+    ng-click="goToComponent(component)" 
+    ng-keydown="goToComponent(component)"&gt;
+    Buttons
   &lt;/material-item&gt;
 					</code></pre>
 					<p><small>AngularJS</small></p>
