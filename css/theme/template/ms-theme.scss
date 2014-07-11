@@ -3,18 +3,39 @@
 /*********************************************
  * AccessibilityHelper Plugin
  *********************************************/
-  .slides > section.present > .accessibilityWrapper {
-    outline: none;
-  }
-  .slides.staticPage > section {
-    display: block !important;
 
-    &> .accessibilityWrapper {
-      display: block;
-      visibility: visible;
+/* Include in your HTML file along with accessibility-helper.js
+  or copy contents to your theme css */
+
+/*********************************************
+ * AccessibilityHelper Plugin
+ *
+ * MIT licensed
+ *
+ * 2014 Marcy Sutton, http://marcysutton.com
+ *********************************************/
+.reveal {
+  .slides {
+    &>section {
+      &>.accessibilityWrapper,
+      &>section>.accessibilityWrapper {
+        display: none;
+        visibility: hidden;
+      }
+      &.present > .accessibilityWrapper {
+        display: block;
+        visibility: visible;
+        outline: none;
+      }
+      &> .accessibilityWrapper {
+        outline: none;
+      }
+    }
+    &.staticPage > section {
+      display: block !important;
     }
   }
-.reveal {
+
   #global-skip-link {
     display: block;
     font-size: 0.6em;
