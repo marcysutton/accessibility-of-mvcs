@@ -380,6 +380,12 @@ body {
       }
     }
   }
+  img.freezeframe_done {
+    border-width: 0;
+    margin: 0;
+    max-height: 100%;
+    max-width: 100%;
+  }
 
 	a:hover, a:focus {
     outline: none;
