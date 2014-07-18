@@ -335,15 +335,15 @@ body {
   	color: $linkColor;
   	text-decoration: none;
 
-  	-webkit-transition: color .15s ease;
-  	   -moz-transition: color .15s ease;
-  	    -ms-transition: color .15s ease;
-  	     -o-transition: color .15s ease;
-  	        transition: color .15s ease;
+  	-webkit-transition: all .5s;
+  	   -moz-transition: all .5s;
+  	    -ms-transition: all .5s;
+  	     -o-transition: all .5s;
+  	        transition: all .5s;
   }
-	a:not(.image):hover {
+	a:not(.image):hover, a:not(.image):focus {
 		color: $linkColorHover;
-		border: none;
+		border-bottom: 1px solid $linkColorHover;
 	}
 
   .roll span:after {
@@ -505,7 +505,33 @@ body {
  * Slide Styles
  *********************************************/
 .reveal {
-  button, x-tacobutton {
+  .hamburger-button {
+    background: transparent url(../../img/hamburger.svg) no-repeat;
+    background-size: 100%;
+    color: $white;
+    cursor: pointer;
+    margin: 0 auto;
+    padding-top: 55%;
+    width: 100px;
+    text-shadow: $paragraphTextShadow;
+  }
+  .hamburger-menu {
+    display: inline-block;
+    padding: 0.5em 2em;
+    max-height: 3em;
+    overflow: hidden;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    -webkit-transition: 1s;
+    transition: 1s;
+    
+    &.active {
+      background-color: black;
+      max-height: 500px;
+    }
+  }
+  button {
     background-color: $backgroundColor;
     border-radius: 10px;
     border-width: 0;
@@ -513,61 +539,7 @@ body {
     display: inline-block;
     font-size: 1em;
     padding: 0.25em 0.5em;
-  }
-  button {
     margin: 1.5em;
-  }
-  x-tacobutton {
-    margin: 0;
-  }
-  x-tacobutton.pending,
-  x-tacobutton.pending:focus,
-  x-tacobutton.pending:hover,
-  x-tacobutton.open,
-  x-tacobutton.open:focus,
-  x-tacobutton.open:hover {
-    background-color: $secondaryColor;
-    color: $white;
-  }
-  button:hover, button:focus,
-  x-tacobutton:hover, x-tacobutton:focus {
-    background-color: $linkColor;
-    color: $backgroundColor;
-    cursor: pointer;
-  }
-  button:active,
-  x-tacobutton:active {
-    background-color: $white;
-    color: $backgroundColor;
-  }
-  #imgdiv {
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
-  #textcontentdiv {
-    position: relative;
-    padding-top: 1em;
-    z-index: 2;
-
-    h2, div {
-      display: inline-block;
-      margin: 0;
-      padding: 0.25em;
-      transition: all 0.5s;
-    }
-    div.cleardiv {
-      display: block
-    }
-    &.initialized h2,
-    .initialized div {
-      background-color: rgba(0,0,0,0.9);
-    }
-    &.initialized div.cleardiv {
-      background: none;
-    }
   }
   p.byline {
     font-size: 1.25em;
