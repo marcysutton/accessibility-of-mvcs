@@ -52,7 +52,8 @@
   left: -50000px;
   padding: 5px 10px;
   position: fixed;
-  white-space: nowrap; }
+  white-space: nowrap;
+  text-shadow: 1px 3px 3px black; }
 .reveal ul#table-of-contents {
   display: block;
   list-style: none;
@@ -274,14 +275,13 @@ body {
 .reveal a:not(.image), .reveal .highlight {
   color: #cff110;
   text-decoration: none;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s; }
-.reveal a:not(.image):hover, .reveal a:not(.image):focus {
-  color: white;
-  border-bottom: 1px solid white; }
+  -webkit-transition: color .5s;
+  -moz-transition: color .5s;
+  -ms-transition: color .5s;
+  -o-transition: color .5s;
+  transition: color .5s; }
+.reveal a:not(.image):hover {
+  color: white; }
 .reveal .roll span:after {
   color: white;
   background: #92ab0a; }
@@ -424,6 +424,15 @@ body {
   .reveal .hamburger-menu.active {
     background-color: black;
     max-height: 500px; }
+  .reveal .hamburger-menu li a {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s; }
+    .reveal .hamburger-menu li a:hover, .reveal .hamburger-menu li a:focus {
+      color: white;
+      border-bottom: 1px solid white; }
 .reveal button {
   background-color: black;
   border-radius: 10px;

@@ -43,6 +43,7 @@
     padding: 5px 10px;
     position: fixed;
     white-space: nowrap;
+    text-shadow: $paragraphTextShadow;
   }
   ul#table-of-contents {
     display: block;
@@ -335,15 +336,14 @@ body {
   	color: $linkColor;
   	text-decoration: none;
 
-  	-webkit-transition: all .5s;
-  	   -moz-transition: all .5s;
-  	    -ms-transition: all .5s;
-  	     -o-transition: all .5s;
-  	        transition: all .5s;
+  	-webkit-transition: color .5s;
+  	   -moz-transition: color .5s;
+  	    -ms-transition: color .5s;
+  	     -o-transition: color .5s;
+  	        transition: color .5s;
   }
-	a:not(.image):hover, a:not(.image):focus {
+	a:not(.image):hover {
 		color: $linkColorHover;
-		border-bottom: 1px solid $linkColorHover;
 	}
 
   .roll span:after {
@@ -529,6 +529,18 @@ body {
     &.active {
       background-color: black;
       max-height: 500px;
+    }
+    li a {
+      -webkit-transition: all .5s;
+         -moz-transition: all .5s;
+          -ms-transition: all .5s;
+           -o-transition: all .5s;
+              transition: all .5s;
+
+      &:hover, &:focus {
+        color: $linkColorHover;
+        border-bottom: 1px solid $linkColorHover;
+      }
     }
   }
   button {
