@@ -128,14 +128,20 @@
 				</section>
 
 				<section>
-					<h2>Focusable</h2>
-					<pre><code contenteditable class="html">
-	&lt;button&gt;Let's Go&lt;button&gt;
-					</code></pre>
-					<p>or</p>
-					<pre><code contenteditable class="html">
-	&lt;div role="button" tabIndex="0"&gt;Bike&lt;/div&gt;
-					</code></pre>
+					<div class="textDiv" id="hamburgerTextDiv">
+						<h2>Focusable</h2>
+						<div>
+							<button class="hamburger-bikes">Let's Go</button>
+							<pre><code class="html">
+       &lt;button&gt;Let's Go&lt;button&gt;
+							</code></pre>
+							<div class="hamburger-bikes" role="button" tabIndex="0">Bike</div>
+							<pre><code class="html">
+       &lt;div role="button" tabIndex="0"&gt;Bike&lt;/div&gt;
+							</code></pre>
+						</div>
+					</div>
+					<div id="hamburgerImgDiv"></div>
 				</section>
 
 				<section>
@@ -241,6 +247,7 @@
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 		<script src="lib/js/freezeframe.min.js"></script>
+		<script src="lib/js/randomImg.js"></script>
 		<script>
 
 			// Full list of configuration options available here:

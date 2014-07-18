@@ -527,7 +527,7 @@ body {
     transition: 1s;
     
     &.active {
-      background-color: black;
+      background-color: $backgroundColor;
       max-height: 500px;
     }
     li a {
@@ -543,15 +543,47 @@ body {
       }
     }
   }
-  button {
+  #hamburgerTextDiv {
+    position: relative;
+    z-index: 1;
+
+    h2 {
+      display: inline-block;
+      padding: 0 0.25em;
+    }
+
+    &.initialized {
+      h2 {
+        background-color: $backgroundColor;
+      }
+    }
+  }
+  #hamburgerImgDiv {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  button, [role=button] {
     background-color: $backgroundColor;
     border-radius: 10px;
     border-width: 0;
     color: $white;
+    cursor: pointer;
     display: inline-block;
+    font-family: $mainFont;
     font-size: 1em;
     padding: 0.25em 0.5em;
     margin: 1.5em;
+    
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+
+    &:hover, &:focus {
+      background-color: $linkColor;
+      color: $backgroundColor;
+    }
   }
   p.byline {
     font-size: 1.25em;

@@ -433,15 +433,36 @@ body {
     .reveal .hamburger-menu li a:hover, .reveal .hamburger-menu li a:focus {
       color: white;
       border-bottom: 1px solid white; }
-.reveal button {
+.reveal #hamburgerTextDiv {
+  position: relative;
+  z-index: 1; }
+  .reveal #hamburgerTextDiv h2 {
+    display: inline-block;
+    padding: 0 0.25em; }
+  .reveal #hamburgerTextDiv.initialized h2 {
+    background-color: black; }
+.reveal #hamburgerImgDiv {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+.reveal button, .reveal [role=button] {
   background-color: black;
   border-radius: 10px;
   border-width: 0;
   color: white;
+  cursor: pointer;
   display: inline-block;
+  font-family: "Aleo Regular", sans-serif;
   font-size: 1em;
   padding: 0.25em 0.5em;
-  margin: 1.5em; }
+  margin: 1.5em;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+  .reveal button:hover, .reveal button:focus, .reveal [role=button]:hover, .reveal [role=button]:focus {
+    background-color: #cff110;
+    color: black; }
 .reveal p.byline {
   font-size: 1.25em;
   margin-bottom: 4%; }
