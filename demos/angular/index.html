@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="my-stuff" ng-controller="myStuffController">
-<head>
+<head lang="en">
+	<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+	<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+	<meta charset='utf-8'>
 	<title>Angular Demo</title>
+	<meta name="description" content="Angular Accessibility demo for CascadiaJS">
+	<meta name="author" content="Marcy Sutton">
 	<link href="../css/myStuff.css" type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -13,13 +18,15 @@
 	</ul>
 </nav>
 <main ng-view>
-	
+	<noscript>
+		You need JavaScript for this. Sorry.
+	</noscript>
 </main>
-	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<script src="../../lib/js/jquery-ui.js"></script>
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-route/angular-route.js"></script>
-	<script src="../../lib/js/angular-sortable.js"></script>
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/jquery-ui.js"></script>
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/lib/angular-route.min.js"></script>
+	<script src="js/lib/angular-sortable.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/directives/keypress.js"></script>
 	<script src="js/directives/sortable-list.js"></script>
