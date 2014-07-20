@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="my-stuff" ng-controller="myStuffController">
+<head>
+	<title>Angular Demo</title>
+	<link href="../css/myStuff.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<nav>
+	<ul>
+		<li><a href="#/favorite-movies" ng-class="getClass('/favorite-movies')">Favorite Movies</a></li>
+		<li><a href="#/bucket-list" ng-class="getClass('/bucket-list')">Bucket List</a></li>
+		<li><a href="#/about" ng-class="getClass('/about')">Who's this?</a></li>
+	</ul>
+</nav>
+<main ng-view>
+	
+</main>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="../../lib/js/jquery-ui.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="../../lib/js/angular-sortable.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/directives/keypress.js"></script>
+	<script src="js/directives/sortable-list.js"></script>
+	<script src="js/controllers.js"></script>
+</body>
+</html>
