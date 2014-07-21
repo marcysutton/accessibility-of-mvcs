@@ -82,6 +82,14 @@ li {
 	padding: 0.5em 0;
 }
 
+input.item {
+	box-sizing: border-box;
+	display: block;
+	font-size: 1em;
+	font-family: 'Aleo-Regular', Courier, Times, serif;
+	padding: 0.5em 1em;
+	width: 100%;
+}
 nav {
 	display: inline-block;
 	margin-right: 1em;
