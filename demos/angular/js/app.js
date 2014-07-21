@@ -1,6 +1,6 @@
 'use strict';
 
-var myStuff = angular.module('my-stuff', ['ngRoute', 'ui.sortable', 'myStuffControllers', 'sortableListDirective']);
+var myStuff = angular.module('my-stuff', ['ngRoute', 'ui.sortable', 'pageControllers', 'sortableListDirective', 'navLinkDirective']);
 
 myStuff.config(['$routeProvider',
   function($routeProvider) {
@@ -21,4 +21,17 @@ myStuff.config(['$routeProvider',
       	templateUrl: 'partials/page-home.html',
         redirectTo: '/'
       });
-  }]);
+  }])
+.controller('appController', ['$rootScope', '$scope', '$location', '$route',
+	function($rootScope, $scope, $location, $route){    
+		$scope.checkPath = function(path) {
+			return $location.path().substr(0, path.length) == path;
+		}	
+		$scope.getClass = function(path) {
+	    if ($scope.checkPath(path)) {
+	      return "active"
+	    } else {
+	      return ""
+	    }
+		}
+}]);
