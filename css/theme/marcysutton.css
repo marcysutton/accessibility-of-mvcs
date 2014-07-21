@@ -159,7 +159,7 @@ body {
   margin: 0 0 20px 0;
   text-transform: none;
   text-shadow: 2px 2px 6px black; }
-.reveal p, .reveal small, .reveal ul, .reveal ol, .reveal div.large-tag, .reveal figcaption, .reveal blockquote {
+.reveal p, .reveal small, .reveal ul, .reveal ol, .reveal div.large-tag, .reveal figcaption, .reveal blockquote, .reveal dd, .reveal dt {
   text-shadow: 1px 3px 3px black; }
 .reveal h1, .reveal h2.h1-style {
   font-size: 3.25em; }
@@ -192,11 +192,28 @@ body {
   .reveal blockquote strong {
     font-weight: normal;
     font-size: 115%; }
+.reveal section dl {
+  font-size: 0.85em;
+  max-height: 680px;
+  overflow: auto;
+  text-align: left; }
+  .reveal section dl dt {
+    clear: both;
+    float: left;
+    margin-bottom: 1em;
+    margin-right: 0.25em;
+    width: 20%;
+    word-wrap: break-word; }
+  .reveal section dl dd {
+    display: inline-block;
+    margin-bottom: 1em;
+    width: 79%; }
 .reveal section .definition {
-  font-size: 1.25em; }
-  .reveal section .definition span {
-    font-style: italic;
-    font-weight: bold; }
+  border-top: 3px dashed #cff110;
+  font-size: 1em;
+  margin: 1em auto 0;
+  padding-top: 1em;
+  width: 70%; }
 .reveal section .notes p {
   color: #cccccc;
   font-size: 2em;
