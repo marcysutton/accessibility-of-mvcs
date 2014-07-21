@@ -122,8 +122,11 @@
 							<li><a href="#" tabIndex="-1">E. coli</a></li>
 						</ul>
 					</div>
-					<pre class="fragment"><code contenteditable class="html">
+					<pre><code contenteditable class="html">
 	&lt;div class="hamburger-button"&gt;&lt;/div&gt;
+	&lt;ul&gt;
+	  &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+		....
 					</code></pre>
 				</section>
 
@@ -144,28 +147,31 @@
 					<div id="hamburgerImgDiv"></div>
 				</section>
 
-				<section>
+				<section data-click-background="img/joust2.jpg">
 					<h2>(Not) Submittable</h2>
 					<pre><code contenteditable class="html">
-  &lt;material-item ng-repeat="component in COMPONENTS" 
-	ng-click="goToComponent(component);"&gt;
-    Buttons
-  &lt;/material-item&gt;
+    // AngularJS
+  &lt;bike-joust ng-click="oneTwoThree(go);"&gt;
+    JOUST
+  &lt;/bike-joust&gt;
 					</code></pre>
-					<p><small>AngularJS</small></p>
+
+					<div class="bike-joust">JOUST!</div>
+					<p class="hidden"><small>Photo: geneandtonic.blogspot.com</small></p>
 				</section>
 
-				<section>
+				<section data-click-background="img/joust.jpg">
 					<h2>Submittable</h2>
 					<pre><code contenteditable class="html">
-					// NEEDS TESTING
-  &lt;material-item role="link" tabIndex="0"
-    ng-click="goToComponent(component)" 
-    ng-keydown="goToComponent(component)"&gt;
-    Buttons
-  &lt;/material-item&gt;
+    // AngularJS
+  &lt;bike-joust role="button" tabIndex="0"
+    ng-click="oneTwoThree(go)" 
+    ng-keypress="oneTwoThree(go)"&gt;
+    JOUST
+  &lt;/bike-joust&gt;
 					</code></pre>
-					<p><small>AngularJS</small></p>
+					<button class="bike-joust">JOUST!</button>
+					<p class="hidden"><small>Photo: Joshua Trujilo, Seattle PI</small></p>
 				</section>
 
 				<section>

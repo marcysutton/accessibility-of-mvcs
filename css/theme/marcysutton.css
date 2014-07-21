@@ -76,6 +76,9 @@
   left: -50000px;
   position: absolute; }
 
+.hidden {
+  display: none; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -98,6 +101,10 @@ body {
       font-size: 1.45em;
       line-height: 1.45em;
       max-height: 500px; }
+  .reveal .has-background {
+    background-color: rgba(0, 0, 0, 0.75); }
+    .reveal .has-background pre, .reveal .has-background code {
+      background-color: transparent; }
   .reveal footer {
     background-color: rgba(0, 0, 0, 0.85);
     bottom: 0px;
@@ -446,7 +453,7 @@ body {
   position: absolute;
   top: 0;
   width: 100%; }
-.reveal button, .reveal [role=button] {
+.reveal button, .reveal [role=button], .reveal .bike-joust {
   background-color: black;
   border-radius: 10px;
   border-width: 0;
@@ -460,7 +467,7 @@ body {
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
   transition: 0.5s; }
-  .reveal button:hover, .reveal button:focus, .reveal [role=button]:hover, .reveal [role=button]:focus {
+  .reveal button:hover, .reveal button:focus, .reveal [role=button]:hover, .reveal [role=button]:focus, .reveal .bike-joust:hover, .reveal .bike-joust:focus {
     background-color: #cff110;
     color: black; }
 .reveal p.byline {
@@ -485,9 +492,9 @@ body {
   .reveal .image-headline#lemur {
     background: transparent url(../../img/lemur.jpg) no-repeat center top;
     background-size: 100% auto;
-    max-width: 700px;
+    max-width: 600px;
     margin: 0.5em auto 0;
-    padding-top: 38%;
+    padding-top: 35%;
     position: relative; }
   .reveal .image-headline h2, .reveal .image-headline h3 {
     bottom: 0;
