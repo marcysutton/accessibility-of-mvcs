@@ -150,10 +150,8 @@
 				<section data-click-background="img/joust2.jpg">
 					<h2>(Not) Submittable</h2>
 					<pre><code class="html">
-    // AngularJS
-  &lt;bike-joust ng-click="oneTwoThree(go);"&gt;
-    JOUST
-  &lt;/bike-joust&gt;
+  // AngularJS
+  &lt;div ng-click="oneTwoThree(go);"&gt;JOUST!&lt;/div&gt;
 					</code></pre>
 
 					<div class="bike-joust" tabIndex="0">JOUST!</div>
@@ -163,12 +161,12 @@
 				<section data-click-background="img/joust.jpg">
 					<h2>Submittable</h2>
 					<pre><code class="html">
-    // AngularJS
-  &lt;bike-joust role="button" tabIndex="0"
+  // AngularJS
+  &lt;div role="button" tabIndex="0"
     ng-click="oneTwoThree(go)" 
     ng-keypress="oneTwoThree(go)"&gt;
-    JOUST
-  &lt;/bike-joust&gt;
+    JOUST!
+  &lt;/div&gt;
 					</code></pre>
 					<button class="bike-joust">JOUST!</button>
 					<p class="hidden"><small>Photo: Joshua Trujilo, Seattle PI</small></p>
@@ -182,25 +180,23 @@
 				<section>
 					<h2>Focus Styles</h2>
 					<pre><code contenteditable class="css">
-	a {
-	  taco: cheese;
-	  garnish: 0;
-
-	  &:hover, &:focus {
-		   taco: bean
-	  }
-        }
+  a {
+    color: black;
+    
+    &:hover, &:focus {
+      background-color: black;
+      color: white;
+    }
+  }
 					</code></pre>
 					<p>SCSS</p>
 				</section>
 
 				<section>
-					<h2>Custom Tags</h2>
+					<h2>Custom Elements</h2>
 					<pre><code contenteditable class="html">
-  // EmberJS
-  &lt;gold-hotpants&gt;
-    {{ who }}
-  &lt;/gold-hotpants&gt;
+  // EmberJS Component
+  {{gold-hotpants}}
 					</code></pre>
 				</section>
 				
