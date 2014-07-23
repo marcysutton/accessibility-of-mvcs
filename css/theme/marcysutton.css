@@ -161,7 +161,7 @@ body {
   text-shadow: 2px 2px 6px black; }
 .reveal p, .reveal small, .reveal ul, .reveal ol, .reveal div.large-tag, .reveal figcaption, .reveal blockquote, .reveal dd, .reveal dt {
   text-shadow: 1px 3px 3px black; }
-.reveal h1, .reveal h2.h1-style {
+.reveal h1, .reveal h2.h1-style, .reveal h3.h1-style {
   font-size: 3.25em; }
 .reveal h2,
 .reveal h1.h2-style,
@@ -172,6 +172,8 @@ body {
 .reveal h2.h3-style,
 .reveal p.h3-style {
   font-size: 1.75em; }
+.reveal .smaller {
+  font-size: 70%; }
 .reveal small {
   font-size: 0.85em;
   letter-spacing: 0;

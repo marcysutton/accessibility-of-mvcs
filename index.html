@@ -21,7 +21,7 @@
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 		<link rel="stylesheet" href="lib/css/jqcloud.css">
 		
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="lib/js/jquery-1.11.1.min.js"></script>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -124,9 +124,6 @@
 					</div>
 					<pre><code contenteditable class="html">
 	&lt;div class="hamburger-button"&gt;&lt;/div&gt;
-	&lt;ul&gt;
-	  &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-		....
 					</code></pre>
 				</section>
 
@@ -190,6 +187,20 @@
   }
 					</code></pre>
 					<p>SCSS</p>
+				</section>
+
+				<section>
+					<h2 class="h1-style">
+						JavaScript<br>
+						<span class="smaller muted">(can be)</span><br>
+						required.<small>*</small>
+					</h2>
+					<p class="fragment" style="margin-top: 2em;"><small>but warn people.</small></p>
+				</section>
+
+				<section>
+					<h2 class="h1-style">"As rendered"</h2>
+          <img src="img/happy-little-tree.jpg" alt="Bob Ross happy little tree">
 				</section>
 
 				<section>
@@ -392,14 +403,89 @@
 				<section>
 					<h2>JavaScript MVCs + ARIA = BFFs</h2>
 					<!-- dynamic attribute example -->
+					<pre><code class="javascript">
+  // AngularUI Bootstrap
+  &lt;accordion-group
+  	aria-expanded="status.open"
+  	is-open="status.open"
+  	aria-disabled="status.isDisabled"
+  	is-disabled="status.isDisabled"&gt;
+  &lt;/accordion-group&gt;
+					</code></pre>
+				</section>
+
+				<section data-transition="none">
+					<h2>JavaScript MVCs + ARIA = BFFs<span class="offscreen"> (continued)</span></h2>
+					<!-- dynamic attribute example -->
+					<pre><code class="javascript">
+  // AngularUI Bootstrap
+  &lt;accordion-group
+  	aria-expanded="status.open"
+  	aria-disabled="status.isDisabled"&gt;
+  &lt;/accordion-group&gt;
+
+
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Notification</h2>
+					<img src="img/log-off-windows.png" class="" style="min-height: 600px;" alt="Remember logging off from Windows 98?">
+				</section>
+
+				<section>
+					<h2>Alerts</h2>
+					<img src="img/bootstrap-alerts.png" alt="Bootstrap alerts">
+					<img src="img/distiller-signed-out.png" alt="Distiller sign-out alert">
+				</section>
+		
+				<section>
+					<h2 class="h1-style">ARIA Live Regions</h2>
+					<p class="big-italic">Notification of updates without the user losing focus</p>
+					<aside class="notes">
+					<p>aria-live has a very specific purpose and should be used sparingly only for that purpose</p>
+					<p>Politeness levels</p>
+					</aside>
 				</section>
 
 				<section>
 					<h2>Live Regions</h2>
+					<!-- Live region code example -->
+
+					<!--<pre><code class="html">
+  // AngularUI Bootstrap
+  &lt;div ng-controller="AlertDemoCtrl"&gt;
+    &lt;alert ng-repeat="alert in alerts" type="{{alert.type}}" 
+      close="closeAlert($index)"&gt;{{alert.msg}}&lt;/alert&gt;
+    &lt;button class='btn btn-default' ng-click="addAlert()"&gt;
+      Add Alert
+    &lt;/button&gt;
+  &lt;/div&gt;
+					</code></pre>-->
 				</section>
 
 				<section>
-					<h2>Focus Management</h2>
+					<h2>ARIA-Live: don't overdo it.</h2>
+					<h3 class="h1-style">Focus is your friend.</h3>
+				</section>
+
+				<section>
+					<div style="float: right; width: 60%;">
+						<h2 class="h1-style">No. 1 thing</h2>
+						<h3 class="h1-style" style="border-top: 3px dashed #cff110; margin-top: 0.75em; padding-top: 0.75em;">
+							<span class="fragment">Focus</span><br>
+							<span class="fragment">Management</span></h3>
+					</div>
+					<img src="img/number-one-friend.jpg" alt="Number one friend trophy drawing">
+				</section>
+
+				<section>
+					<h2 class="h1-style"><em>&ldquo;freak-out mode&rdquo;</em></h2>
+				</section>
+
+				<section>
+					<h2>Managing focus</h2>
+					<!-- demo(s) -->
 				</section>
 
 				<section>

@@ -175,7 +175,7 @@ body {
   p, small, ul, ol, div.large-tag, figcaption, blockquote, dd, dt {
     text-shadow: $paragraphTextShadow;
   }
-  h1, h2.h1-style {
+  h1, h2.h1-style, h3.h1-style {
     font-size: 3.25em;
   }
   h2,
@@ -188,6 +188,9 @@ body {
   h2.h3-style,
   p.h3-style {
     font-size: 1.75em;
+  }
+  .smaller {
+    font-size: 70%;
   }
   small {
     font-size: 0.85em;
