@@ -222,14 +222,15 @@ body {
   section {
     dl {
       font-size: 0.85em;
-      max-height: 680px;
+      max-height: 480px;
+      margin-top: 2em;
       overflow: auto;
       text-align: left;
 
       dt {
         clear: both;
         float: left;
-        margin-bottom: 1em;
+        margin-bottom: 0.75em;
         margin-right: 0.25em;
         width: 20%;
         word-wrap: break-word;
@@ -648,15 +649,31 @@ body {
       margin: 0.5em auto 0;
       padding-top: 35%;
       position: relative;
+
+      h2, h3 {
+        color: #000;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 3px #fff;
+      }
+    }
+    &#owl {
+      background: transparent url(../../img/oh-no-you-didnt.gif) no-repeat center top;
+      background-size: 100% auto;
+      max-width: 650px;
+      margin: 0.5em auto 0;
+      padding-top: 25%;
+      position: relative;
+
+      h3 {
+        color: #fff;
+        font-size: 1.75em;
+      }
     }
 
     h2, h3 {
       bottom: 0;
-      color: #000;
-      font-size: 2.5em;
       position: absolute;
       text-align: center;
-      text-shadow: 2px 2px 3px #fff;
       width: 100%;
     }
   }
