@@ -21,7 +21,7 @@ var SlideAccessibility = (function(){
   // get slides, wrap contents in 'accessibilityWrapper'
   var slides = document.querySelectorAll( SLIDE_SELECTOR );
   for(var i=0; i<slides.length; i++){
-    slides[i].id = 'slide'+(i+1);
+    slides[i].setAttribute('data-id', i);
     var contents = slides[i].innerHTML;
     slides[i].innerHTML = '<div class="accessibilityWrapper" tabIndex="-1">'+contents+'</div>';
   }
@@ -83,8 +83,8 @@ var SkipLinks = (function(){
 
     var skipLinkHTML = '';
 
-    for(var i = 1; i < NUM_SLIDES; i++){
-      skipLinkHTML += '<li><a href="#/slide' + i + '">Slide ' + i + '</a></li>';
+    for(var i = 0; i < NUM_SLIDES; i++){
+      skipLinkHTML += '<li><a href="#/' + i + '">Slide ' + i + '</a></li>';
     }
     skipLinkHTML += '</ul>';
 
@@ -164,7 +164,7 @@ var SkipLinks = (function(){
   function skipLinkClick(event) {
     skipLinkBlur(event);
     var href = event.currentTarget.getAttribute('href');
-    var section = document.querySelector('#'+href.split('#/')[1]);
+    var section = document.querySelector('[data-id="'+href.split('#/')[1]+'"]');
     section.querySelector( SKIP_LINK_TARGET_SELECTOR ).focus();
   }
 
