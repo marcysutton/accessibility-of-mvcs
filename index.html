@@ -50,7 +50,7 @@
 				</section>
 
 				<section>
-		    	<h2 style="border-bottom: 0.07em dashed #fff; display: inline-block;">IRL</h2>
+		    	<h2 class="dashed-border">IRL</h2>
 			    <div id="wordCloud" style="min-width: 1024px; width: 1440px; min-height: 600px; height: 601px;" class="jqcloud">
 			    	<span class="w7" style="position: absolute; left: 355px; top: 35px;">Banking</span>
 			    	<span class="w7" style="position: absolute; left: 350px; top: 450px;">Education</span>
@@ -108,7 +108,7 @@
 
 				<section>
 					<h2>Interactivity</h2>
-					<p style="margin-bottom: 0.75em">Responding to input</p>
+					<p style="margin-bottom: 0.75em">Accepting and responding to input from people</p>
 					<img class="freezeframe" src="img/interactive.gif" alt="Skittles hold your finger here surprise cat-guy licking gif" style="min-height: 400px;">
 				</section>
 
@@ -148,7 +148,7 @@
 					<h2>(Not) Submittable</h2>
 					<pre><code class="html">
   // AngularJS
-  &lt;div ng-click="oneTwoThree(go);"&gt;JOUST!&lt;/div&gt;
+  &lt;div ng-click="oneTwoThree(go);" tabIndex="0"&gt;JOUST!&lt;/div&gt;
 					</code></pre>
 
 					<div class="bike-joust" tabIndex="0">JOUST!</div>
@@ -170,37 +170,41 @@
 				</section>
 
 				<section>
-					<h2>Visual Feedback</h2>
-					<img src="img/cat-mirror2.gif" style="min-height:500px;" alt="Cat freaking out in mirror">
-				</section>
-
-				<section>
-					<h2>Focus Styles</h2>
-					<pre><code contenteditable class="css">
-  a {
-    color: black;
-    
-    &:hover, &:focus {
-      background-color: black;
-      color: white;
-    }
-  }
-					</code></pre>
-					<p>SCSS</p>
-				</section>
-
-				<section>
 					<h2 class="h1-style">
 						JavaScript<br>
 						<span class="smaller muted">(can be)</span><br>
 						required.<small>*</small>
 					</h2>
-					<p class="fragment" style="margin-top: 2em;"><small>but warn people.</small></p>
+					<p class="fragment" style="margin-top: 2em;"><small>With a warning message.</small></p>
 				</section>
 
 				<section>
 					<h2 class="h1-style">"As rendered"</h2>
-          <img src="img/happy-little-tree.jpg" alt="Bob Ross happy little tree">
+          <img src="img/happy-little-tree.jpg" alt="Bob Ross happy little tree" style="min-width: 45%">
+				</section>
+
+				<section>
+					<h2 style="text-transform: uppercase;">Are your views accessible?</h2>
+					<h3>It depends on:</h3>
+					<div class="dashed-border"></div>
+					<ul>
+						<li class="fragment">The framework</li>
+						<li class="fragment">Templating solution</li>
+						<li class="fragment">Screen reader</li>
+						<li class="fragment">Browser</li>
+						<li class="fragment">Your shitty(?) code</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>POUR me a beer</h2>
+					<div class="dashed-border"></div>
+					<ul class="drop-caps">
+						<li>Perceivable</li>
+						<li>Operable</li>
+						<li>Understandable</li>
+						<li>Robust</li>
+					</ul>
 				</section>
 
 				<section>
@@ -212,28 +216,34 @@
 				</section>
 				
 				<section>
-					<h2>ARIA Core Components</h2>
+					<h2 class="h1-style">ARIA Core Components</h2>
+				</section>
+
+				<section>
      			<div class="definition">
-	     			<h3>Roles</h3>
+	     			<h2>Roles</h2>
 	     			<p>What does this thing do</p>
 	          <pre><code class="html">   &lt;form role="search"&gt;</code></pre>
           </div>
-       		<div></div>
-     			<div class="definition fragment">
-	     			<h3>States</h3>
+				</section>
+
+				<section>
+     			<div class="definition">
+	     			<h2>States</h2>
 	     			<p>The current condition of this particular thing</p>
          		<pre><code class="html">   &lt;input aria-disabled="true"&gt;</code></pre>
        		</div>
-       		<div></div>
-     			<div class="definition fragment">
-	     			<h3>Properties</h3>
+				</section>
+
+				<section>
+     			<div class="definition">
+	     			<h2>Properties</h2>
           	<pre><code class="html">   &lt;input aria-required="true"&gt;</code></pre>
         	</div>
 				</section>
 
 				<section>
 					<h2>ARIA Roles<br><span class="muted">OMG SO MANY</span></h2>
-					<h3 style="margin-top: 1em;">Landmarks, structure,  widgets</h3>
 					<dl id="index_role" class="compact">
 					<dt><a href="http://www.w3.org/TR/wai-aria/roles#alert" target="_blank" title="Link opens in a new window"><code>alert</code></a></dt>
 					<dd>A message with important, and usually time-sensitive, information. See related alertdialog and status.</dd>
@@ -387,6 +397,7 @@
 					<h2>Using Roles</h2>
 					<ul>
 						<li>They're element types</li>
+						<li class="fragment">They're landmarks</li>
 		     		<li class="fragment">Start with native HTML tags</li>
 						<li class="fragment">Read the <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="Link opens in a new window">documentation</a></li>
 						<li class="fragment">Don't overdo it</li>
@@ -395,9 +406,11 @@
 
 				<section>
 					<h2 class="h1-style" style="margin-bottom: 0.5em;">Application Mode</h2>
-					<pre><code class="html">
-				&lt;body role="application"&gt;
-					</code></pre>
+					<div class="definition">
+						<pre><code class="html">
+	&lt;body role="application"&gt;
+						</code></pre>
+					</div>
 					<div class="fragment image-headline" id="owl" style="margin-top: 1.5em;">
 						<h3>OH NO YOU DIDN&rsquo;T</h3>
 					</div>

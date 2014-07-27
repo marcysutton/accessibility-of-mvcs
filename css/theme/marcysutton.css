@@ -79,6 +79,11 @@
 .hidden {
   display: none; }
 
+.clear-after:after {
+  clear: both;
+  content: '';
+  display: block; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -195,7 +200,7 @@ body {
     font-size: 115%; }
 .reveal section dl {
   font-size: 0.85em;
-  max-height: 480px;
+  max-height: 17em;
   margin-top: 2em;
   overflow: auto;
   text-align: left; }
@@ -210,16 +215,6 @@ body {
     display: inline-block;
     margin-bottom: 1em;
     width: 79%; }
-.reveal section .definition {
-  border-top: 3px dashed #cff110;
-  font-size: 1em;
-  margin: 1em auto 0;
-  padding-top: 1em;
-  width: 70%; }
-.reveal section .notes p {
-  color: #cccccc;
-  font-size: 2em;
-  position: absolute; }
 .reveal section figure {
   margin: 0;
   padding: 0;
@@ -428,6 +423,23 @@ body {
 /*********************************************
  * Slide Styles
  *********************************************/
+.reveal .definition {
+  font-size: 1em;
+  margin: 1em auto 0;
+  width: 70%; }
+.reveal .dashed-border {
+  border-top: 0.07em dashed #cff110;
+  margin: 1em auto;
+  padding-top: 1em;
+  width: 70%; }
+.reveal .notes p {
+  color: #cccccc;
+  font-size: 2em;
+  position: absolute; }
+.reveal .drop-caps li:first-letter {
+  font-size: 130%;
+  display: inline-block;
+  margin-right: 0.05em; }
 .reveal .hamburger-button {
   background: transparent url(../../img/hamburger.svg) no-repeat;
   background-size: 100%;
@@ -448,7 +460,6 @@ body {
   -webkit-transition: 1s;
   transition: 1s; }
   .reveal .hamburger-menu.active {
-    background-color: black;
     max-height: 500px; }
   .reveal .hamburger-menu li a {
     -webkit-transition: all .5s;
@@ -466,8 +477,12 @@ body {
     display: inline-block;
     padding: 0 0.25em; }
   .reveal #hamburgerTextDiv.initialized h2 {
-    background-color: black; }
+    color: black;
+    text-shadow: none; }
 .reveal #hamburgerImgDiv {
+  background-repeat: repeat;
+  background-position: left center;
+  background-size: contain;
   height: 100%;
   position: absolute;
   top: 0;
