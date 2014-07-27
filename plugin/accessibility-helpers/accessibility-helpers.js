@@ -84,7 +84,7 @@ var SkipLinks = (function(){
     var skipLinkHTML = '';
 
     for(var i = 0; i < NUM_SLIDES; i++){
-      skipLinkHTML += '<li><a href="#/' + i + '">Slide ' + i + '</a></li>';
+      skipLinkHTML += '<li><a href="#/' + i + '">Slide ' + (i + 1) + '</a></li>';
     }
     skipLinkHTML += '</ul>';
 
