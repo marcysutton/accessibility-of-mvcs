@@ -228,8 +228,8 @@ body {
   section {
     dl {
       font-size: 0.85em;
-      max-height: 19em;
-      margin: 2.5em auto 0;
+      max-height: 17em;
+      margin: 0.5em auto 0;
       overflow: auto;
       text-align: left;
       width: 78%;
@@ -238,7 +238,7 @@ body {
         clear: both;
         float: left;
         padding-right: 1.5em;
-        padding-bottom: 2em;
+        padding-bottom: 1.5em;
         text-align: right;
         width: 20%;
         word-wrap: break-word;
@@ -246,7 +246,7 @@ body {
       dd {
         clear: both;
         display: inline-block;
-        padding-bottom: 2em;
+        padding-bottom: 1.5em;
         width: 74%;
       }
     }

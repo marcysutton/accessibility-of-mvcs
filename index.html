@@ -258,6 +258,7 @@
 						OMG SO MANY
 						</span>
 					</h2>
+					<div class="dashed-border inset-width"></div>
 					<dl id="index_role" class="compact">
 					<dt><a href="http://www.w3.org/TR/wai-aria/roles#alert" target="_blank" title="Link opens in a new window"><code>alert</code></a></dt>
 					<dd>A message with important, and usually time-sensitive, information. See related alertdialog and status.</dd>
@@ -509,7 +510,7 @@
       @flashMessage(e.message)
 
   flashMessage: (message) ->
-    @container.append "<h4 class='message'>#{message}</h4>"
+    @container.append "<p class='message'>#{message}</p>"
 					</code></pre>
 					<pre><code class="html">
   &lt;div class="flash-message" aria-live="assertive" role="alert"&gt;&lt;/div&gt;
