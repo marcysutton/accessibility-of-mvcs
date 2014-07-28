@@ -9,20 +9,17 @@
   src: url("../../lib/font/Aleo-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../lib/font/Aleo-Bold-webfont.woff") format("woff"), url("../../lib/font/Aleo-Bold-webfont.ttf") format("truetype"), url("../../lib/font/Aleo-Bold-webfont.svg#aleobold") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'Aleo Regular';
   src: url("../../lib/font/Aleo-Regular-webfont.eot");
   src: url("../../lib/font/Aleo-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../lib/font/Aleo-Regular-webfont.woff") format("woff"), url("../../lib/font/Aleo-Regular-webfont.ttf") format("truetype"), url("../../lib/font/Aleo-Regular-webfont.svg#aleoregular") format("svg");
   font-weight: normal; }
-
 @font-face {
   font-family: "substantial-ico-fonts";
   src: url(../../lib/font/substantial-ico-fonts.eot);
   src: url(../../lib/font/substantial-ico-fonts.eot?#iefix) format("embedded-opentype"), url(../../lib/font/substantial-ico-fonts.woff) format("woff"), url(../../lib/font/substantial-ico-fonts.ttf) format("truetype"), url(../../lib/font/substantial-ico-fonts.svg#substantial-ico-fonts) format("svg");
   font-style: normal;
   font-weight: normal; }
-
 /*********************************************
  * AccessibilityHelper Plugin
  *********************************************/
@@ -171,7 +168,7 @@ body {
 .reveal h1.h2-style,
 .reveal h3.h2-style,
 .reveal p.h2-style {
-  font-size: 2.15em; }
+  font-size: 2.5em; }
 .reveal h3,
 .reveal h2.h3-style,
 .reveal p.h3-style {
@@ -200,21 +197,24 @@ body {
     font-size: 115%; }
 .reveal section dl {
   font-size: 0.85em;
-  max-height: 17em;
-  margin-top: 2em;
+  max-height: 19em;
+  margin: 2.5em auto 0;
   overflow: auto;
-  text-align: left; }
+  text-align: left;
+  width: 78%; }
   .reveal section dl dt {
     clear: both;
     float: left;
-    margin-bottom: 0.75em;
-    margin-right: 0.25em;
+    padding-right: 1.5em;
+    padding-bottom: 2em;
+    text-align: right;
     width: 20%;
     word-wrap: break-word; }
   .reveal section dl dd {
+    clear: both;
     display: inline-block;
-    margin-bottom: 1em;
-    width: 79%; }
+    padding-bottom: 2em;
+    width: 74%; }
 .reveal section figure {
   margin: 0;
   padding: 0;
@@ -424,22 +424,26 @@ body {
  * Slide Styles
  *********************************************/
 .reveal .definition {
-  font-size: 1em;
+  font-size: 0.85em;
   margin: 1em auto 0;
-  width: 70%; }
+  padding-bottom: 1em; }
 .reveal .dashed-border {
-  border-top: 0.07em dashed #cff110;
-  margin: 1em auto;
-  padding-top: 1em;
+  border-top: 10px dashed #cff110;
+  margin: 1em auto 0;
+  padding-top: 1em; }
+.reveal .inset-width {
+  margin: 1em auto 0;
   width: 70%; }
 .reveal .notes p {
   color: #cccccc;
   font-size: 2em;
   position: absolute; }
-.reveal .drop-caps li:first-letter {
-  font-size: 130%;
-  display: inline-block;
-  margin-right: 0.05em; }
+.reveal .drop-caps {
+  text-align: left; }
+  .reveal .drop-caps li:first-letter {
+    font-size: 130%;
+    display: inline-block;
+    margin-right: 0.05em; }
 .reveal .hamburger-button {
   background: transparent url(../../img/hamburger.svg) no-repeat;
   background-size: 100%;
@@ -538,7 +542,7 @@ body {
     background: transparent url(../../img/oh-no-you-didnt.gif) no-repeat center top;
     background-size: 100% auto;
     max-width: 650px;
-    margin: 0.5em auto 0;
+    margin: 0.25em auto 0;
     padding-top: 25%;
     position: relative; }
     .reveal .image-headline#owl h3 {

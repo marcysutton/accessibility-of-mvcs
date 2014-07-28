@@ -188,7 +188,7 @@ body {
   h1.h2-style,
   h3.h2-style,
   p.h2-style {
-    font-size: 2.15em;
+    font-size: 2.5em;
   }
   h3,
   h2.h3-style,
@@ -228,23 +228,26 @@ body {
   section {
     dl {
       font-size: 0.85em;
-      max-height: 17em;
-      margin-top: 2em;
+      max-height: 19em;
+      margin: 2.5em auto 0;
       overflow: auto;
       text-align: left;
+      width: 78%;
 
       dt {
         clear: both;
         float: left;
-        margin-bottom: 0.75em;
-        margin-right: 0.25em;
+        padding-right: 1.5em;
+        padding-bottom: 2em;
+        text-align: right;
         width: 20%;
         word-wrap: break-word;
       }
       dd {
+        clear: both;
         display: inline-block;
-        margin-bottom: 1em;
-        width: 79%;
+        padding-bottom: 2em;
+        width: 74%;
       }
     }
     figure {
@@ -530,14 +533,17 @@ body {
  *********************************************/
 .reveal {
   .definition {
-    font-size: 1em;
+    font-size: 0.85em;
     margin: 1em auto 0;
-    width: 70%;
+    padding-bottom: 1em;  
   }
   .dashed-border {
-    border-top: 0.07em dashed #cff110;
-    margin: 1em auto;
+    border-top: 10px dashed #cff110;
+    margin: 1em auto 0;
     padding-top: 1em;
+  }
+  .inset-width {
+    margin: 1em auto 0;
     width: 70%;
   }
   .notes {
@@ -548,6 +554,8 @@ body {
     }
   }
   .drop-caps {
+    text-align: left;
+
     li {
       &:first-letter {
         font-size: 130%;
@@ -682,7 +690,7 @@ body {
       background: transparent url(../../img/oh-no-you-didnt.gif) no-repeat center top;
       background-size: 100% auto;
       max-width: 650px;
-      margin: 0.5em auto 0;
+      margin: 0.25em auto 0;
       padding-top: 25%;
       position: relative;
 
