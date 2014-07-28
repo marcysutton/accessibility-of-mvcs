@@ -486,7 +486,7 @@
 				<section>
 					<h2>Live Regions</h2>
 					<pre><code class="coffeescript">
-  // Spine.js
+  // SpineJS
   class App.FlashMessageController
   constructor: ->
     @container = $('.flash-message')
@@ -518,12 +518,41 @@
 				</section>
 
 				<section>
-					<h2 class="h1-style"><em>&ldquo;freak-out mode&rdquo;</em></h2>
+					<h2 class="h1-style"><em>&ldquo;freak-out&rdquo; mode</em></h2>
 				</section>
 
 				<section>
 					<h2>Managing focus</h2>
 					<!-- demo(s) -->
+					<pre><code class="coffeescript">
+ // SpineJS
+ class App.FocusManager
+   constructor: ->
+     $('body').on 'focusin', (e) =>
+       @oldFocus = $(e.target)
+
+     App.bind 'rendered', (e) =>
+       return unless @oldFocus
+
+       @_focusById() if @oldFocus.data('focus-id')
+       else @_focusByNodeEquality()
+
+   _focusById: ->
+     focusId = @oldFocus.data('focus-id')
+     newFocus = $("[data-focus-id=#{focusId}]")
+     MyApp.focus(newFocus) if newFocus
+
+   _focusByNodeEquality: ->
+     allNodes = $('body *:visible').get()
+     for node in allNodes
+       if MyApp.equalNodes(node, @oldFocus[0])
+         MyApp.focus(node)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Distiller</h2>
+					<a href="http://drinkdistiller.com" target="_blank" title="Link opens in a new window"><img src="img/distiller.png" class="plain" alt="Distiller's Top Shelf" style="max-height: 700px;"></a>
 				</section>
 
 				<section>
