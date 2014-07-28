@@ -85,7 +85,8 @@
 				</section>
 
 				<section>
-					<h2>Accessibility challenges <br>in single-page apps</h2>
+					<h2 style="margin-bottom:0.5em;">Accessibility challenges <br>in single-page apps</h2>
+					<div class="dashed-border inset-width"></div>
 					<ul>
 						<li class="fragment">Interactivity</li>
 						<li class="fragment">Update notification</li>
@@ -220,7 +221,6 @@
 				<section>
 					<h2>ARIA Core Components</h2>
 					<div class="inset-width">
-	     			<div class="dashed-border"></div>
 	     			<div class="definition">
 		     			<h3>Roles</h3>
 		     			<p>What does this thing do</p>
@@ -395,8 +395,9 @@
 	
 				<section>
 					<h2>Using Roles</h2>
+					<div class="dashed-border inset-width"></div>
 					<ul>
-						<li>They're element types</li>
+						<li class="fragment">They're element types</li>
 						<li class="fragment">They're landmarks</li>
 		     		<li class="fragment">Start with native HTML tags</li>
 						<li class="fragment">Read the <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="Link opens in a new window">documentation</a></li>
@@ -422,7 +423,6 @@
 					<div class="fragment image-headline" id="owl">
 						<h3>OH NO YOU DIDN&rsquo;T</h3>
 					</div>
-					<!-- <img src="img/oh-no-you-didnt.gif" alt="OH NO YOU DIDN'T owl"> -->
 					<aside class="notes">
 	 Be VERY careful with &lt;body role=“application”&gt;
 					</aside>
@@ -440,6 +440,9 @@
   	is-disabled="status.isDisabled"&gt;
   &lt;/accordion-group&gt;
 					</code></pre>
+					<aside class="notes">
+	 Angular properties alongside aria properties get verbose.
+					</aside>
 				</section>
 
 				<section data-transition="none">
@@ -454,6 +457,9 @@
 
 
 					</code></pre>
+					<aside class="notes">
+	 What if frameworks could integrate more fully with ARIA?
+					</aside>
 				</section>
 
 				<section>
