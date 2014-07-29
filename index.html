@@ -227,8 +227,21 @@
 				<section>
 					<h2>Custom Elements</h2>
 					<pre><code contenteditable class="html">
-  // EmberJS Component
-  {{gold-hotpants}}
+    // EmberJS Component
+    {{gold-hotpants}}
+					</code></pre>
+					<pre><code class="javascript">
+    App.GoldHotpantsComponent = Ember.Component.extend({
+      attributeBindings: [
+        'tabIndex'
+      ],
+      tagName: 'div',
+      ariaRole: 'form',
+
+      tabIndex: function() {
+        return this.get('active') ? 0 : -1;
+      }.property('active')
+    });
 					</code></pre>
 				</section>
 				
