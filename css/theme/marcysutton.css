@@ -67,6 +67,8 @@
       padding: 5px 10px;
       position: absolute;
       white-space: nowrap; }
+.reveal .letter-icon {
+  font-size: 150%; }
 
 .offscreen {
   display: block;
@@ -102,10 +104,12 @@ body {
       font-size: 1.45em;
       line-height: 1.45em;
       max-height: 500px; }
-  .reveal .has-background {
+  .reveal .text-background {
+    padding: 1em 0; }
+  .reveal .has-background pre, .reveal .has-background code {
+    background-color: transparent; }
+  .reveal .has-background .text-background {
     background-color: rgba(0, 0, 0, 0.75); }
-    .reveal .has-background pre, .reveal .has-background code {
-      background-color: transparent; }
   .reveal footer {
     background-color: rgba(0, 0, 0, 0.85);
     bottom: 0px;

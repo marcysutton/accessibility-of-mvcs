@@ -146,29 +146,31 @@
 				</section>
 
 				<section data-click-background="img/joust2.jpg">
-					<h2>(Not) Submittable</h2>
-					<pre><code class="html">
+					<div class="text-background">
+						<h2>(Not) Submittable</h2>
+						<pre><code class="html">
   // AngularJS
   &lt;div ng-click="oneTwoThree(go);" tabIndex="0"&gt;JOUST!&lt;/div&gt;
-					</code></pre>
+						</code></pre>
 
-					<div class="bike-joust" tabIndex="0">JOUST!</div>
-					<p class="hidden"><small>Photo: geneandtonic.blogspot.com</small></p>
+						<div class="bike-joust" tabIndex="0">JOUST!</div>
+						<p class="hidden"><small>Photo: geneandtonic.blogspot.com</small></p>
+					</div>
 				</section>
 
 				<section data-click-background="img/joust.jpg">
-					<h2>Submittable</h2>
-					<div class="inset-width">
-					<pre><code class="html">
+					<div class="inset-width text-background">
+						<h2>Submittable</h2>
+						<pre><code class="html">
   // AngularJS
   &lt;div role="button" tabIndex="0"
     ng-click="oneTwoThree(go)" 
     ng-keypress="oneTwoThree(go)"&gt;
     JOUST!
   &lt;/div&gt;
-					</code></pre>
-					<button class="bike-joust">JOUST!</button>
-					<p class="hidden"><small>Photo: Joshua Trujilo, Seattle PI</small></p>
+						</code></pre>
+						<button class="bike-joust">JOUST!</button>
+						<p class="hidden"><small>Photo: Joshua Trujilo, Seattle PI</small></p>
 					</div>
 				</section>
 
@@ -438,7 +440,7 @@
 						Application Mode <br>
 					</h2>
 					<h3 style="margin-bottom: 0.5em;"><small>
-							<a href="http://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/" target="_blank" title="Marco Zehe's post about using Application Mode opens in a new window">[link]</a>
+							<a href="http://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/" target="_blank" title="Marco Zehe's post about using Application Mode opens in a new window"><span aria-hidden="true">[link]</span><span class="offscreen">Marco Zehe's post about using Application Mode</span></a>
 						</small></h3>
 					<div class="definition inset-width">
 						<pre><code class="html">
@@ -457,7 +459,9 @@
 				</section>
 
 				<section>
-					<h2>MV*s + ARIA = BFFs</h2>
+					<h2>MVCs + ARIA = BFFs</h2>
+					<p aria-hidden="true"><span class="letter-icon">❤</span></p>
+					<h3 class="offscreen">JavaScript MVC frameworks and WAI-ARIA are best friends</h3>
 					<!-- dynamic attribute example -->
 					<pre><code class="javascript">
   // AngularUI Bootstrap
@@ -474,7 +478,7 @@
 				</section>
 
 				<section data-transition="none">
-					<h2>MV*s + ARIA = BFFs<span class="offscreen"> (continued)</span></h2>
+					<h2>Make your framework do the heavy lifting</h2>
 					<!-- dynamic attribute example -->
 					<pre><code class="javascript">
   // AngularUI Bootstrap
@@ -483,10 +487,10 @@
   	aria-disabled="status.isDisabled"&gt;
   &lt;/accordion-group&gt;
 
-
 					</code></pre>
+					<p></p>
 					<aside class="notes">
-	 What if frameworks could integrate more fully with ARIA?
+	 
 					</aside>
 				</section>
 
@@ -504,7 +508,7 @@
 				<section>
 					<h2 class="h1-style">ARIA Live Regions</h2>
 					<p class="big-italic">Notification of updates without the user losing focus</p>
-					<p style="margin-top: 1em;"><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions" target="_blank" title="Mozilla documentation on ARIA Live Regions opens in a new window">[link]</a></p>
+					<p style="margin-top: 1em;"><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions" target="_blank" title="Mozilla documentation on ARIA Live Regions opens in a new window"><span class="offscreen">Mozilla documentation on ARIA Live Regions</span><span aria-hidden="true">[link]</span></a></p>
 					<aside class="notes">
 					<p>aria-live has a very specific purpose and should be used sparingly only for that purpose</p>
 					<p>Politeness levels</p>

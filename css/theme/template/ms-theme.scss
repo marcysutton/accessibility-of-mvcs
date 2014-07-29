@@ -66,6 +66,11 @@
       }
     }
   }
+  .letter-icon {
+    // display: inline-block;
+    font-size: 150%;
+    // vertical-align: middle;
+  }
 }
 .offscreen {
   display: block;
@@ -109,11 +114,15 @@ body {
       max-height: 500px;
     }
   }
+  .text-background {
+    padding: 1em 0;
+  }
   .has-background {
-    background-color: rgba(0,0,0,0.75);
-
     pre, code {
       background-color: transparent;
+    }
+    .text-background {
+      background-color: rgba(0,0,0,0.75);
     }
   }
   footer {
