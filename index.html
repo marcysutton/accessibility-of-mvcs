@@ -85,6 +85,71 @@
 				</section>
 
 				<section>
+					<h2 class="h1-style">
+						<span class="fragment">Model</span><br>
+						<span class="fragment">View</span><br>
+						<span class="fragment">Controller</span><br>
+						<span class="fragment">Router</span><br>
+						<span class="fragment">WHATEVER</span>
+					</h2>
+				</section>
+
+				<section>
+					<h2 style="text-transform: uppercase;">Are your views accessible?</h2>
+					<h3>It depends on:</h3>
+					<div class="dashed-border inset-width"></div>
+					<ul>
+						<li class="fragment">The framework</li>
+						<li class="fragment">Screen reader</li>
+						<li class="fragment">Browser</li>
+						<li class="fragment">Your shitty(?) code</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>POUR me a beer</h2>
+					<p><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#guidelines">WCAG 2.0 Principles</a></p>
+					<div class="dashed-border inset-width"></div>
+					<ul class="drop-caps">
+						<li>Perceivable</li>
+						<li>Operable</li>
+						<li>Understandable</li>
+						<li>Robust</li>
+					</ul>
+					<aside class="notes">
+					<dl>
+						<dt>Perceivable</dt>
+						<dd>Provide text alternatives for non-text content.
+						Provide captions and other alternatives for multimedia.
+						Create content that can be presented in different ways,
+						by assistive technologies, without losing meaning.
+						Make it easier for users to see and hear content.</dd>
+
+						<dt>Operable</dt>
+						<dd>Make all functionality available from a keyboard.
+						Give users enough time to read and use content.
+						Do not use content that causes seizures.
+						Help users navigate and find content.</dd>
+
+						<dt>Understandable</dt>
+						<dd>Make text readable and understandable.
+						Specified languages, no unexplained jargon, expand abbreviations. 
+						Organizational predictability (headings), error management.</dd>
+
+						<dt>Robust</dt>
+						<dd>Users must be able to access content as technologies advance and user agents evolve (content should remain accessible).
+						Maximize compatibility with current and future user tools.</dd>
+					</aside>
+				</section>
+
+				<section data-background="img/awesome.gif" data-transition="none">
+					<div class="offscreen">
+						<h2>What does that mean?</h2>
+						<h3>It means your stuff should be AWESOME.</h3>
+					</div>
+				</section>
+
+				<section>
 					<h2 style="margin-bottom:0.5em;">Accessibility challenges <br>in single-page apps</h2>
 					<div class="dashed-border inset-width"></div>
 					<ul>
@@ -96,21 +161,13 @@
 					</ul>
 				</section>
 
-				<!--<section>
-					<h2>Keyboard</h2>
-					<ul>
-						<li>Focus indicators</li>
-						<li>Navigation order</li>
-						<li>Non-navigable elements</li>
-						<li>Scripted elements &amp; widgets</li>
-						<li>Lengthy navigation</li>
-					</ul>
-				</section>-->
-
 				<section>
 					<h2>Interactivity</h2>
 					<p style="margin-bottom: 0.75em">Accepting and responding to input from people</p>
 					<img class="freezeframe" src="img/interactive.gif" alt="Skittles hold your finger here surprise cat-guy licking gif" style="min-height: 400px;">
+					<aside class="notes">
+					Challenge the concept of "interactive". It doesn't have to be visually interactive. Appeal to all the senses. PERCEIVABLE and OPERABLE. And robust.
+					</aside>
 				</section>
 
 				<section>
@@ -129,20 +186,21 @@
 				</section>
 
 				<section>
-					<div class="textDiv" id="hamburgerTextDiv">
-						<h2>Focusable</h2>
-						<div>
-							<button class="hamburger-bikes" data-img-src="img/hamburgler-on-bike.jpg">Let's Go</button>
-							<pre><code class="html">
-       &lt;button&gt;Let's Go&lt;button&gt;
-							</code></pre>
-							<div class="hamburger-bikes" role="button" tabIndex="0" data-img-src="img/hamburgler-on-bike-flipped.jpg">Bike</div>
-							<pre><code class="html">
-       &lt;div role="button" tabIndex="0"&gt;Bike&lt;/div&gt;
-							</code></pre>
-						</div>
+					<h2>Focusable</h2>
+					<div class="hamburger-menu">
+						<button class="hamburger-button" aria-label="Menu"></button>
+						<ul aria-disabled="true">
+							<li><a href="javascript: return false;" tabIndex="-1">Lettuce</a></li>
+							<li><a href="javascript: return false;" tabIndex="-1">Tomato</a></li>
+							<li><a href="javascript: return false;" tabIndex="-1">E. coli</a></li>
+						</ul>
 					</div>
-					<div id="hamburgerImgDiv"></div>
+					<pre><code class="html">
+   &lt;button aria-label="Menu"&gt;&lt;button&gt;
+					</code></pre>
+					<pre><code class="html">
+   &lt;div role="button" tabIndex="0" aria-label="Menu"&gt;&lt;/div&gt;
+					</code></pre>
 				</section>
 
 				<section data-click-background="img/joust2.jpg">
@@ -175,6 +233,27 @@
 				</section>
 
 				<section>
+					<h2>Visual Feedback</h2>
+					<img src="img/cat-mirror2.gif" alt="Cat dancing in mirror" style="min-height: 500px;">
+				</section>
+
+				<section>
+					<h2>Visual Feedback</h2>
+					<p class="big-italic">for realsies</p>
+					<div class="inset-width">
+					<pre><code class="css">
+  a {
+    color: $linkColor;
+
+    &:hover, &:focus {
+      color: $linkActiveColor;
+    }
+  }
+					</code></pre>
+					</div>
+				</section>
+
+				<section>
 					<h2 class="h1-style">
 						JavaScript<br>
 						<span class="smaller muted">(can be)</span><br>
@@ -189,44 +268,6 @@
 				</section>
 
 				<section>
-					<h2 style="text-transform: uppercase;">Are your views accessible?</h2>
-					<h3>It depends on:</h3>
-					<div class="dashed-border inset-width"></div>
-					<ul>
-						<li class="fragment">The framework</li>
-						<li class="fragment">Templating solution</li>
-						<li class="fragment">Screen reader</li>
-						<li class="fragment">Browser</li>
-						<li class="fragment">Your shitty(?) code</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>POUR me a beer</h2>
-					<div class="dashed-border inset-width"></div>
-					<ul class="drop-caps">
-						<li>Perceivable</li>
-						<li>Operable</li>
-						<li>Understandable</li>
-						<li>Robust</li>
-					</ul>
-					<aside class="notes">
-					<dl>
-						<dt>Perceivable</dt>
-						<dd>Users must be able to perceive the information being presented (it can't be invisible to all of their senses)</dd>
-
-						<dt>Operable</dt>
-						<dd>Users must be able to operate the interface (the interface cannot require interaction that a user cannot perform)</dd>
-
-						<dt>Understandable</dt>
-						<dd>Users must be able to understand the information as well as the operation of the user interface (the content or operation cannot be beyond their understanding)</dd>
-
-						<dt>Robust</dt>
-						<dd>Users must be able to access the content as technologies advance (as technologies and user agents evolve, the content should remain accessible)</dd>
-					</aside>
-				</section>
-
-				<section>
 					<h2>Custom Elements</h2>
 					<pre><code contenteditable class="html">
     // EmberJS Component
@@ -237,14 +278,18 @@
       attributeBindings: [
         'tabIndex'
       ],
-      tagName: 'div',
-      ariaRole: 'form',
+      tagName: 'section',
 
       tabIndex: function() {
         return this.get('active') ? 0 : -1;
       }.property('active')
     });
 					</code></pre>
+				</section>
+
+				<section>
+					<h2 class="offscreen">Ember Custom Component demo</h2>
+					<a href="demos/ember/gold-hotpants.html" target="_blank" title="Link opens in a new window"><img src="img/gold-hotpants.png" alt="Ember Gold Hotpants Demo"></a>
 				</section>
 				
 				<section>
@@ -266,6 +311,36 @@
 	        	</div>
         	</div>
 				</section>
+
+				<!--<section>
+					<h2>Make your framework do the heavy lifting</h2>
+					<pre><code class="javascript">
+  // AngularUI Bootstrap
+  &lt;accordion-group
+  	aria-expanded="status.open"
+  	is-open="status.open"
+  	aria-disabled="status.isDisabled"
+  	is-disabled="status.isDisabled"&gt;
+  &lt;/accordion-group&gt;
+					</code></pre>
+					<aside class="notes">
+	 Angular properties alongside aria properties get verbose.
+					</aside>
+				</section>
+
+				<section data-transition="none">
+					<h2>Make your framework do the heavy lifting</h2>
+					<h3 class="offscreen">Example where ARIA attributes are the default</h3>
+					<pre><code class="javascript">
+  // AngularUI Bootstrap
+  &lt;accordion-group
+  	aria-expanded="status.open"
+  	aria-disabled="status.isDisabled"&gt;
+  &lt;/accordion-group&gt;
+
+
+					</code></pre>
+				</section>-->
 
 				<section>
 					<h2>ARIA Roles
@@ -436,71 +511,48 @@
 				</section>
 
 				<section>
-					<h2>
-						Application Mode <br>
-					</h2>
-					<h3 style="margin-bottom: 0.5em;"><small>
+					<h2>Application Mode</h2>
+					<p class="big-italic">Disables a screen reader&rsquo;s &ldquo;virtual cursor&rdquo;</p>
+					<p style="margin: 0.5em 0;"><small>
 							<a href="http://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/" target="_blank" title="Marco Zehe's post about using Application Mode opens in a new window"><span aria-hidden="true">[link]</span><span class="offscreen">Marco Zehe's post about using Application Mode</span></a>
-						</small></h3>
+						</small></p>
 					<div class="definition inset-width">
 						<pre><code class="html">
     &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
 						</code></pre>
-						<pre class="fragment"><code class="html">
-    &lt;body role="application"&gt;
-						</code></pre>
 					</div>
-					<div class="fragment image-headline" id="owl">
+
+					<aside class="notes">
+	<p>Virtual Cursor/Browse mode:<br>
+	 Several keys are captured by the assistive technology and are not processed by the browser. These allow navigation by headings, lists, links, tables, form elements and others. Usually, these are done via single letters. The visual focus may or may not follow the virtual cursor onto focusable items, depending on the assistive technology in use and its settings</p>
+	 <p>Forms mode/focus mode:<br>
+	 All keys are passed through to the browser. The challenge is that you may be creating widgets that require you to force the user into direct interaction with the browser. You know that your widget can best be used via the keyboard if the user is not in virtual mode. It is under your control whether the user is being thrown into focus mode once your widget gains keyboard focus.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Headache City</h2>
+					<div class="inset-width">
+					<pre><code class="html">
+	    &lt;body role="application"&gt;
+					</code></pre>
+					</div>
+					<div class="image-headline" id="owl">
 						<h3>OH NO YOU DIDN&rsquo;T</h3>
 					</div>
 					<aside class="notes">
-	 Be VERY careful with &lt;body role=“application”&gt;
+	 Only want to use role="application" if the content you're providing consists of only interactive controls, and of those, mostly advanced widgets, that emulate a real desktop application.
 					</aside>
 				</section>
 
 				<section>
-					<h2>MVCs + ARIA = BFFs</h2>
-					<p aria-hidden="true"><span class="letter-icon">❤</span></p>
-					<h3 class="offscreen">JavaScript MVC frameworks and WAI-ARIA are best friends</h3>
-					<!-- dynamic attribute example -->
-					<pre><code class="javascript">
-  // AngularUI Bootstrap
-  &lt;accordion-group
-  	aria-expanded="status.open"
-  	is-open="status.open"
-  	aria-disabled="status.isDisabled"
-  	is-disabled="status.isDisabled"&gt;
-  &lt;/accordion-group&gt;
-					</code></pre>
-					<aside class="notes">
-	 Angular properties alongside aria properties get verbose.
-					</aside>
-				</section>
-
-				<section data-transition="none">
-					<h2>Make your framework do the heavy lifting</h2>
-					<!-- dynamic attribute example -->
-					<pre><code class="javascript">
-  // AngularUI Bootstrap
-  &lt;accordion-group
-  	aria-expanded="status.open"
-  	aria-disabled="status.isDisabled"&gt;
-  &lt;/accordion-group&gt;
-
-					</code></pre>
-					<p></p>
-					<aside class="notes">
-	 
-					</aside>
-				</section>
-
-				<section>
-					<h2>Notification</h2>
+					<h2>Update Notification</h2>
+					<p><em>Remember this?</em></p>
 					<img src="img/log-off-windows.png" class="" style="min-height: 600px;" alt="Remember logging off from Windows 98?">
 				</section>
 
 				<section>
-					<h2>Alerts</h2>
+					<h2>Webapp Alerts</h2>
 					<img src="img/bootstrap-alerts.png" alt="Bootstrap alerts" style="max-width: 958px;">
 					<img src="img/distiller-signed-out.png" alt="Distiller sign-out alert">
 				</section>
@@ -518,7 +570,6 @@
 				<section>
 					<h2>Live Regions</h2>
 					<pre><code class="coffeescript">
-  // SpineJS
   class App.FlashMessageController
   constructor: ->
     @container = $('.flash-message')
@@ -540,13 +591,13 @@
 				</section>
 
 				<section>
-					<div style="float: right; width: 60%;">
-						<h2 class="h1-style">No. 1 thing</h2>
-						<h3 class="h1-style fragment dashed-border">
-							Focus<br>
-							Management</h3>
-					</div>
-					<img src="img/number-one-friend.jpg" alt="Number one friend trophy drawing">
+					<h2 class="h1-style">Focus Management</h2>
+				</section>
+
+				<section>
+					<h2>Distiller</h2>
+					<a href="http://drinkdistiller.com" target="_blank" title="Distiller opens in a new window"><img src="img/distiller-top-shelf.png" alt="Distiller's Top Shelf" style="max-height: 700px;"></a>
+					<p>(They're hiring devs!)</p>
 				</section>
 
 				<section>
@@ -557,7 +608,6 @@
 					<h2>Managing focus</h2>
 					<!-- demo(s) -->
 					<pre><code class="coffeescript">
- // SpineJS
  class App.FocusManager
    constructor: ->
      $('body').on 'focusin', (e) =>
@@ -583,14 +633,12 @@
 				</section>
 
 				<section>
-					<h2>Distiller</h2>
-					<a href="http://drinkdistiller.com" target="_blank" title="Distiller opens in a new window"><img src="img/distiller-top-shelf.png" alt="Distiller's Top Shelf" style="max-height: 700px;"></a>
-					<p>(They're hiring devs!)</p>
-				</section>
-
-				<section>
-					<h2>The End</h2>
-					<object width="1280" height="720"><param name="movie" value="http://swf.tubechop.com/tubechop.swf?vurl=ztCxilMDyDo&start=0&end=48.61&cid=3381357"></param><embed src="http://swf.tubechop.com/tubechop.swf?vurl=ztCxilMDyDo&start=0&end=47.61&cid=3381357" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"></embed></object>
+					<h2>You got this.</h2>
+					<ul>
+						<li>Interactivity</li>
+						<li>Update notification</li>
+						<li>Focus management</li>
+					</ul>
 				</section>
 
 			</div>
