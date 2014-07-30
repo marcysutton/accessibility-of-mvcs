@@ -15,6 +15,11 @@
   src: url("../../lib/font/Aleo-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../lib/font/Aleo-Regular-webfont.woff") format("woff"), url("../../lib/font/Aleo-Regular-webfont.ttf") format("truetype"), url("../../lib/font/Aleo-Regular-webfont.svg#aleoregular") format("svg");
   font-weight: normal; }
 @font-face {
+  font-family: 'Aleo Italic';
+  src: url("../../lib/font/Aleo-Italic-webfont.eot");
+  src: url("../../lib/font/Aleo-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("../../lib/font/Aleo-Italic-webfont.woff") format("woff"), url("../../lib/font/Aleo-Italic-webfont.ttf") format("truetype"), url("../../lib/font/Aleo-Italic-webfont.svg#aleoitalic") format("svg");
+  font-weight: normal; }
+@font-face {
   font-family: "substantial-ico-fonts";
   src: url(../../lib/font/substantial-ico-fonts.eot);
   src: url(../../lib/font/substantial-ico-fonts.eot?#iefix) format("embedded-opentype"), url(../../lib/font/substantial-ico-fonts.woff) format("woff"), url(../../lib/font/substantial-ico-fonts.ttf) format("truetype"), url(../../lib/font/substantial-ico-fonts.svg#substantial-ico-fonts) format("svg");
@@ -69,6 +74,9 @@
       white-space: nowrap; }
 .reveal .letter-icon {
   font-size: 150%; }
+
+.strike {
+  text-decoration: line-through; }
 
 .offscreen {
   display: block;
@@ -177,12 +185,17 @@ body {
 .reveal h2.h3-style,
 .reveal p.h3-style {
   font-size: 1.75em; }
+.reveal .larger {
+  font-size: 120%; }
 .reveal .smaller {
   font-size: 70%; }
 .reveal small {
   font-size: 0.85em;
   letter-spacing: 0;
   text-transform: none; }
+.reveal em {
+  font-family: "Aleo Italic", sans-serif;
+  font-style: normal; }
 .reveal blockquote {
   background-color: transparent;
   font-style: italic;
@@ -243,8 +256,8 @@ body {
   .reveal .left-align p {
     margin-bottom: 0.75em; }
 .reveal .big-italic {
-  font-size: 2em;
-  font-style: italic;
+  font-family: "Aleo Italic", sans-serif;
+  font-size: 1.5em;
   font-weight: normal;
   text-transform: none; }
   .reveal .big-italic.smaller {
@@ -451,8 +464,10 @@ body {
 .reveal .hamburger-button {
   background: transparent url(../../img/hamburger.svg) no-repeat;
   background-size: 100%;
+  border-width: 0;
   color: white;
   cursor: pointer;
+  display: block;
   margin: 0 auto;
   padding-top: 55%;
   width: 100px;
@@ -495,7 +510,7 @@ body {
   position: absolute;
   top: 0;
   width: 100%; }
-.reveal button, .reveal [role=button], .reveal .bike-joust {
+.reveal .bike-joust {
   background-color: black;
   border-radius: 10px;
   border-width: 0;
@@ -509,7 +524,7 @@ body {
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
   transition: 0.5s; }
-  .reveal button:hover, .reveal button:focus, .reveal [role=button]:hover, .reveal [role=button]:focus, .reveal .bike-joust:hover, .reveal .bike-joust:focus {
+  .reveal .bike-joust:hover, .reveal .bike-joust:focus {
     background-color: #cff110;
     color: black; }
 .reveal p.byline {

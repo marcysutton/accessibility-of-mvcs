@@ -72,6 +72,9 @@
     // vertical-align: middle;
   }
 }
+.strike {
+  text-decoration: line-through;
+}
 .offscreen {
   display: block;
   left: -50000px;
@@ -204,6 +207,9 @@ body {
   p.h3-style {
     font-size: 1.75em;
   }
+  .larger {
+    font-size: 120%;
+  }
   .smaller {
     font-size: 70%;
   }
@@ -211,6 +217,10 @@ body {
     font-size: 0.85em;
     letter-spacing: 0;
     text-transform: none;
+  }
+  em {
+    font-family: $italicFont;
+    font-style: normal;
   }
   blockquote {
     background-color: transparent;
@@ -292,8 +302,8 @@ body {
     }
   }
   .big-italic {
-    font-size: 2em;
-    font-style: italic;
+    font-family: $italicFont;
+    font-size: 1.5em;
     font-weight: normal;
     text-transform: none;
 
@@ -576,8 +586,10 @@ body {
   .hamburger-button {
     background: transparent url(../../img/hamburger.svg) no-repeat;
     background-size: 100%;
+    border-width: 0;
     color: $white;
     cursor: pointer;
+    display: block;
     margin: 0 auto;
     padding-top: 55%;
     width: 100px;
@@ -635,7 +647,7 @@ body {
     top: 0;
     width: 100%;
   }
-  button, [role=button], .bike-joust {
+  .bike-joust {
     background-color: $backgroundColor;
     border-radius: 10px;
     border-width: 0;
