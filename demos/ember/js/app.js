@@ -1,15 +1,19 @@
 App = Ember.Application.create();
 
 Ember.RadioButton = Ember.View.extend({  
-    tagName : "input",
-    type : "radio",
-    attributeBindings : [ "name", "type", "value", "checked:checked:" ],
-    click : function() {
-      this.set("selection", this.$().val())
-    },
-    checked : function() {
-      return this.get("value") == this.get("selection");   
-    }.property()
+  tagName : "input",
+  type : "radio",
+  attributeBindings : [ "name", "type", "value", "checked:checked:" ],
+  click : function() {
+    this.set("selection", this.$().val())
+  },
+  checked : function() {
+    return this.get("value") == this.get("selection");   
+  }.property()
+});
+
+Ember.AccessibleTextField = Ember.TextField.extend({
+	attributeBindings : [ "aria-label" ]
 });
 
 App.GoldHotpantsComponent = Ember.Component.extend({
@@ -21,17 +25,30 @@ App.GoldHotpantsComponent = Ember.Component.extend({
 
 	winningCaption: "Tom Dale's Gold Shorts",
   
-  radioButtonSelected: 1,
+  radioButtonSelected: null,
 	
 	attributeBindings: [
-		'tabIndex'
+		'tabIndex',
+		'ariaLabel'
 	],
 	tagName: 'div',
 	ariaRole: 'form',
 
-	winningCaptionDidChange: function(sender, key, value, rev){
-		// do something fancy here
+	didInsertElement: function(){
+		this.set('winningCaption', this.get('captions')[0].body);
 	},
+
+	radioButtonSelectedObserver: function(obj) {
+		this.set('winningCaption', this.radioButtonSelected);
+  }.observes('radioButtonSelected'),
+
+	winningCaptionObserver: function(){
+		// do something fancy here
+		$('.alt').addClass('highlighted')
+		window.setTimeout(function(){
+			$('.alt').removeClass('highlighted');
+		},2000);
+	}.observes('winningCaption'),
 
 	tabIndex: function() {
 		return this.get('active') ? 0 : -1;

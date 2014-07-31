@@ -135,3 +135,20 @@ main {
 .ember-view {
 	outline: none;
 }
+.alt {
+	display: inline-block;
+	outline: none;
+	padding: 1em;
+}
+.alt.highlighted {
+  -webkit-animation: target-fade 2s 1;
+  -moz-animation: target-fade 2s 1;
+}
+@-webkit-keyframes target-fade {
+  0% { background-color: rgba(202, 217, 0, .1); }
+  100% { background-color: rgba(202, 217, 0, 0); }
+}
+@-moz-keyframes target-fade {
+  0% { background-color: rgba(202, 217, 0, .1); }
+  100% { background-color: rgba(202, 217, 0, 0); }
+}
