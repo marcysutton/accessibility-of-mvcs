@@ -36,6 +36,7 @@ App.GoldHotpantsComponent = Ember.Component.extend({
 
 	didInsertElement: function(){
 		this.set('winningCaption', this.get('captions')[0].body);
+		$('input[type=radio]:first').prop('checked', 'checked');
 	},
 
 	radioButtonSelectedObserver: function(obj) {
