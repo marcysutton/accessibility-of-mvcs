@@ -103,6 +103,23 @@ input.item {
 	padding: 0.5em 1em;
 	width: 100%;
 }
+.selectable-list {
+	list-style: none;
+}
+.selectable-list li {
+	/*border-bottom: 1px solid #999;
+	margin-bottom: 1em;
+	padding-bottom: 1em;*/
+}
+.selectable-list li span {
+	display: inline-block;
+	min-width: 12em;
+}
+.selectable-list li input[type="radio"] {
+	border: 0px;
+	display: inline-block;
+	margin-right: 0.5em;
+}
 nav {
 	display: inline-block;
 	margin-right: 1em;
@@ -114,4 +131,7 @@ main {
 	display: inline-block;
 	padding: 1em;
 	vertical-align: top;
+}
+.ember-view {
+	outline: none;
 }
