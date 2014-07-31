@@ -19,12 +19,6 @@
   src: url("../../lib/font/Aleo-Italic-webfont.eot");
   src: url("../../lib/font/Aleo-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("../../lib/font/Aleo-Italic-webfont.woff") format("woff"), url("../../lib/font/Aleo-Italic-webfont.ttf") format("truetype"), url("../../lib/font/Aleo-Italic-webfont.svg#aleoitalic") format("svg");
   font-weight: normal; }
-@font-face {
-  font-family: "substantial-ico-fonts";
-  src: url(../../lib/font/substantial-ico-fonts.eot);
-  src: url(../../lib/font/substantial-ico-fonts.eot?#iefix) format("embedded-opentype"), url(../../lib/font/substantial-ico-fonts.woff) format("woff"), url(../../lib/font/substantial-ico-fonts.ttf) format("truetype"), url(../../lib/font/substantial-ico-fonts.svg#substantial-ico-fonts) format("svg");
-  font-style: normal;
-  font-weight: normal; }
 /*********************************************
  * AccessibilityHelper Plugin
  *********************************************/
@@ -112,6 +106,10 @@ body {
       font-size: 1.45em;
       line-height: 1.45em;
       max-height: 500px; }
+  .reveal .full-screen-code pre {
+    width: 100%; }
+    .reveal .full-screen-code pre code {
+      max-height: 100%; }
   .reveal .text-background {
     padding: 1em 0; }
   .reveal .has-background pre, .reveal .has-background code {
@@ -451,6 +449,11 @@ body {
 .reveal .inset-width {
   margin: 1em auto 0;
   width: 70%; }
+.reveal .inset-width-smaller {
+  margin: 1em auto 0;
+  width: 55%; }
+.reveal .left-align {
+  text-align: left; }
 .reveal .notes p {
   color: #ccc;
   font-size: 2em;
@@ -462,16 +465,28 @@ body {
     display: inline-block;
     margin-right: 0.05em; }
 .reveal .hamburger-button {
-  background: transparent url(../../img/hamburger.svg) no-repeat;
-  background-size: 100%;
-  border-width: 0;
-  color: #fff;
+  background-color: transparent;
+  border: 6px solid transparent;
   cursor: pointer;
   display: block;
   margin: 0 auto;
-  padding-top: 55%;
-  width: 100px;
-  text-shadow: 1px 3px 3px #000; }
+  padding-top: 61%;
+  position: relative;
+  width: 120px;
+  text-shadow: 1px 3px 3px #000;
+  transition: border-color 0.25s; }
+  .reveal .hamburger-button:before {
+    background: transparent url(../../img/hamburger.svg) no-repeat;
+    background-size: 100%;
+    content: '';
+    display: block;
+    bottom: 0.5em;
+    left: 0.5em;
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em; }
+  .reveal .hamburger-button:focus, .reveal .hamburger-button:hover {
+    border: 6px solid #cff110; }
 .reveal .hamburger-menu {
   display: inline-block;
   padding: 0.5em 2em;
@@ -527,6 +542,13 @@ body {
   .reveal .bike-joust:hover, .reveal .bike-joust:focus {
     background-color: #cff110;
     color: #000; }
+.reveal .inline-icon-block .text {
+  display: inline-block;
+  vertical-align: middle; }
+.reveal .inline-icon-block .icon {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle; }
 .reveal p.byline {
   font-size: 1.25em;
   margin-bottom: 4%; }
