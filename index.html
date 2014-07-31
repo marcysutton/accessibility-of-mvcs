@@ -86,11 +86,12 @@
 
 				<section>
 					<h2 class="h1-style">
-						<span class="fragment">Model</span><br>
+						<span class="">Model</span><br>
 						<span class="fragment">View</span><br>
 						<span class="fragment">Controller</span><br>
 						<span class="fragment">Router</span><br>
-						<span class="fragment">WHATEVER</span>
+						<span class="fragment" style="margin-top: 0.25em; display: inline-block;">*</span><br>
+						<span class="fragment" style="display: block; margin-top: -.25em;">WHATEVER</span>
 					</h2>
 				</section>
 
@@ -132,9 +133,9 @@
 						Help users navigate and find content.</dd>
 
 						<dt>Understandable</dt>
-						<dd>Make text readable and understandable.
-						Specified languages, no unexplained jargon, expand abbreviations. 
-						Organizational predictability (headings), error management.</dd>
+						<dd>Heading and semantic structure.
+						Make text readable and understandable.
+						Specified languages, no unexplained jargon, expand abbreviations.</dd>
 
 						<dt>Robust</dt>
 						<dd>Users must be able to access content as technologies advance and user agents evolve (content should remain accessible).
@@ -166,12 +167,13 @@
 					<p style="margin-bottom: 0.75em">Accepting and responding to input from people</p>
 					<img class="freezeframe" src="img/interactive.gif" alt="Skittles hold your finger here surprise cat-guy licking gif" style="min-height: 400px;">
 					<aside class="notes">
-					Challenge the concept of "interactive". It doesn't have to be visually interactive. Appeal to all the senses. PERCEIVABLE and OPERABLE. And robust.
+					Challenge the concept of "interactive". It doesn't have to be visually interactive. Appeal to all the senses. PERCEIVABLE and OPERABLE. And robust. And understandable.
 					</aside>
 				</section>
 
 				<section>
-					<h2>(Not) Focusable</h2>
+					<h2>Not Understandable</h2>
+					<h3>Or Operable</h3>
 					<div class="hamburger-menu">
 						<div class="hamburger-button"></div>
 						<ul aria-disabled="true">
@@ -183,10 +185,16 @@
 					<pre><code contenteditable class="html">
 	&lt;div class="hamburger-button"&gt;&lt;/div&gt;
 					</code></pre>
+					<p class="fragment" style="margin-top: 1.5em;">Actually, this fails all 4 POUR principles.</p>
+					<aside class="notes">
+						Hamburger button is a div with no tabIndex, role or keypress event
+						<!--<p><em>Or Perceivable.</em></p>
+						<p class="fragment">Or Understandable.</p>-->
+					</aside>
 				</section>
 
 				<section>
-					<h2>Focusable</h2>
+					<h2>Understandable</h2>
 					<div class="hamburger-menu">
 						<button class="hamburger-button" aria-label="Menu"></button>
 						<ul aria-disabled="true">
@@ -205,7 +213,7 @@
 
 				<section data-click-background="img/joust2.jpg">
 					<div class="text-background">
-						<h2>(Not) Submittable</h2>
+						<h2>Not Operable</h2>
 						<pre><code class="html">
   // AngularJS
   &lt;div ng-click="oneTwoThree(go);" tabIndex="0"&gt;JOUST!&lt;/div&gt;
@@ -218,7 +226,7 @@
 
 				<section data-click-background="img/joust.jpg">
 					<div class="inset-width text-background">
-						<h2>Submittable</h2>
+						<h2>Operable</h2>
 						<pre><code class="html">
   // AngularJS
   &lt;div role="button" tabIndex="0"
@@ -513,9 +521,6 @@
 				<section>
 					<h2>Application Mode</h2>
 					<p class="big-italic">Disables a screen reader&rsquo;s &ldquo;virtual cursor&rdquo;</p>
-					<p style="margin: 0.5em 0;"><small>
-							<a href="http://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/" target="_blank" title="Marco Zehe's post about using Application Mode opens in a new window"><span aria-hidden="true">[link]</span><span class="offscreen">Marco Zehe's post about using Application Mode</span></a>
-						</small></p>
 					<div class="definition inset-width">
 						<pre><code class="html">
     &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
@@ -523,6 +528,9 @@
 					</div>
 
 					<aside class="notes">
+					<p style="margin: 0.5em 0;"><small>
+							<a href="http://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/" target="_blank" title="Marco Zehe's post about using Application Mode opens in a new window"><span aria-hidden="true">[link]</span><span class="offscreen">Marco Zehe's post about using Application Mode</span></a>
+						</small></p>
 	<p>Virtual Cursor/Browse mode:<br>
 	 Several keys are captured by the assistive technology and are not processed by the browser. These allow navigation by headings, lists, links, tables, form elements and others. Usually, these are done via single letters. The visual focus may or may not follow the virtual cursor onto focusable items, depending on the assistive technology in use and its settings</p>
 	 <p>Forms mode/focus mode:<br>
@@ -547,7 +555,7 @@
 
 				<section>
 					<h2>Update Notification</h2>
-					<p><em>Remember this?</em></p>
+					<p><em>Desktop Style</em></p>
 					<img src="img/log-off-windows.png" class="" style="min-height: 600px;" alt="Remember logging off from Windows 98?">
 				</section>
 
@@ -560,8 +568,8 @@
 				<section>
 					<h2 class="h1-style">ARIA Live Regions</h2>
 					<p class="big-italic">Notification of updates without the user losing focus</p>
-					<p style="margin-top: 1em;"><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions" target="_blank" title="Mozilla documentation on ARIA Live Regions opens in a new window"><span class="offscreen">Mozilla documentation on ARIA Live Regions</span><span aria-hidden="true">[link]</span></a></p>
 					<aside class="notes">
+					<p style="margin-top: 1em;"><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions" target="_blank" title="Mozilla documentation on ARIA Live Regions opens in a new window"><span class="offscreen">Mozilla documentation on ARIA Live Regions</span><span aria-hidden="true">[link]</span></a></p>
 					<p>aria-live has a very specific purpose and should be used sparingly only for that purpose</p>
 					<p>Politeness levels</p>
 					</aside>
@@ -586,25 +594,32 @@
 				</section>
 
 				<section>
-					<h2>ARIA-Live: don't overdo it.</h2>
-					<h3 class="h1-style">Focus is your friend.</h3>
-				</section>
-
-				<section>
-					<h2 class="h1-style">Focus Management</h2>
-				</section>
-
-				<section>
 					<h2>Distiller</h2>
 					<a href="http://drinkdistiller.com" target="_blank" title="Distiller opens in a new window"><img src="img/distiller-top-shelf.png" alt="Distiller's Top Shelf" style="max-height: 700px;"></a>
 					<p>(They're hiring devs!)</p>
 				</section>
 
 				<section>
-					<h2 class="h1-style"><em>&ldquo;freak-out&rdquo; mode</em></h2>
+					<h2 class="inline-icon-block">
+						<span class="text">Perceivable</span>
+						<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
+					</h2>
+					<h2 class="inline-icon-block">
+						<span class="text">Robust</span>
+						<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
+					</h2>
 				</section>
 
 				<section>
+					<h2 class="h1-style">Focus Management</h2>
+					<!-- aria-activedescendant ? -->
+				</section>
+
+				<section>
+					<h2 class="h1-style"><em>&ldquo;freak-out&rdquo; mode</em></h2>
+				</section>
+
+				<section class="full-screen-code">
 					<h2>Managing focus</h2>
 					<!-- demo(s) -->
 					<pre><code class="coffeescript">
@@ -617,19 +632,34 @@
        return unless @oldFocus
 
        @_focusById() if @oldFocus.data('focus-id')
-       else @_focusByNodeEquality()
 
    _focusById: ->
      focusId = @oldFocus.data('focus-id')
      newFocus = $("[data-focus-id=#{focusId}]")
      MyApp.focus(newFocus) if newFocus
-
-   _focusByNodeEquality: ->
-     allNodes = $('body *:visible').get()
-     for node in allNodes
-       if MyApp.equalNodes(node, @oldFocus[0])
-         MyApp.focus(node)
 					</code></pre>
+				</section>
+
+				
+				<section>
+					<div class="inset-width-smaller left-align">
+						<h2 class="inline-icon-block">
+							<span class="text">Perceivable</span>
+							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
+						</h2>
+						<h2 class="inline-icon-block">
+							<span class="text">Operable</span>
+							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
+						</h2>
+						<h2 class="inline-icon-block">
+							<span class="text">Understandable</span>
+							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
+						</h2>
+						<h2 class="inline-icon-block">
+							<span class="text">Robust</span>
+							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
+						</h2>
+					</div>
 				</section>
 
 				<section>
@@ -640,7 +670,13 @@
 						<li>Focus management</li>
 					</ul>
 				</section>
-
+					
+				<section>
+					<h2>Make it awesome.</h2>
+					<img src="img/badass-climber.jpg" alt="Spencer West, man who lost his legs as a child,summiting Mt. Kilimanjaro">
+					<p class="smaller">Thanks, CascadiaJS! <br>
+					<a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window"><em>@marcysutton</em></a></p>
+				</section>
 			</div>
 
 		</div>
