@@ -24,10 +24,10 @@
   
   <script type="text/x-handlebars" data-template-name="components/gold-hotpants">
   {{image-view winningCaption=winningCaption}}
-  <div class="alt" tabIndex="-1">{{winningCaption}}</div>
+  <div aria-hidden="true" class="alt" tabIndex="-1">Alt: <strong>{{winningCaption}}</strong></div>
 
-  <label class="offscreen" for="new-caption">Caption Tom Dale&rsquo;s gold hot-pants</label>
-  {{view Ember.TextField id="new-caption" class="item" placeholder="Caption this photo"valueBinding="newCaption" action="createCaption"}}
+  <label class="offscreen" for="new-caption">Caption this photo</label>
+  {{view Ember.TextField id="new-caption" class="item" aria-label="Caption this photo" name="new-caption" placeholder="Caption this photo" valueBinding="newCaption" action="createCaption"}}
 
   <ul class="selectable-list">
   {{#each caption in captions}}
