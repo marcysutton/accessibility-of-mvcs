@@ -20,7 +20,7 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 		<link rel="stylesheet" href="lib/css/jqcloud.css">
-		
+
 		<script src="lib/js/jquery-1.11.1.min.js"></script>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -168,7 +168,7 @@
 				<section>
 					<h2>Interactivity</h2>
 					<p style="margin-bottom: 0.75em">Accepting and responding to input from people</p>
-					<img class="freezeframe" src="img/interactive.gif" alt="Skittles hold your finger here surprise cat-guy licking gif" style="min-height: 400px;">
+					<img src="img/interactive.gif" alt="Skittles hold your finger here surprise cat-guy licking gif" style="min-height: 400px;">
 					<aside class="notes">
 					Challenge the concept of "interactive". It doesn't have to be visually interactive. Appeal to all the senses. PERCEIVABLE and OPERABLE. And robust. And understandable.
 					</aside>
@@ -233,7 +233,7 @@
 						<pre><code class="html">
   // AngularJS
   &lt;div role="button" tabIndex="0"
-    ng-click="oneTwoThree(go)" 
+    ng-click="oneTwoThree(go)"
     ng-keypress="oneTwoThree(go)"&gt;
     JOUST!
   &lt;/div&gt;
@@ -307,7 +307,7 @@
 					<h2 class="offscreen">Ember Custom Component demo</h2>
 					<a href="demos/ember/gold-hotpants.html" target="_blank" title="Link opens in a new window"><img src="img/gold-hotpants.png" alt="Ember Gold Hotpants Demo"></a>
 				</section>
-				
+
 				<section>
 					<h2>ARIA Core Components</h2>
 					<div class="inset-width">
@@ -513,7 +513,7 @@
 					<dt><a href="http://www.w3.org/TR/wai-aria/roles#window" target="_blank" title="Link opens in a new window"><code>window</code></a></dt>
 					<dd>A browser or application window.</dd></dl>
 				</section>
-	
+
 				<section>
 					<h2>Using Roles</h2>
 					<div class="dashed-border inset-width"></div>
@@ -570,7 +570,7 @@
 					<img src="img/bootstrap-alerts.png" alt="Bootstrap alerts" style="max-width: 958px;">
 					<img src="img/distiller-signed-out.png" alt="Distiller sign-out alert">
 				</section>
-		
+
 				<section>
 					<h2 class="h1-style">ARIA Live Regions</h2>
 					<p class="big-italic">Notification of updates without the user losing focus</p>
@@ -635,7 +635,7 @@
 					</code></pre>
 				</section>
 
-				
+
 				<section>
 					<div class="inset-width-smaller left-align">
 						<h2 class="inline-icon-block">
@@ -665,7 +665,7 @@
 						<li>Focus management</li>
 					</ul>
 				</section>
-					
+
 				<section>
 					<h2>Make it awesome.</h2>
 					<img src="img/badass-climber.jpg" alt="Spencer West, man who lost his legs as a child,summiting Mt. Kilimanjaro">
@@ -678,7 +678,6 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
-		<script src="lib/js/freezeframe.min.js"></script>
 		<script src="lib/js/randomImg.js"></script>
 		<script>
 
@@ -719,8 +718,7 @@
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/accessibility-helpers/accessibility-helpers.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'lib/js/slides.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'lib/js/freezeframe-init.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'lib/js/slides.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 		</script>
