@@ -44,13 +44,9 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-
 				<section>
-					<iframe width="1280" height="720" src="//www.youtube.com/embed/kVR5qo5cMAw?rel=0" frameborder="0" allowfullscreen title="Through The Eyes of a Legally Blind Athlete"></iframe>
-				</section>
-
-				<section>
-		    	<h2>#IRL</h2>
+		    	<h2 class="h3-style align-left"><em>What do you build?</em></h2>
+					<div class="separator"></div>
 			    <div id="wordCloud" style="min-width: 1024px; width: 1440px; min-height: 600px; height: 601px;" class="jqcloud">
 			    	<span class="w7" style="position: absolute; left: 355px; top: 35px;">Banking</span>
 			    	<span class="w7" style="position: absolute; left: 350px; top: 450px;">Education</span>
@@ -69,7 +65,7 @@
 					</p>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h2 class="h1-style">Best framework?</h2>
 				</section>
 
@@ -77,7 +73,7 @@
 					<div class="image-headline" id="lemur">
 						<h2>Calm down.</h2>
 					</div>
-				</section>
+				</section> -->
 
 				<section>
 					<h2 class="h3-style">Take your pick</h2>
@@ -91,26 +87,64 @@
 						<span class="fragment">Controller</span><br>
 						<span class="fragment">Router</span><br>
 						<span class="fragment" style="margin-top: 0.25em; display: inline-block;">*</span><br>
-						<span class="fragment" style="display: block; margin-top: -.25em;">WHATEVER</span>
+						<!-- <span class="fragment" style="display: block; margin-top: -.25em;">WHATEVER</span> -->
 					</h2>
 				</section>
 
 				<section>
-					<h2 style="text-transform: uppercase;">Are your views accessible?</h2>
-					<h3>It depends on:</h3>
-					<div class="dashed-border inset-width"></div>
+					<h2>Are your sites accessible?</h2>
+					<h3>It could depend on:</h3>
+					<div class="separator inset-width"></div>
 					<ul>
-						<li class="fragment">The framework</li>
+						<li class="fragment">The framework*</li>
 						<li class="fragment">Screen reader</li>
 						<li class="fragment">Browser</li>
-						<li class="fragment">Your shitty(?) code</li>
+						<li class="fragment">Your code*</li>
 					</ul>
+					<aside class="notes">
+						* Things you can control! You can submit PRs to frameworks, refine your code, even petition browsers. Can't do as much about screen readers.
+					</aside>
+				</section>
+
+				<!-- <section data-background="img/awesome.gif" data-transition="none">
+					<div class="offscreen">
+						<h2>What does that mean?</h2>
+						<h3>It means your stuff should be AWESOME.</h3>
+					</div>
+				</section> -->
+
+				<section>
+					<h2 style="margin-bottom:0.5em;">Accessibility <br>in single-page apps</h2>
+					<div class="separator inset-width"></div>
+					<ul>
+						<li class="fragment">Interactivity</li>
+						<li class="fragment">Semantics</li>
+						<li class="fragment">Managing ARIA attributes</li>
+						<li class="fragment">Focus management</li>
+						<li class="fragment">*Graceful degradation</li>
+					</ul>
+					<aside class="notes">
+					*Graceful degradation is worth mentioning but it is outside the scope of this talk.
+					</aside>
 				</section>
 
 				<section>
-					<h2>POUR me a beer</h2>
+					<h2>Interactivity</h2>
+					<p style="margin-bottom: 0.75em" class="interactive-input">Accepting and responding to input from
+						<span contenteditable>
+							<span autotype class="disabled"></span>
+						</span>
+					</p>
+					<img src="img/bird-atm.gif" alt="Bird using an ATM like a boss">
+					<aside class="notes">
+					Challenge the concept of "interactive". It doesn't have to be visually interactive. Appeal to all the senses. PERCEIVABLE and OPERABLE. And robust. And understandable.
+					</aside>
+				</section>
+
+				<section>
+					<h2>POUR us some coffee</h2>
 					<p><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#guidelines">WCAG 2.0 Principles</a></p>
-					<div class="dashed-border inset-width"></div>
+					<div class="separator inset-width"></div>
 					<ul class="drop-caps">
 						<li>Perceivable</li>
 						<li>Operable</li>
@@ -143,37 +177,6 @@
 					</aside>
 				</section>
 
-				<section data-background="img/awesome.gif" data-transition="none">
-					<div class="offscreen">
-						<h2>What does that mean?</h2>
-						<h3>It means your stuff should be AWESOME.</h3>
-					</div>
-				</section>
-
-				<section>
-					<h2 style="margin-bottom:0.5em;">Accessibility challenges <br>in single-page apps</h2>
-					<div class="dashed-border inset-width"></div>
-					<ul>
-						<li class="fragment">Interactivity</li>
-						<li class="fragment">Update notification</li>
-						<li class="fragment">Focus management</li>
-
-						<li class="fragment">*Graceful degradation</li>
-					</ul>
-					<aside class="notes">
-					*Graceful degradation is worth mentioning but it is outside the scope of this talk.
-					</aside>
-				</section>
-
-				<section>
-					<h2>Interactivity</h2>
-					<p style="margin-bottom: 0.75em">Accepting and responding to input from people</p>
-					<img src="img/interactive2.gif" alt="Blow on your screen and dog shows up" style="min-height: 400px;">
-					<aside class="notes">
-					Challenge the concept of "interactive". It doesn't have to be visually interactive. Appeal to all the senses. PERCEIVABLE and OPERABLE. And robust. And understandable.
-					</aside>
-				</section>
-
 				<section>
 					<h2>Not Understandable</h2>
 					<h3>Or Operable</h3>
@@ -188,7 +191,7 @@
 					<pre><code contenteditable class="html">
 	&lt;div class="hamburger-button"&gt;&lt;/div&gt;
 					</code></pre>
-					<p class="fragment" style="margin-top: 1.5em;">Actually, this fails all 4 POUR principles.</p>
+					<p style="margin-top: 1.5em;">This fails all 4 POUR principles</p>
 					<aside class="notes">
 						Hamburger button is a div with no tabIndex, role or keypress event
 						<!--<p><em>Or Perceivable.</em></p>
@@ -218,7 +221,6 @@
 					<div class="text-background">
 						<h2>Not Operable</h2>
 						<pre><code class="html">
-  // AngularJS
   &lt;div ng-click="oneTwoThree(go);" tabIndex="0"&gt;JOUST!&lt;/div&gt;
 						</code></pre>
 
@@ -231,7 +233,10 @@
 					<div class="inset-width text-background">
 						<h2>Operable</h2>
 						<pre><code class="html">
-  // AngularJS
+  &lt;button ng-click="oneTwoThree(go)"&gt;
+    JOUST!
+  &lt;button&gt;
+
   &lt;div role="button" tabIndex="0"
     ng-click="oneTwoThree(go)"
     ng-keypress="oneTwoThree(go)"&gt;
@@ -245,7 +250,7 @@
 
 				<section>
 					<h2>Visual Feedback</h2>
-					<p class="big-italic">for realsies</p>
+					<p class="big-italic">with Sass</p>
 					<div class="inset-width">
 					<pre><code class="css">
   a {
@@ -257,6 +262,22 @@
   }
 					</code></pre>
 					</div>
+				</section>
+
+				<section>
+					<h2>Adding Semantics</h2>
+					<p>Use native child elements</p>
+					<pre><code class="html">
+	&lt;taco-surprise&gt;
+	  &lt;h2&gt;Taco Surprise!&lt;/h2&gt;
+	  &lt;button&gt;Give me tacos&lt;/button&gt;
+
+	  &lt;output&gt;
+	    &lt;img src="" alt="" aria-hidden="true"&gt;
+	    &lt;p class="error hidden"&gt;Or give me death&lt;/p&gt;
+	  &lt;/output&gt;
+	&lt;/taco-surprise&gt;
+					</code></pre>
 				</section>
 
 				<section>
@@ -273,14 +294,14 @@
           <img src="img/happy-little-tree.jpg" alt="Bob Ross happy little tree" style="min-width: 45%">
 				</section>
 
-				<section>
+				<!-- <section>
 					<h2>Custom Elements</h2>
 					<pre><code contenteditable class="html">
     // EmberJS Component
-    {{gold-hotpants}}
+    {{sparkle-party}}
 					</code></pre>
 					<pre><code class="javascript">
-    App.GoldHotpantsComponent = Ember.Component.extend({
+    App.SparklePartyComponent = Ember.Component.extend({
       attributeBindings: [
         'tabIndex'
       ],
@@ -294,14 +315,9 @@
 				</section>
 
 				<section>
-					<h2 class="offscreen">Tom Dale, Ceator of Ember.js and Wearer of Gold Shorts</h2>
-					<img src="img/tom-zahra-jsconf.jpg" alt="Tom Dale in his gold shorts with Zahra Jabini at JSConf 2014. Photo by Matthew Bergman">
-				</section>
-
-				<section>
 					<h2 class="offscreen">Ember Custom Component demo</h2>
-					<a href="demos/ember/gold-hotpants.html" target="_blank" title="Link opens in a new window"><img src="img/gold-hotpants.png" alt="Ember Gold Hotpants Demo"></a>
-				</section>
+					<a href="demos/ember/sparkle-party.html" target="_blank" title="Link opens in a new window"><img src="img/sparkle-party.png" alt="Ember Sparkle Party Demo"></a>
+				</section> -->
 
 				<section>
 					<h2>ARIA Core Components</h2>
@@ -323,43 +339,13 @@
         	</div>
 				</section>
 
-				<!--<section>
-					<h2>Make your framework do the heavy lifting</h2>
-					<pre><code class="javascript">
-  // AngularUI Bootstrap
-  &lt;accordion-group
-  	aria-expanded="status.open"
-  	is-open="status.open"
-  	aria-disabled="status.isDisabled"
-  	is-disabled="status.isDisabled"&gt;
-  &lt;/accordion-group&gt;
-					</code></pre>
-					<aside class="notes">
-	 Angular properties alongside aria properties get verbose.
-					</aside>
-				</section>
-
-				<section data-transition="none">
-					<h2>Make your framework do the heavy lifting</h2>
-					<h3 class="offscreen">Example where ARIA attributes are the default</h3>
-					<pre><code class="javascript">
-  // AngularUI Bootstrap
-  &lt;accordion-group
-  	aria-expanded="status.open"
-  	aria-disabled="status.isDisabled"&gt;
-  &lt;/accordion-group&gt;
-
-
-					</code></pre>
-				</section>-->
-
 				<section>
 					<h2>ARIA Roles
 						<span class="muted" style="display: block; margin-top: 0.25em;">
 						OMG SO MANY
 						</span>
 					</h2>
-					<div class="dashed-border inset-width"></div>
+					<div class="separator inset-width"></div>
 					<dl id="index_role" class="compact">
 					<dt><a href="http://www.w3.org/TR/wai-aria/roles#alert" target="_blank" title="Link opens in a new window"><code>alert</code></a></dt>
 					<dd>A message with important, and usually time-sensitive, information. See related alertdialog and status.</dd>
@@ -511,7 +497,7 @@
 
 				<section>
 					<h2>Using Roles</h2>
-					<div class="dashed-border inset-width"></div>
+					<div class="separator inset-width"></div>
 					<ul>
 						<li class="fragment">They're element types</li>
 						<li class="fragment">They're landmarks</li>
@@ -522,11 +508,43 @@
 				</section>
 
 				<section>
+					<h2>Let the framework <br>do the heavy lifting</h2>
+					<pre><code class="javascript">
+  // AngularUI Bootstrap
+  &lt;accordion-group
+  	aria-expanded="status.open"
+  	is-open="status.open"
+  	aria-disabled="status.isDisabled"
+  	is-disabled="status.isDisabled"&gt;
+  &lt;/accordion-group&gt;
+					</code></pre>
+					<aside class="notes">
+	 Angular properties alongside aria properties get verbose.
+					</aside>
+				</section>
+
+				<section data-transition="none">
+					<h2>Let the framework <br>do the heavy lifting</h2>
+					<h3 class="offscreen">Example where ARIA attributes are the default</h3>
+					<pre><code class="javascript">
+  // AngularUI Bootstrap
+  &lt;accordion-group
+  	aria-expanded="status.open"
+  	aria-disabled="status.isDisabled"&gt;
+  &lt;/accordion-group&gt;
+
+
+					</code></pre>
+				</section>
+
+				<section>
 					<h2>Application Mode</h2>
 					<p class="big-italic">Disables a screen reader&rsquo;s &ldquo;virtual cursor&rdquo;</p>
 					<div class="definition inset-width">
 						<pre><code class="html">
     &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
+
+    // Never put role="application" on the body
 						</code></pre>
 					</div>
 
@@ -539,7 +557,7 @@
 					</aside>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h2>Headache City</h2>
 					<div class="inset-width">
 					<pre><code class="html">
@@ -552,78 +570,33 @@
 					<aside class="notes">
 	 Only want to use role="application" if the content you're providing consists of only interactive controls, and of those, mostly advanced widgets, that emulate a real desktop application.
 					</aside>
-				</section>
+				</section> -->
 
-				<section>
-					<h2>Update Notification</h2>
-					<img src="img/bootstrap-alerts.png" alt="Bootstrap alerts" style="max-width: 958px;">
-					<img src="img/distiller-signed-out.png" alt="Distiller sign-out alert">
-				</section>
-
-				<section>
-					<h2 class="h1-style">ARIA Live Regions</h2>
-					<p class="big-italic">Notification of updates without the user losing focus</p>
-					<aside class="notes">
-					<p><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions" target="_blank" title="Mozilla documentation on ARIA Live Regions opens in a new window">Mozilla documentation on ARIA Live Regions</a></p>
-					<p>aria-live has a very specific purpose and should be used sparingly only for that purpose</p>
-					<p>Politeness levels</p>
-					</aside>
-				</section>
-
-				<section>
-					<h2>Live Regions</h2>
-					<pre><code class="coffeescript">
-  class App.FlashMessageController
-  constructor: ->
-    @container = $('.flash-message')
-
-    App.bind 'flashMessage', (e) =>
-      @flashMessage(e.message)
-
-  flashMessage: (message) ->
-    @container.append("<p class='message'>#{message}</p>")
-					</code></pre>
-					<pre><code class="html">
-  &lt;div class="flash-message" aria-live="assertive" role="alert"&gt;&lt;/div&gt;
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Distiller</h2>
-					<a href="http://drinkdistiller.com" target="_blank" title="Distiller opens in a new window"><img src="img/distiller-top-shelf.png" alt="Distiller's Top Shelf" style="max-height: 700px;"></a>
-					<p>(They're hiring devs!)</p>
-				</section>
 
 				<section>
 					<h2 class="h1-style">Focus Management</h2>
 					<!-- aria-activedescendant ? -->
+					<ul>
+						<li>Dialogs</li>
+						<li>Appending views</li>
+						<li>Tab index</li>
+					</ul>
+				</section>
+				
+				<section>
+					<a href="https://material.angularjs.org/#/material.components.dialog/readme/overview" target="_blank" title="Link opens in a new window"><img src="img/Angular-Material-Dialog.png" class="plain" alt="Angular Material Dialog"></a>
 				</section>
 
 				<section>
-					<h2 class="h1-style"><em>&ldquo;freak-out&rdquo; mode</em></h2>
+					<h2>Accessibility Updates</h2>
+					<p>Done and in progress:</p>
+					<ul>
+						<li>Headings for page structure</li>
+						<li>Sidenav is keyboard accessible</li>
+						<li>Interactivity & semantics in components</li>
+					</ul>
 				</section>
-
-				<section class="full-screen-code">
-					<h2>Managing focus</h2>
-					<!-- demo(s) -->
-					<pre><code class="coffeescript">
- class App.FocusManager
-   constructor: ->
-     $('body').on 'focusin', (e) =>
-       @oldFocus = $(e.target)
-
-     App.bind 'rendered', (e) =>
-       return unless @oldFocus
-
-       @_focusById() if @oldFocus.data('focus-id')
-
-   _focusById: ->
-     focusId = @oldFocus.data('focus-id')
-     newFocus = $("[data-focus-id=#{focusId}]")
-     MyApp.focus(newFocus) if newFocus
-					</code></pre>
-				</section>
-
+			
 				<section>
 					<div class="inset-width-smaller left-align">
 						<h2 class="inline-icon-block">
@@ -646,16 +619,7 @@
 				</section>
 
 				<section>
-					<h2>You got this.</h2>
-					<ul>
-						<li>Interactivity</li>
-						<li>Update notification</li>
-						<li>Focus management</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Make it awesome.</h2>
+					<h2>Let's make it awesome.</h2>
 					<a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window"><em>@marcysutton</em></a></p>
 				</section>
 			</div>

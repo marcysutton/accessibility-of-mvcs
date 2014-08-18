@@ -95,8 +95,7 @@
  *********************************************/
 
 body {
-  background: black url("backgrounds/white-grid.png") repeat center top;
-  background-size: cover;
+  background: black url("backgrounds/graphy.png") repeat center top;
 }
 
 .reveal {
@@ -516,6 +515,14 @@ body {
 /*********************************************
  * LAYOUTS
  *********************************************/
+ .reveal .align-right {
+  margin-bottom: 1em;
+  text-align: right;
+ }
+.reveal .align-left {
+  margin-bottom: 1em;
+  text-align: left;
+ }
 .reveal li .twoThirdsCol {
   padding-top: 2%;
 
@@ -564,10 +571,13 @@ body {
     margin: 1em auto 0;
     padding-bottom: 1em;  
   }
-  .dashed-border {
-    border-top: 8px dashed #cff110;
+  $separator_width: 3px;
+  .separator {
+    background-color: $linkColor;
+    box-shadow: 1px 1px 1px #000;
+    height: $separator_width;
+    line-height: $separator_width;
     margin: 1em auto 0;
-    padding-top: 1em;
   }
   .inset-width {
     margin: 1em auto 0;
@@ -597,6 +607,15 @@ body {
         margin-right: 0.05em;
       }
     }
+  }
+  .interactive-input span[contenteditable] {
+    border-bottom: 4px solid currentColor;
+    display: inline-block;
+    line-height: 1.25;
+    margin-top: 0.25em;
+    min-width: 4.5em;
+    outline: none;
+    text-align: left
   }
   .hamburger-button {
     background-color: transparent;
