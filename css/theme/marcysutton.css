@@ -89,8 +89,7 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: black url("backgrounds/white-grid.png") repeat center top;
-  background-size: cover; }
+  background: black url("backgrounds/graphy_@2X.png") repeat center top; }
 
 .reveal {
   background-color: rgba(0, 0, 0, 0.65);
@@ -404,6 +403,14 @@ body {
 /*********************************************
  * LAYOUTS
  *********************************************/
+.reveal .align-right {
+  margin-bottom: 1em;
+  text-align: right; }
+
+.reveal .align-left {
+  margin-bottom: 1em;
+  text-align: left; }
+
 .reveal li .twoThirdsCol {
   padding-top: 2%; }
   .reveal li .twoThirdsCol small {
@@ -442,10 +449,12 @@ body {
   font-size: 0.85em;
   margin: 1em auto 0;
   padding-bottom: 1em; }
-.reveal .dashed-border {
-  border-top: 8px dashed #cff110;
-  margin: 1em auto 0;
-  padding-top: 1em; }
+.reveal .separator {
+  background-color: #cff110;
+  box-shadow: 1px 1px 1px #000;
+  height: 3px;
+  line-height: 3px;
+  margin: 1em auto 0; }
 .reveal .inset-width {
   margin: 1em auto 0;
   width: 70%; }
@@ -549,6 +558,15 @@ body {
   display: inline-block;
   margin-left: 10px;
   vertical-align: middle; }
+.reveal button.sparkle-party {
+  background: black url(../../img/sparkle-party-tub-play.jpg) no-repeat;
+  background-size: cover;
+  border: 0;
+  border-radius: none;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  width: 100%; }
 .reveal p.byline {
   font-size: 1.25em;
   margin-bottom: 4%; }

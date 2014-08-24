@@ -31,7 +31,7 @@ App.GoldHotpantsComponent = Ember.Component.extend({
 		'tabIndex',
 		'ariaLabel'
 	],
-	tagName: 'div',
+	tagName: 'gold-hotpants',
 	ariaRole: 'form',
 
 	didInsertElement: function(){
