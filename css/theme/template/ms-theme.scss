@@ -719,16 +719,30 @@ body {
       vertical-align:middle;
     }
   }
+  .sparkle-party {
+    min-height: 720px;
+    position: relative;
 
-  button.sparkle-party {
-    background: black url(../../img/sparkle-party-tub-play.jpg) no-repeat; 
-    background-size: cover;
-    border: 0;
-    border-radius: none;
-    cursor: pointer;
-    display: block;
-    height: 100%;
-    width: 100%;
+    .enabled button {
+      display: none;
+    }
+    button {
+      background: black url(../../img/sparkle-party-tub-play.jpg) no-repeat; 
+      background-size: cover;
+      border: 0;
+      border-radius: none;
+      cursor: pointer;
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1; 
+    }
+    object {
+      height: 100%;
+      min-height: 720px;
+      width: 100%;
+    }
   }
   p.byline {
     font-size: 1.25em;

@@ -558,15 +558,26 @@ body {
   display: inline-block;
   margin-left: 10px;
   vertical-align: middle; }
-.reveal button.sparkle-party {
-  background: black url(../../img/sparkle-party-tub-play.jpg) no-repeat;
-  background-size: cover;
-  border: 0;
-  border-radius: none;
-  cursor: pointer;
-  display: block;
-  height: 100%;
-  width: 100%; }
+.reveal .sparkle-party {
+  min-height: 720px;
+  position: relative; }
+  .reveal .sparkle-party .enabled button {
+    display: none; }
+  .reveal .sparkle-party button {
+    background: black url(../../img/sparkle-party-tub-play.jpg) no-repeat;
+    background-size: cover;
+    border: 0;
+    border-radius: none;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1; }
+  .reveal .sparkle-party object {
+    height: 100%;
+    min-height: 720px;
+    width: 100%; }
 .reveal p.byline {
   font-size: 1.25em;
   margin-bottom: 4%; }
