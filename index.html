@@ -142,44 +142,8 @@
 				</section>
 
 				<section>
-					<h2>POUR us some coffee</h2>
-					<p><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#guidelines">WCAG 2.0 Principles</a></p>
-					<div class="separator inset-width"></div>
-					<ul class="drop-caps">
-						<li>Perceivable</li>
-						<li>Operable</li>
-						<li>Understandable</li>
-						<li>Robust</li>
-					</ul>
-					<aside class="notes">
-					<dl>
-						<dt>Perceivable</dt>
-						<dd>Provide text alternatives for non-text content.
-						Provide captions and other alternatives for multimedia.
-						Create content that can be presented in different ways,
-						by assistive technologies, without losing meaning.
-						Make it easier for users to see and hear content.</dd>
-
-						<dt>Operable</dt>
-						<dd>Make all functionality available from a keyboard.
-						Give users enough time to read and use content.
-						Do not use content that causes seizures.
-						Help users navigate and find content.</dd>
-
-						<dt>Understandable</dt>
-						<dd>Heading and semantic structure.
-						Make text readable and understandable.
-						Specified languages, no unexplained jargon, expand abbreviations.</dd>
-
-						<dt>Robust</dt>
-						<dd>Users must be able to access content as technologies advance and user agents evolve (content should remain accessible).
-						Maximize compatibility with current and future user tools.</dd>
-					</aside>
-				</section>
-
-				<section>
 					<h2>Not Understandable</h2>
-					<h3>Or Operable</h3>
+					<h3>or Operable</h3>
 					<div class="hamburger-menu">
 						<div class="hamburger-button"></div>
 						<ul aria-disabled="true">
@@ -191,16 +155,14 @@
 					<pre><code contenteditable class="html">
 	&lt;div class="hamburger-button"&gt;&lt;/div&gt;
 					</code></pre>
-					<p style="margin-top: 1.5em;">This fails all 4 POUR principles</p>
 					<aside class="notes">
 						Hamburger button is a div with no tabIndex, role or keypress event
-						<!--<p><em>Or Perceivable.</em></p>
-						<p class="fragment">Or Understandable.</p>-->
 					</aside>
 				</section>
 
 				<section>
 					<h2>Understandable</h2>
+					<h3>and Operable</h3>
 					<div class="hamburger-menu">
 						<button class="hamburger-button" aria-label="Menu"></button>
 						<ul aria-disabled="true">
@@ -294,7 +256,7 @@
           <img src="img/happy-little-tree.jpg" alt="Bob Ross happy little tree" style="min-width: 45%">
 				</section>
 
-				<!-- <section>
+				<section>
 					<h2>Custom Elements</h2>
 					<pre><code contenteditable class="html">
     // EmberJS Component
@@ -317,7 +279,7 @@
 				<section>
 					<h2 class="offscreen">Ember Custom Component demo</h2>
 					<a href="demos/ember/sparkle-party.html" target="_blank" title="Link opens in a new window"><img src="img/sparkle-party.png" alt="Ember Sparkle Party Demo"></a>
-				</section> -->
+				</section>
 
 				<section>
 					<h2>ARIA Core Components</h2>
@@ -557,7 +519,7 @@
 					</aside>
 				</section>
 
-				<!-- <section>
+				<section>
 					<h2>Headache City</h2>
 					<div class="inset-width">
 					<pre><code class="html">
@@ -570,8 +532,7 @@
 					<aside class="notes">
 	 Only want to use role="application" if the content you're providing consists of only interactive controls, and of those, mostly advanced widgets, that emulate a real desktop application.
 					</aside>
-				</section> -->
-
+				</section>
 
 				<section>
 					<h2 class="h1-style">Focus Management</h2>
@@ -592,37 +553,6 @@
 					<pre><code class="javascript">
 
 					</code></pre>
-				</section>
-
-				<section>
-					<h2>Accessibility Updates</h2>
-					<p>Done and in progress:</p>
-					<ul>
-						<li>Headings for page structure</li>
-						<li>Sidenav is keyboard accessible</li>
-						<li>Interactivity & semantics in components</li>
-					</ul>
-				</section>
-			
-				<section>
-					<div class="inset-width-smaller left-align">
-						<h2 class="inline-icon-block">
-							<span class="text">Perceivable</span>
-							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
-						</h2>
-						<h2 class="inline-icon-block">
-							<span class="text">Operable</span>
-							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
-						</h2>
-						<h2 class="inline-icon-block">
-							<span class="text">Understandable</span>
-							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
-						</h2>
-						<h2 class="inline-icon-block">
-							<span class="text">Robust</span>
-							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
-						</h2>
-					</div>
 				</section>
 
 				<section>
