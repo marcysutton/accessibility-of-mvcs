@@ -5,8 +5,9 @@ By [Marcy Sutton](http://marcysutton.com)<br>
 Developer at [Substantial](http://substantial.com)<br>
 twitter: [@marcysutton](http://twitter.com/marcysutton)
 
-##Presenting at:
+##Presented at:
 * CascadiaJS, July 31-Aug 1 2014
+* JSConf EU, Sept 13-14, 2014
 
 ## Installation
 
