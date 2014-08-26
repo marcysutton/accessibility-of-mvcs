@@ -570,6 +570,8 @@ body {
   .reveal button.reset:hover, .reveal button.reset:focus {
     background-color: #000;
     color: #fff; }
+  .reveal button.reset[disabled] {
+    display: none; }
 .reveal .inline-icon-block .text {
   display: inline-block;
   vertical-align: middle; }

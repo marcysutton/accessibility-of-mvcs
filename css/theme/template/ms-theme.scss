@@ -733,6 +733,9 @@ body {
       background-color: $backgroundColor;
       color: $white;
     }
+    &[disabled] {
+      display: none;
+    }
   }
   .inline-icon-block {
     .text {
