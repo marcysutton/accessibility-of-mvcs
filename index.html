@@ -360,13 +360,13 @@
 					<pre><code contenteditable class="html">
     {{party-pants}}
 					</code></pre>
-					<pre><code class="javascript">
+					<pre><code contenteditable class="javascript">
     App.PartyPantsComponent = Ember.Component.extend({
       attributeBindings: [
         'tabIndex'
       ],
       tagName: 'party-pants',
-      ariaRole: 'application',
+      ariaRole: 'article',
 
       tabIndex: function() {
         return this.get('active') ? 0 : -1;
