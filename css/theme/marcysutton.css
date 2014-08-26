@@ -182,6 +182,8 @@ body {
 .reveal h2.h3-style,
 .reveal p.h3-style {
   font-size: 1.75em; }
+.reveal h4, .reveal h3.h4-style {
+  font-size: 1.5em; }
 .reveal .larger {
   font-size: 120%; }
 .reveal .smaller {
@@ -542,23 +544,32 @@ body {
   position: absolute;
   top: 0;
   width: 100%; }
-.reveal .bike-joust {
-  background-color: #000;
+.reveal .themed-button, .reveal button.reset {
+  background-color: #cff110;
   border-radius: 10px;
   border-width: 0;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   display: inline-block;
   font-family: "Aleo Regular", sans-serif;
   font-size: 1em;
   padding: 0.25em 0.5em;
-  margin: 1.5em;
+  margin: 1em;
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
   transition: 0.5s; }
-  .reveal .bike-joust:hover, .reveal .bike-joust:focus {
-    background-color: #cff110;
-    color: #000; }
+  .reveal .themed-button:hover, .reveal button.reset:hover, .reveal .themed-button:focus, .reveal button.reset:focus {
+    background-color: #000;
+    color: #fff; }
+.reveal button.reset {
+  background-color: #fff;
+  color: #000;
+  display: inline-block;
+  font-size: 0.65em;
+  margin-top: 0; }
+  .reveal button.reset:hover, .reveal button.reset:focus {
+    background-color: #000;
+    color: #fff; }
 .reveal .inline-icon-block .text {
   display: inline-block;
   vertical-align: middle; }

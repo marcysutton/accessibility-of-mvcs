@@ -115,7 +115,7 @@
 					<h2 style="margin-bottom:0.5em;">Accessibility challenges <br>in single-page apps</h2>
 					<div class="separator inset-width"></div>
 					<ul>
-						<li class="fragment">Interactivity</li>
+						<li class="fragment">UX</li>
 						<li class="fragment">Semantics</li>
 						<li class="fragment">Managing ARIA attributes</li>
 						<li class="fragment">Focus management</li>
@@ -127,16 +127,16 @@
 				</section>
 
 				<section>
-					<h2>Interactivity</h2>
-					<p style="margin-bottom: 0.75em">Accepting and responding to input</p>
-					<img src="img/bird-atm.gif" alt="Bird using an ATM like a boss">
+					<h2>(Accessible) <br>User Experience</h2>
+					<img src="img/bird-atm.gif" alt="Bird using an ATM like a boss" style="min-height: 300px;">
 					<aside class="notes">
 					Challenge the concept of "interactive". It doesn't have to be visually interactive. Appeal to all the senses. PERCEIVABLE and OPERABLE. And robust. And understandable.
 					</aside>
 				</section>
 
 				<section>
-					<h2>What Not To Do</h2>
+					<h2>What Not To Do</h2> 
+					<h3>for AUX</h3>
 					<div class="hamburger-menu">
 						<div class="hamburger-button"></div>
 						<ul aria-disabled="true">
@@ -155,6 +155,7 @@
 
 				<section>
 					<h2>What To Do</h2>
+					<h3>for AUX</h3>
 					<div class="hamburger-menu">
 						<button class="hamburger-button" aria-label="Menu"></button>
 						<ul aria-disabled="true">
@@ -175,11 +176,15 @@
 					<div class="text-background">
 						<h2>Nope</h2>
 						<pre><code class="html">
-  // AngularJS
-  &lt;div ng-click="oneTwoThree(go);" tabIndex="0"&gt;JOUST!&lt;/div&gt;
+  	&lt;div ng-click="oneTwoThree(go);" tabIndex="0"&gt;
+  	     JOUST!
+  	&lt;/div&gt;
 						</code></pre>
 
-						<div class="bike-joust" tabIndex="0">JOUST!</div>
+						<div class="themed-button bike-joust" tabIndex="0">JOUST!</div>
+						<div>
+							<button class="reset" id="joust1" aria-label="Reset 1st joust image">Reset</button>
+						</div>
 						<p class="hidden"><small>Photo: geneandtonic.blogspot.com</small></p>
 					</div>
 				</section>
@@ -188,14 +193,16 @@
 					<div class="inset-width text-background">
 						<h2>Yep</h2>
 						<pre><code class="html">
-  // AngularJS
   &lt;div role="button" tabIndex="0"
     ng-click="oneTwoThree(go)"
     ng-keypress="oneTwoThree(go)"&gt;
     JOUST!
   &lt;/div&gt;
 						</code></pre>
-						<button class="bike-joust">JOUST!</button>
+						<button class="themed-button bike-joust">JOUST!</button>
+						<div>
+							<button class="reset" id="joust2" aria-label="Reset 2nd joust image">Reset</button>
+						</div>
 						<p class="hidden"><small>Photo: Joshua Trujilo, Seattle PI</small></p>
 					</div>
 				</section>
@@ -249,6 +256,7 @@
 
 				<section>
 					<h2>Custom Elements</h2>
+					<h3 class="h4-style">Ember.js</h3>
 					<pre><code contenteditable class="html">
     {{gold-hotpants}}
 					</code></pre>
@@ -376,11 +384,12 @@
 				</section>
 				
 				<section>
-					<a href="https://material.angularjs.org/#/material.components.dialog/readme/overview" target="_blank" title="Link opens in a new window"><img src="img/Angular-Material-Dialog.png" class="plain" alt="Angular Material Dialog"></a>
+					<h2 class="h3-style">Angular.js Material Design</h2>
+					<a href="https://material.angularjs.org/#/material.components.dialog/readme/overview" target="_blank" title="Link opens in a new window"><img src="img/Angular-Material-Dialog.png" class="plain" alt="Angular Material Dialog" style="max-height: 700px;"></a>
 				</section>
 
 				<section>
-					<h2>Some Sweet AngularJS Code</h2>
+					<h2>Some Sweet Angular.js Code</h2>
 					<pre><code class="javascript">
 
 					</code></pre>

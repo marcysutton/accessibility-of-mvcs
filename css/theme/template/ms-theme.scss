@@ -214,6 +214,9 @@ body {
   p.h3-style {
     font-size: 1.75em;
   }
+  h4, h3.h4-style {
+    font-size: 1.5em;
+  }
   .larger {
     font-size: 120%;
   }
@@ -696,25 +699,39 @@ body {
     top: 0;
     width: 100%;
   }
-  .bike-joust {
-    background-color: $backgroundColor;
+
+  .themed-button {
+    background-color: $linkColor;
     border-radius: 10px;
     border-width: 0;
-    color: $white;
+    color: $backgroundColor;
     cursor: pointer;
     display: inline-block;
     font-family: $mainFont;
     font-size: 1em;
     padding: 0.25em 0.5em;
-    margin: 1.5em;
+    margin: 1em;
     
     -moz-transition: 0.5s;
     -webkit-transition: 0.5s;
     transition: 0.5s;
 
     &:hover, &:focus {
-      background-color: $linkColor;
-      color: $backgroundColor;
+      background-color: $backgroundColor;
+      color: $white;
+    }
+  }
+  button.reset {
+    @extend .themed-button;
+    background-color: $white;
+    color: $backgroundColor;
+    display: inline-block;
+    font-size: 0.65em;
+    margin-top: 0;
+
+    &:hover, &:focus {
+      background-color: $backgroundColor;
+      color: $white;
     }
   }
   .inline-icon-block {
