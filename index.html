@@ -116,9 +116,8 @@
 					<div class="separator inset-width"></div>
 					<ul>
 						<li class="fragment">UX</li>
-						<li class="fragment">Semantics</li>
 						<li class="fragment">Managing ARIA attributes</li>
-						<li class="fragment">Focus management</li>
+						<li class="fragment">Semantics</li>
 						<li class="fragment">*Graceful degradation</li>
 					</ul>
 					<aside class="notes">
@@ -137,17 +136,19 @@
 				<section>
 					<h2>What Not To Do</h2> 
 					<h3>for AUX</h3>
-					<div class="hamburger-menu">
-						<div class="hamburger-button"></div>
-						<ul aria-disabled="true">
-							<li><a href="javascript: return false;" tabIndex="-1">Lettuce</a></li>
-							<li><a href="javascript: return false;" tabIndex="-1">Tomato</a></li>
-							<li><a href="javascript: return false;" tabIndex="-1">E. coli</a></li>
-						</ul>
+					<div class="inset-width">
+						<div class="hamburger-menu">
+							<div class="hamburger-button" title="Div requires clicking, does not operate as button"></div>
+							<ul aria-disabled="true">
+								<li><a href="javascript: return false;" tabIndex="-1">Lettuce</a></li>
+								<li><a href="javascript: return false;" tabIndex="-1">Tomato</a></li>
+								<li><a href="javascript: return false;" tabIndex="-1">E. coli</a></li>
+							</ul>
+						</div>
+						<pre><code contenteditable class="html">
+   &lt;div class="hamburger-button"&gt;&lt;/div&gt;
+						</code></pre>
 					</div>
-					<pre><code contenteditable class="html">
-	&lt;div class="hamburger-button"&gt;&lt;/div&gt;
-					</code></pre>
 					<aside class="notes">
 						Hamburger button is a div with no tabIndex, role or keypress event
 					</aside>
@@ -157,7 +158,7 @@
 					<h2>What To Do</h2>
 					<h3>for AUX</h3>
 					<div class="hamburger-menu">
-						<button class="hamburger-button" aria-label="Menu"></button>
+						<button class="hamburger-button" title="Button is accessible" aria-label="Menu"></button>
 						<ul aria-disabled="true">
 							<li><a href="javascript: return false;" tabIndex="-1">Lettuce</a></li>
 							<li><a href="javascript: return false;" tabIndex="-1">Tomato</a></li>
@@ -181,7 +182,7 @@
   	&lt;/div&gt;
 						</code></pre>
 
-						<div class="themed-button image-show" tabIndex="0" aria-label="This element is purposefully inaccessible, but clicking shows an image of a dog dancing">DANCE!</div>
+						<div class="themed-button image-show" tabIndex="0" title="Div requires clicking to activate" aria-label="This element is purposefully inaccessible, but clicking shows an image of a dog dancing">DANCE!</div>
 						<div>
 							<button class="reset" aria-label="Reset dog dancing image">Reset</button>
 						</div>
@@ -222,60 +223,8 @@
 				</section>
 
 				<section>
-					<h2 class="offscreen">German Sparkle Party video</h2>
-					<div class="sparkle-party">
-						<button>
-							<span class="offscreen">Play German Sparkle Party Video</span>
-						</button>
-						<!--<iframe width="1280" height="720" src="//www.youtube.com/embed/f-jN3vH26NQ?autoplay=1&start=148" frameborder="0" allowfullscreen></iframe>-->
-					</div>
-				</section>
-
-				<section>
-					<h2>"Semantic HTML"</h2>
-					<pre><code class="html">
-   &lt;sparkle-party&gt;
-     &lt;h2&gt;Do you like to dance?&lt;/h2&gt;
-     &lt;button class="js-lets-dance"&gt;I wore my party pants&lt;/button&gt;
-
-     &lt;disco-ball role="application"&gt;
-       &lt;canvas&gt;&lt;/canvas&gt;
-       &lt;p aria-live="polite" class="js-disco-transcript"&gt;&lt;/p&gt;
-     &lt;/disco-ball&gt;
-   &lt;/sparkle-party&gt;
-					</code></pre>
-				</section>
-
-				<section>
-					<h2 class="offscreen">Tom Dale, Ceator of Ember.js and Wearer of Gold Shorts</h2>
-					<img src="img/tom-zahra-jsconf.jpg" alt="Tom Dale in his gold shorts with Zahra Jabini at JSConf 2014. Photo by Matthew Bergman" style="max-height: 700px;">
-					<p style="font-size: 0.65em;">Photo by Matthew Bergman</p>
-				</section>
-
-				<section>
-					<h2>Custom Elements</h2>
-					<h3 class="h4-style">Ember.js</h3>
-					<pre><code contenteditable class="html">
-    {{gold-hotpants}}
-					</code></pre>
-					<pre><code class="javascript">
-    App.GoldHotpantsComponent = Ember.Component.extend({
-      attributeBindings: [
-        'tabIndex'
-      ],
-      tagName: 'gold-hotpants',
-      ariaRole: 'application',
-
-      tabIndex: function() {
-        return this.get('active') ? 0 : -1;
-      }.property('active')
-    });
-					</code></pre>
-				</section>
-
-				<section>
-					<h2 class="offscreen">Ember Custom Component demo</h2>
-					<a href="demos/ember/gold-hotpants.html" target="_blank" title="Link opens in a new window"><img src="img/gold-hotpants.png" alt="Ember Gold Hotpants Demo"></a>
+					<h2>Dance Break</h2>
+					<img src="img/flamingo-dancing.gif" alt="Flamingo dance break" style="min-width: 700px;">
 				</section>
 
 				<section>
@@ -296,18 +245,6 @@
 	          	<pre><code class="html">   &lt;input aria-required="true"&gt;</code></pre>
 	        	</div>
         	</div>
-				</section>
-
-				<section>
-					<h2>Using Roles</h2>
-					<div class="separator inset-width"></div>
-					<ul>
-						<li class="fragment">They're element types</li>
-						<li class="fragment">They're landmarks</li>
-		     		<li class="fragment">Start with native HTML tags</li>
-						<li class="fragment">Read the <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="Link opens in a new window">documentation</a></li>
-						<li class="fragment">Don't overdo it</li>
-					</ul>
 				</section>
 
 				<section>
@@ -338,6 +275,18 @@
 
 
 					</code></pre>
+				</section>
+
+				<section>
+					<h2>Using Roles</h2>
+					<div class="separator inset-width"></div>
+					<ul>
+						<li class="fragment">They're element types</li>
+						<li class="fragment">They're landmarks</li>
+		     		<li class="fragment">Start with native HTML tags</li>
+						<li class="fragment">Read the <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="Link opens in a new window">documentation</a></li>
+						<li class="fragment">Don't overdo it</li>
+					</ul>
 				</section>
 
 				<section>
@@ -372,18 +321,78 @@
 				</section>
 
 				<section>
-					<h2 class="h1-style">Focus Management</h2>
-					<!-- aria-activedescendant ? -->
-					<ul>
-						<li>Dialogs</li>
-						<li>Appending views</li>
-						<li>Tab index</li>
-					</ul>
+					<h2 class="offscreen">German Sparkle Party</h2>
+					<div class="sparkle-party">
+						<button>
+							<span class="offscreen">Play German Sparkle Party Video</span>
+						</button>
+						<!--<iframe width="1280" height="720" src="//www.youtube.com/embed/f-jN3vH26NQ?autoplay=1&start=148" frameborder="0" allowfullscreen></iframe>-->
+					</div>
+				</section>
+
+				<section>
+					<h2>Oh, You Fancy</h2>
+					<pre><code class="html">
+   &lt;sparkle-party&gt;
+     &lt;h2&gt;Do you like to dance?&lt;/h2&gt;
+     &lt;button class="lets-dance"&gt;I wore my party pants&lt;/button&gt;
+
+     &lt;disco-ball role="application"&gt;
+       &lt;canvas&gt;&lt;/canvas&gt;
+       &lt;p aria-live="polite" class="disco-transcript"&gt;&lt;/p&gt;
+     &lt;/disco-ball&gt;
+   &lt;/sparkle-party&gt;
+					</code></pre>
+					<aside class="notes">
+						Client-side apps often blur the lines between application and document. Because accessibility works best with a document structure, it's best to selectively use the application role on a per-widget basis. Care must also be taken for the correct roles, states and properties for non-native elements or interactions.
+					</aside>
+				</section>
+
+				<section>
+					<h2 class="h3-style" style="max-width: 800px; margin: 0 auto 0.25em;"><small>Tom Dale, Co-Creator of Ember.js and Wearer of Party Pants</small></h2>
+					<p style="font-size: 0.65em;">Photo by Matthew Bergman</p>
+					<img src="img/tom-zahra-jsconf.jpg" alt="Tom Dale in his gold shorts with Zahra Jabini at JSConf 2014. Photo by Matthew Bergman" style="max-height: 650px;">
+				</section>
+
+				<section>
+					<h2>Custom Elements</h2>
+					<h3 class="h4-style">Ember.js</h3>
+					<pre><code contenteditable class="html">
+    {{party-pants}}
+					</code></pre>
+					<pre><code class="javascript">
+    App.PartyPantsComponent = Ember.Component.extend({
+      attributeBindings: [
+        'tabIndex'
+      ],
+      tagName: 'party-pants',
+      ariaRole: 'application',
+
+      tabIndex: function() {
+        return this.get('active') ? 0 : -1;
+      }.property('active')
+    });
+					</code></pre>
+				</section>
+
+				<section>
+					<h2 class="offscreen">Ember Custom Component demo</h2>
+					<a href="demos/ember/gold-hotpants.html" target="_blank" title="Link opens in a new window"><img src="img/gold-hotpants.png" alt="Ember Gold Hotpants Demo"></a>
 				</section>
 				
 				<section>
 					<h2 class="h3-style">Angular.js Material Design</h2>
 					<a href="https://material.angularjs.org/#/material.components.dialog/readme/overview" target="_blank" title="Link opens in a new window"><img src="img/Angular-Material-Dialog.png" class="plain" alt="Angular Material Dialog" style="max-height: 700px;"></a>
+				</section>
+
+				<section>
+					<h2>ARIA Was Made for This.</h2>
+					<ul>
+						<li>Buttons</li>
+						<li>Custom Inputs</li>
+						<li>Dialogs</li>
+						<li>Tab UIs</li>
+					</ul>
 				</section>
 
 				<section>
