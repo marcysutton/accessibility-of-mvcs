@@ -44,6 +44,11 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+
+				<section>
+					<iframe width="960" height="720" src="//www.youtube-nocookie.com/embed/vIWJpXvQmHQ?rel=0" frameborder="0" allowfullscreen></iframe>
+				</section>
+
 				<section>
 		    	<h2 class="h3-style align-left"><em>What do you build?</em></h2>
 					<div class="separator"></div>
@@ -65,7 +70,7 @@
 					</p>
 				</section>
 
-				<!-- <section>
+				<section>
 					<h2 class="h1-style">Best framework?</h2>
 				</section>
 
@@ -73,7 +78,7 @@
 					<div class="image-headline" id="lemur">
 						<h2>Calm down.</h2>
 					</div>
-				</section> -->
+				</section>
 
 				<section>
 					<h2 class="h3-style">Take your pick</h2>
@@ -87,12 +92,12 @@
 						<span class="fragment">Controller</span><br>
 						<span class="fragment">Router</span><br>
 						<span class="fragment" style="margin-top: 0.25em; display: inline-block;">*</span><br>
-						<!-- <span class="fragment" style="display: block; margin-top: -.25em;">WHATEVER</span> -->
+						<span class="fragment" style="display: block; margin-top: -.25em;">WHATEVER</span>
 					</h2>
 				</section>
 
 				<section>
-					<h2>Are your sites accessible?</h2>
+					<h2 style="text-transform: uppercase;">Are your apps accessible?</h2>
 					<h3>It could depend on:</h3>
 					<div class="separator inset-width"></div>
 					<ul>
@@ -106,15 +111,8 @@
 					</aside>
 				</section>
 
-				<!-- <section data-background="img/awesome.gif" data-transition="none">
-					<div class="offscreen">
-						<h2>What does that mean?</h2>
-						<h3>It means your stuff should be AWESOME.</h3>
-					</div>
-				</section> -->
-
 				<section>
-					<h2 style="margin-bottom:0.5em;">Accessibility <br>in single-page apps</h2>
+					<h2 style="margin-bottom:0.5em;">Accessibility challenges <br>in single-page apps</h2>
 					<div class="separator inset-width"></div>
 					<ul>
 						<li class="fragment">Interactivity</li>
@@ -130,11 +128,7 @@
 
 				<section>
 					<h2>Interactivity</h2>
-					<p style="margin-bottom: 0.75em" class="interactive-input">Accepting and responding to input from
-						<span contenteditable>
-							<span autotype class="disabled"></span>
-						</span>
-					</p>
+					<p style="margin-bottom: 0.75em">Accepting and responding to input</p>
 					<img src="img/bird-atm.gif" alt="Bird using an ATM like a boss">
 					<aside class="notes">
 					Challenge the concept of "interactive". It doesn't have to be visually interactive. Appeal to all the senses. PERCEIVABLE and OPERABLE. And robust. And understandable.
@@ -142,44 +136,7 @@
 				</section>
 
 				<section>
-					<h2>POUR us some coffee</h2>
-					<p><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#guidelines">WCAG 2.0 Principles</a></p>
-					<div class="separator inset-width"></div>
-					<ul class="drop-caps">
-						<li>Perceivable</li>
-						<li>Operable</li>
-						<li>Understandable</li>
-						<li>Robust</li>
-					</ul>
-					<aside class="notes">
-					<dl>
-						<dt>Perceivable</dt>
-						<dd>Provide text alternatives for non-text content.
-						Provide captions and other alternatives for multimedia.
-						Create content that can be presented in different ways,
-						by assistive technologies, without losing meaning.
-						Make it easier for users to see and hear content.</dd>
-
-						<dt>Operable</dt>
-						<dd>Make all functionality available from a keyboard.
-						Give users enough time to read and use content.
-						Do not use content that causes seizures.
-						Help users navigate and find content.</dd>
-
-						<dt>Understandable</dt>
-						<dd>Heading and semantic structure.
-						Make text readable and understandable.
-						Specified languages, no unexplained jargon, expand abbreviations.</dd>
-
-						<dt>Robust</dt>
-						<dd>Users must be able to access content as technologies advance and user agents evolve (content should remain accessible).
-						Maximize compatibility with current and future user tools.</dd>
-					</aside>
-				</section>
-
-				<section>
-					<h2>Not Understandable</h2>
-					<h3>Or Operable</h3>
+					<h2>What Not To Do</h2>
 					<div class="hamburger-menu">
 						<div class="hamburger-button"></div>
 						<ul aria-disabled="true">
@@ -191,16 +148,13 @@
 					<pre><code contenteditable class="html">
 	&lt;div class="hamburger-button"&gt;&lt;/div&gt;
 					</code></pre>
-					<p style="margin-top: 1.5em;">This fails all 4 POUR principles</p>
 					<aside class="notes">
 						Hamburger button is a div with no tabIndex, role or keypress event
-						<!--<p><em>Or Perceivable.</em></p>
-						<p class="fragment">Or Understandable.</p>-->
 					</aside>
 				</section>
 
 				<section>
-					<h2>Understandable</h2>
+					<h2>What To Do</h2>
 					<div class="hamburger-menu">
 						<button class="hamburger-button" aria-label="Menu"></button>
 						<ul aria-disabled="true">
@@ -219,8 +173,9 @@
 
 				<section data-click-background="img/joust2.jpg">
 					<div class="text-background">
-						<h2>Not Operable</h2>
+						<h2>Nope</h2>
 						<pre><code class="html">
+  // AngularJS
   &lt;div ng-click="oneTwoThree(go);" tabIndex="0"&gt;JOUST!&lt;/div&gt;
 						</code></pre>
 
@@ -231,12 +186,9 @@
 
 				<section data-click-background="img/joust.jpg">
 					<div class="inset-width text-background">
-						<h2>Operable</h2>
+						<h2>Yep</h2>
 						<pre><code class="html">
-  &lt;button ng-click="oneTwoThree(go)"&gt;
-    JOUST!
-  &lt;button&gt;
-
+  // AngularJS
   &lt;div role="button" tabIndex="0"
     ng-click="oneTwoThree(go)"
     ng-keypress="oneTwoThree(go)"&gt;
@@ -250,7 +202,7 @@
 
 				<section>
 					<h2>Visual Feedback</h2>
-					<p class="big-italic">with Sass</p>
+					<p class="big-italic">for realsies</p>
 					<div class="inset-width">
 					<pre><code class="css">
   a {
@@ -265,47 +217,48 @@
 				</section>
 
 				<section>
-					<h2>Adding Semantics</h2>
-					<p>Use native child elements</p>
-					<pre><code class="html">
-	&lt;taco-surprise&gt;
-	  &lt;h2&gt;Taco Surprise!&lt;/h2&gt;
-	  &lt;button&gt;Give me tacos&lt;/button&gt;
+					<h2 class="offscreen">German Sparkle Party video</h2>
+					<div class="sparkle-party">
+						<button>
+							<span class="offscreen">Play German Sparkle Party Video</span>
+						</button>
+						<!--<iframe width="1280" height="720" src="//www.youtube.com/embed/f-jN3vH26NQ?autoplay=1&start=148" frameborder="0" allowfullscreen></iframe>-->
+					</div>
+				</section>
 
-	  &lt;output&gt;
-	    &lt;img src="" alt="" aria-hidden="true"&gt;
-	    &lt;p class="error hidden"&gt;Or give me death&lt;/p&gt;
-	  &lt;/output&gt;
-	&lt;/taco-surprise&gt;
+				<section>
+					<h2>"Semantic HTML"</h2>
+					<pre><code class="html">
+   &lt;sparkle-party&gt;
+     &lt;h2&gt;Do you like to dance?&lt;/h2&gt;
+     &lt;button class="js-lets-dance"&gt;I wore my party pants&lt;/button&gt;
+
+     &lt;disco-ball role="application"&gt;
+       &lt;canvas&gt;&lt;/canvas&gt;
+       &lt;p aria-live="polite" class="js-disco-transcript"&gt;&lt;/p&gt;
+     &lt;/disco-ball&gt;
+   &lt;/sparkle-party&gt;
 					</code></pre>
 				</section>
 
 				<section>
-					<h2 class="h1-style">
-						JavaScript<br>
-						<span class="smaller muted">(can be)</span><br>
-						required.<small>*</small>
-					</h2>
-					<p class="fragment" style="margin-top: 2em;"><small>*With a warning message.</small></p>
+					<h2 class="offscreen">Tom Dale, Ceator of Ember.js and Wearer of Gold Shorts</h2>
+					<img src="img/tom-zahra-jsconf.jpg" alt="Tom Dale in his gold shorts with Zahra Jabini at JSConf 2014. Photo by Matthew Bergman" style="max-height: 700px;">
+					<p style="font-size: 0.65em;">Photo by Matthew Bergman</p>
 				</section>
 
 				<section>
-					<h2 class="h1-style">"As rendered"</h2>
-          <img src="img/happy-little-tree.jpg" alt="Bob Ross happy little tree" style="min-width: 45%">
-				</section>
-
-				<!-- <section>
 					<h2>Custom Elements</h2>
 					<pre><code contenteditable class="html">
-    // EmberJS Component
-    {{sparkle-party}}
+    {{gold-hotpants}}
 					</code></pre>
 					<pre><code class="javascript">
-    App.SparklePartyComponent = Ember.Component.extend({
+    App.GoldHotpantsComponent = Ember.Component.extend({
       attributeBindings: [
         'tabIndex'
       ],
-      tagName: 'section',
+      tagName: 'gold-hotpants',
+      ariaRole: 'application',
 
       tabIndex: function() {
         return this.get('active') ? 0 : -1;
@@ -316,8 +269,8 @@
 
 				<section>
 					<h2 class="offscreen">Ember Custom Component demo</h2>
-					<a href="demos/ember/sparkle-party.html" target="_blank" title="Link opens in a new window"><img src="img/sparkle-party.png" alt="Ember Sparkle Party Demo"></a>
-				</section> -->
+					<a href="demos/ember/gold-hotpants.html" target="_blank" title="Link opens in a new window"><img src="img/gold-hotpants.png" alt="Ember Gold Hotpants Demo"></a>
+				</section>
 
 				<section>
 					<h2>ARIA Core Components</h2>
@@ -340,162 +293,6 @@
 				</section>
 
 				<section>
-					<h2>ARIA Roles
-						<span class="muted" style="display: block; margin-top: 0.25em;">
-						OMG SO MANY
-						</span>
-					</h2>
-					<div class="separator inset-width"></div>
-					<dl id="index_role" class="compact">
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#alert" target="_blank" title="Link opens in a new window"><code>alert</code></a></dt>
-					<dd>A message with important, and usually time-sensitive, information. See related alertdialog and status.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#alertdialog" target="_blank" title="Link opens in a new window"><code>alertdialog</code></a></dt>
-					<dd>A type of dialog that contains an alert message, where initial focus goes to an element within the dialog. See related alert and dialog.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#application" target="_blank" title="Link opens in a new window"><code>application</code></a></dt>
-					<dd>A region declared as a web application, as opposed to a web document.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#article" target="_blank" title="Link opens in a new window"><code>article</code></a></dt>
-					<dd>A section of a page that consists of a composition that forms an independent part of a document, page, or site.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#banner" target="_blank" title="Link opens in a new window"><code>banner</code></a></dt>
-					<dd>A region that contains mostly site-oriented content, rather than page-specific content.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#button" target="_blank" title="Link opens in a new window"><code>button</code></a></dt>
-					<dd>An input that allows for user-triggered actions when clicked or pressed. See related link.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#checkbox" target="_blank" title="Link opens in a new window"><code>checkbox</code></a></dt>
-					<dd>A checkable input that has three possible values: true, false, or mixed.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#columnheader" target="_blank" title="Link opens in a new window"><code>columnheader</code></a></dt>
-					<dd>A cell containing header information for a column.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#combobox" target="_blank" title="Link opens in a new window"><code>combobox</code></a></dt>
-					<dd>A presentation of a select; usually similar to a textbox where users can type ahead to select an option, or type to enter arbitrary text as a new item in the list. See related listbox.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#command" target="_blank" title="Link opens in a new window"><code>command</code></a></dt>
-					<dd>A form of widget that performs an action but does not receive input data.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#complementary" target="_blank" title="Link opens in a new window"><code>complementary</code></a></dt>
-					<dd>A supporting section of the document, designed to be complementary to the main content at a similar level in the DOM hierarchy, but remains meaningful when separated from the main content.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#composite" target="_blank" title="Link opens in a new window"><code>composite</code></a></dt>
-					<dd>A widget that may contain navigable descendants or owned children.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#contentinfo" target="_blank" title="Link opens in a new window"><code>contentinfo</code></a></dt>
-					<dd>A large perceivable region that contains information about the parent document.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#definition" target="_blank" title="Link opens in a new window"><code>definition</code></a></dt>
-					<dd>A definition of a term or concept.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#dialog" target="_blank" title="Link opens in a new window"><code>dialog</code></a></dt>
-					<dd>A dialog is an application window that is designed to interrupt the current processing of an application in order to prompt the user to enter information or require a response. See related alertdialog.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#directory" target="_blank" title="Link opens in a new window"><code>directory</code></a></dt>
-					<dd>A list of references to members of a group, such as a static table of contents.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#document" target="_blank" title="Link opens in a new window"><code>document</code></a></dt>
-					<dd>A region containing related information that is declared as document content, as opposed to a web application.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#form" target="_blank" title="Link opens in a new window"><code>form</code></a></dt>
-					<dd>A landmark region that contains a collection of items and objects that, as a whole, combine to create a form. See related search.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#grid" target="_blank" title="Link opens in a new window"><code>grid</code></a></dt>
-					<dd>A grid is an interactive control which contains cells of tabular data arranged in rows and columns, like a table.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#gridcell" target="_blank" title="Link opens in a new window"><code>gridcell</code></a></dt>
-					<dd>A cell in a grid or treegrid.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#group" target="_blank" title="Link opens in a new window"><code>group</code></a></dt>
-					<dd>A set of user interface objects which are not intended to be included in a page summary or table of contents by assistive technologies.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#heading" target="_blank" title="Link opens in a new window"><code>heading</code></a></dt>
-					<dd>A heading for a section of the page.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#img" target="_blank" title="Link opens in a new window"><code>img</code></a></dt>
-					<dd>A container for a collection of elements that form an image.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#input" target="_blank" title="Link opens in a new window"><code>input</code></a></dt>
-					<dd>A generic type of widget that allows user input.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#landmark" target="_blank" title="Link opens in a new window"><code>landmark</code></a></dt>
-					<dd>A region of the page intended as a navigational landmark.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#link" target="_blank" title="Link opens in a new window"><code>link</code></a></dt>
-					<dd>An interactive reference to an internal or external resource that, when activated, causes the user agent to navigate to that resource. See related button.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#list" target="_blank" title="Link opens in a new window"><code>list</code></a></dt>
-					<dd>A group of non-interactive list items. See related listbox.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#listbox" target="_blank" title="Link opens in a new window"><code>listbox</code></a></dt>
-					<dd>A widget that allows the user to select one or more items from a list of choices. See related combobox and list.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#listitem" target="_blank" title="Link opens in a new window"><code>listitem</code></a></dt>
-					<dd>A single item in a list or directory.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#log" target="_blank" title="Link opens in a new window"><code>log</code></a></dt>
-					<dd>A type of live region where new information is added in meaningful order and old information may disappear. See related marquee.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#main" target="_blank" title="Link opens in a new window"><code>main</code></a></dt>
-					<dd>The main content of a document.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#marquee" target="_blank" title="Link opens in a new window"><code>marquee</code></a></dt>
-					<dd>A type of live region where non-essential information changes frequently. See related log.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#math" target="_blank" title="Link opens in a new window"><code>math</code></a></dt>
-					<dd>Content that represents a mathematical expression. </dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#menu" target="_blank" title="Link opens in a new window"><code>menu</code></a></dt>
-					<dd>A type of widget that offers a list of choices to the user.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#menubar" target="_blank" title="Link opens in a new window"><code>menubar</code></a></dt>
-					<dd>A presentation of menu that usually remains visible and is usually presented horizontally.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#menuitem" target="_blank" title="Link opens in a new window"><code>menuitem</code></a></dt>
-					<dd>An option in a set of choices contained by a menu or menubar.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#menuitemcheckbox" target="_blank" title="Link opens in a new window"><code>menuitemcheckbox</code></a></dt>
-					<dd>A menuitem with a checkable state whose possible values are true, false, or mixed.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#menuitemradio" target="_blank" title="Link opens in a new window"><code>menuitemradio</code></a></dt>
-					<dd>A checkable menuitem in a set of elements with role menuitemradio, only one of which can be checked at a time.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#navigation" target="_blank" title="Link opens in a new window"><code>navigation</code></a></dt>
-					<dd>A collection of navigational elements (usually links) for navigating the document or related documents.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#note" target="_blank" title="Link opens in a new window"><code>note</code></a></dt>
-					<dd>A section whose content is parenthetic or ancillary to the main content of the resource.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#option" target="_blank" title="Link opens in a new window"><code>option</code></a></dt>
-					<dd>A selectable item in a select list.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#presentation" target="_blank" title="Link opens in a new window"><code>presentation</code></a></dt>
-					<dd>An element whose implicit native role semantics will not be mapped to the accessibility API.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#progressbar" target="_blank" title="Link opens in a new window"><code>progressbar</code></a></dt>
-					<dd>An element that displays the progress status for tasks that take a long time.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#radio" target="_blank" title="Link opens in a new window"><code>radio</code></a></dt>
-					<dd>A checkable input in a group of radio roles, only one of which can be checked at a time.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#radiogroup" target="_blank" title="Link opens in a new window"><code>radiogroup</code></a></dt>
-					<dd>A group of radio buttons.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#range" target="_blank" title="Link opens in a new window"><code>range</code></a></dt>
-					<dd>An input representing a range of values that can be set by the user.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#region" target="_blank" title="Link opens in a new window"><code>region</code></a></dt>
-					<dd>A large perceivable section of a web page or document, that is important enough to be included in a page summary or table of contents, for example, an area of the page containing live sporting event statistics.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#roletype" target="_blank" title="Link opens in a new window"><code>roletype</code></a></dt>
-					<dd>The base role from which all other roles in this taxonomy inherit.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#row" target="_blank" title="Link opens in a new window"><code>row</code></a></dt>
-					<dd>A row of cells in a grid.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#rowgroup" target="_blank" title="Link opens in a new window"><code>rowgroup</code></a></dt>
-					<dd>A group containing one or more row elements in a grid.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#rowheader" target="_blank" title="Link opens in a new window"><code>rowheader</code></a></dt>
-					<dd>A cell containing header information for a row in a grid.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#scrollbar" target="_blank" title="Link opens in a new window"><code>scrollbar</code></a></dt>
-					<dd>A graphical object that controls the scrolling of content within a viewing area, regardless of whether the content is fully displayed within the viewing area.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#search" target="_blank" title="Link opens in a new window"><code>search</code></a></dt>
-					<dd>A landmark region that contains a collection of items and objects that, as a whole, combine to create a search facility. See related form.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#section" target="_blank" title="Link opens in a new window"><code>section</code></a></dt>
-					<dd>A renderable structural containment unit in a document or application.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#sectionhead" target="_blank" title="Link opens in a new window"><code>sectionhead</code></a></dt>
-					<dd>A structure that labels or summarizes the topic of its related section.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#select" target="_blank" title="Link opens in a new window"><code>select</code></a></dt>
-					<dd>A form widget that allows the user to make selections from a set of choices.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#separator" target="_blank" title="Link opens in a new window"><code>separator</code></a></dt>
-					<dd>A divider that separates and distinguishes sections of content or groups of menuitems.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#slider" target="_blank" title="Link opens in a new window"><code>slider</code></a></dt>
-					<dd>A user input where the user selects a value from within a given range.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#spinbutton" target="_blank" title="Link opens in a new window"><code>spinbutton</code></a></dt>
-					<dd>A form of range that expects the user to select from among discrete choices.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#status" target="_blank" title="Link opens in a new window"><code>status</code></a></dt>
-					<dd>A container whose content is advisory information for the user but is not important enough to justify an alert, often but not necessarily presented as a status bar. See related alert.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#structure" target="_blank" title="Link opens in a new window"><code>structure</code></a></dt>
-					<dd>A document structural element.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#tab" target="_blank" title="Link opens in a new window"><code>tab</code></a></dt>
-					<dd>A grouping label providing a mechanism for selecting the tab content that is to be rendered to the user.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#tablist" target="_blank" title="Link opens in a new window"><code>tablist</code></a></dt>
-					<dd>A list of tab elements, which are references to tabpanel elements.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#tabpanel" target="_blank" title="Link opens in a new window"><code>tabpanel</code></a></dt>
-					<dd>A container for the resources associated with a tab, where each tab is contained in a tablist.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#textbox" target="_blank" title="Link opens in a new window"><code>textbox</code></a></dt>
-					<dd>Input that allows free-form text as its value.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#timer" target="_blank" title="Link opens in a new window"><code>timer</code></a></dt>
-					<dd>A type of live region containing a numerical counter which indicates an amount of elapsed time from a start point, or the time remaining until an end point.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#toolbar" target="_blank" title="Link opens in a new window"><code>toolbar</code></a></dt>
-					<dd>A collection of commonly used function buttons or controls represented in compact visual form.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#tooltip" target="_blank" title="Link opens in a new window"><code>tooltip</code></a></dt>
-					<dd>A contextual popup that displays a description for an element.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#tree" target="_blank" title="Link opens in a new window"><code>tree</code></a></dt>
-					<dd>A type of list that may contain sub-level nested groups that can be collapsed and expanded.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#treegrid" target="_blank" title="Link opens in a new window"><code>treegrid</code></a></dt>
-					<dd>A grid whose rows can be expanded and collapsed in the same manner as for a tree.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#treeitem" target="_blank" title="Link opens in a new window"><code>treeitem</code></a></dt>
-					<dd>An option item of a tree. This is an element within a tree that may be expanded or collapsed if it contains a sub-level group of treeitem elements.</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#widget" target="_blank" title="Link opens in a new window"><code>widget</code></a></dt>
-					<dd>An interactive component of a graphical user interface (GUI).</dd>
-					<dt><a href="http://www.w3.org/TR/wai-aria/roles#window" target="_blank" title="Link opens in a new window"><code>window</code></a></dt>
-					<dd>A browser or application window.</dd></dl>
-				</section>
-
-				<section>
 					<h2>Using Roles</h2>
 					<div class="separator inset-width"></div>
 					<ul>
@@ -508,7 +305,7 @@
 				</section>
 
 				<section>
-					<h2>Let the framework <br>do the heavy lifting</h2>
+					<h2>Make your framework do the heavy lifting</h2>
 					<pre><code class="javascript">
   // AngularUI Bootstrap
   &lt;accordion-group
@@ -524,13 +321,13 @@
 				</section>
 
 				<section data-transition="none">
-					<h2>Let the framework <br>do the heavy lifting</h2>
+					<h2>Make your framework do the heavy lifting</h2>
 					<h3 class="offscreen">Example where ARIA attributes are the default</h3>
 					<pre><code class="javascript">
   // AngularUI Bootstrap
   &lt;accordion-group
-  	aria-expanded="status.open"
-  	aria-disabled="status.isDisabled"&gt;
+  	ng-expanded="status.open"
+  	ng-disabled="status.isDisabled"&gt;
   &lt;/accordion-group&gt;
 
 
@@ -543,8 +340,6 @@
 					<div class="definition inset-width">
 						<pre><code class="html">
     &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
-
-    // Never put role="application" on the body
 						</code></pre>
 					</div>
 
@@ -557,7 +352,7 @@
 					</aside>
 				</section>
 
-				<!-- <section>
+				<section>
 					<h2>Headache City</h2>
 					<div class="inset-width">
 					<pre><code class="html">
@@ -570,8 +365,7 @@
 					<aside class="notes">
 	 Only want to use role="application" if the content you're providing consists of only interactive controls, and of those, mostly advanced widgets, that emulate a real desktop application.
 					</aside>
-				</section> -->
-
+				</section>
 
 				<section>
 					<h2 class="h1-style">Focus Management</h2>
@@ -595,39 +389,9 @@
 				</section>
 
 				<section>
-					<h2>Accessibility Updates</h2>
-					<p>Done and in progress:</p>
-					<ul>
-						<li>Headings for page structure</li>
-						<li>Sidenav is keyboard accessible</li>
-						<li>Interactivity & semantics in components</li>
-					</ul>
-				</section>
-			
-				<section>
-					<div class="inset-width-smaller left-align">
-						<h2 class="inline-icon-block">
-							<span class="text">Perceivable</span>
-							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
-						</h2>
-						<h2 class="inline-icon-block">
-							<span class="text">Operable</span>
-							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
-						</h2>
-						<h2 class="inline-icon-block">
-							<span class="text">Understandable</span>
-							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
-						</h2>
-						<h2 class="inline-icon-block">
-							<span class="text">Robust</span>
-							<img src="img/thumbsup.png" class="plain icon" alt="thumbs up">
-						</h2>
-					</div>
-				</section>
-
-				<section>
-					<h2>Let's make it awesome.</h2>
-					<a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window"><em>@marcysutton</em></a></p>
+					<h2 class="h1-style">Make it sparkle.</h2>
+					<h3>Thanks, JSConf EU!</h3>
+					<p><a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a></p></section>
 				</section>
 			</div>
 

@@ -95,7 +95,7 @@
  *********************************************/
 
 body {
-  background: black url("backgrounds/graphy.png") repeat center top;
+  background: black url("backgrounds/space.jpg") repeat center top;
 }
 
 .reveal {
@@ -515,7 +515,7 @@ body {
 /*********************************************
  * LAYOUTS
  *********************************************/
- .reveal .align-right {
+.reveal .align-right {
   margin-bottom: 1em;
   text-align: right;
  }
@@ -726,6 +726,52 @@ body {
       display:inline-block;
       margin-left: 10px;  
       vertical-align:middle;
+    }
+  }
+  .play button:before {
+    background: transparent;
+    border: 58px solid transparent;
+    border-width: 58px 78px;
+    border-left-color: rgba(255, 255, 255, 0.7);
+    content: "";
+    display: block;
+    margin-top: -8px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transition: 0.5s;
+  }
+  .play button:hover:before,
+  .play button:focus:before,
+  .play button:active:before {
+    background: transparent;
+    border-left-color: rgba(255, 255, 255, 1);
+  }
+  .sparkle-party {
+    @extend .play;
+    min-height: 720px;
+    position: relative;
+
+    .enabled button {
+      display: none;
+    }
+    button {
+      background: black url(../../img/sparkle-party.jpg) no-repeat; 
+      background-size: cover;
+      border: 0;
+      border-radius: none;
+      box-shadow: 2px 2px 2px #000;
+      cursor: pointer;
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1; 
+    }
+    object {
+      height: 100%;
+      min-height: 720px;
+      width: 100%;
     }
   }
   p.byline {
