@@ -136,13 +136,14 @@ body {
     }
   }
   footer {
-    background-color: $transparentBlack;
     bottom: 0px;
-    height: 40px;
     left: 0;
-    font-size: 47%;
+    font-family: "Lato", sans-serif;
+    font-style: italic;
+    font-size: 45%;
     line-height: 1.25em;
     position: fixed;
+    padding-bottom: 0.5em;
     text-align: left;
     width: 100%;
     z-index: 1;
@@ -151,14 +152,11 @@ body {
       display: inline-block;
       color: $tertiaryColor;
       padding: 5px 15px;
-      font-style: italic;
       vertical-align: middle;
     }
     .footer-link {
       display: block;
       float: right;
-      font-style: italic;
-      letter-spacing: 0.04em;
       padding: 5px 15px;
       position: relative;
       z-index: 1;
@@ -315,6 +313,7 @@ body {
     font-family: $italicFont;
     font-size: 1.5em;
     font-weight: normal;
+    line-height: 1.25em;
     text-transform: none;
 
     &.smaller {

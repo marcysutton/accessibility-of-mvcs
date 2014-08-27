@@ -3,6 +3,7 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 @font-face {
   font-family: 'Aleo Bold';
   src: url("../../lib/font/Aleo-Bold-webfont.eot");
@@ -116,13 +117,14 @@ body {
   .reveal .has-background .text-background {
     background-color: rgba(0, 0, 0, 0.75); }
   .reveal footer {
-    background-color: rgba(0, 0, 0, 0.85);
     bottom: 0px;
-    height: 40px;
     left: 0;
-    font-size: 47%;
+    font-family: "Lato", sans-serif;
+    font-style: italic;
+    font-size: 45%;
     line-height: 1.25em;
     position: fixed;
+    padding-bottom: 0.5em;
     text-align: left;
     width: 100%;
     z-index: 1; }
@@ -130,13 +132,10 @@ body {
       display: inline-block;
       color: #ccc;
       padding: 5px 15px;
-      font-style: italic;
       vertical-align: middle; }
     .reveal footer .footer-link {
       display: block;
       float: right;
-      font-style: italic;
-      letter-spacing: 0.04em;
       padding: 5px 15px;
       position: relative;
       z-index: 1; }
@@ -258,6 +257,7 @@ body {
   font-family: "Aleo Italic", sans-serif;
   font-size: 1.5em;
   font-weight: normal;
+  line-height: 1.25em;
   text-transform: none; }
   .reveal .big-italic.smaller {
     font-size: 1.5em; }
