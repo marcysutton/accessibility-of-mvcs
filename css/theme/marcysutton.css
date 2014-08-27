@@ -124,7 +124,7 @@ body {
     font-size: 45%;
     line-height: 1.25em;
     position: fixed;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.25em;
     text-align: left;
     width: 100%;
     z-index: 1; }
@@ -570,7 +570,7 @@ body {
   .reveal button.reset:hover, .reveal button.reset:focus {
     background-color: #000;
     color: #fff; }
-  .reveal button.reset[disabled] {
+  .reveal button.reset.disabled {
     display: none; }
 .reveal .inline-icon-block .text {
   display: inline-block;
