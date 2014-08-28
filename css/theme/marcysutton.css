@@ -422,27 +422,29 @@ body {
 
 .reveal .wideCol {
   vertical-align: top;
-  width: 54%; }
+  width: 58%; }
   .reveal .wideCol.twoThirdsCol {
     float: left; }
 
 .reveal .skinnyCol {
   vertical-align: top;
-  width: 44%; }
+  width: 40%; }
   .reveal .skinnyCol.twoThirdsCol {
     float: left;
     margin-right: 2%; }
 
 .reveal .twoThirdsCol pre,
 .reveal .halfCol pre {
-  font-size: .59em;
+  font-size: .50em;
   margin-top: 0;
   width: 100%; }
 
 .reveal .halfCol {
   display: inline-block;
   vertical-align: top;
-  width: 49%; }
+  width: 48%; }
+  .reveal .halfCol.left {
+    margin-right: 2%; }
 
 /*********************************************
  * Slide Styles

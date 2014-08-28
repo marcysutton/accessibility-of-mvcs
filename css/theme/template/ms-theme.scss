@@ -536,7 +536,7 @@ body {
 }
 .reveal .wideCol {
   vertical-align: top;
-  width: 54%;
+  width: 58%;
 
   &.twoThirdsCol {
     float: left;
@@ -544,7 +544,7 @@ body {
 }
 .reveal .skinnyCol {
   vertical-align: top;
-  width: 44%;
+  width: 40%;
 
   &.twoThirdsCol {
     float: left;
@@ -554,7 +554,7 @@ body {
 .reveal .twoThirdsCol,
 .reveal .halfCol {
    pre {
-    font-size: .59em;
+    font-size: .50em;
     margin-top: 0;
     width: 100%;
   }
@@ -562,7 +562,11 @@ body {
 .reveal .halfCol {
   display: inline-block;
   vertical-align: top;
-  width: 49%;
+  width: 48%;
+
+  &.left {
+    margin-right: 2%;
+  }
 }
 /*********************************************
  * Slide Styles
