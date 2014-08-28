@@ -391,7 +391,7 @@
 				
 				<section>
 					<h2 class="h3-style">Angular.js Material Design</h2>
-					<a href="https://material.angularjs.org/#/material.components.dialog/readme/overview" target="_blank" title="Link opens in a new window"><img src="img/Angular-Material-RadioButtons.png" class="plain" alt="Angular Material Radio Buttons" style="max-height: 700px;"></a>
+					<a href="https://material.angularjs.org/#/material.components.radioButton/readme/overview" target="_blank" title="Link opens in a new window"><img src="img/Angular-Material-RadioButtons.png" class="plain" alt="Angular Material Radio Buttons" style="max-height: 700px;"></a>
 				</section>
 
 				<section>
@@ -416,10 +416,8 @@
 				<section>
 					<h2 class="h3-style">Angular Material Radio Buttons (cont'd)</h2>
 					<pre><code class="javascript" style="max-height: 615px;">
-
 function materialRadioGroupDirective() {
   RadioGroupController.prototype = createRadioGroupControllerProto();
-
   return {
     restrict: 'E',
     controller: RadioGroupController,
@@ -428,10 +426,11 @@ function materialRadioGroupDirective() {
   };
 
   function link(scope, element, attr, ctrls) {
-    var rgCtrl = ctrls[0],
-      ngModelCtrl = ctrls[1] || {
-        $setViewValue: angular.noop
-      };
+    element.attr({
+      'role': 'radiogroup',
+      'tabIndex': '0'
+    })
+    .on('keydown', keydownListener);
 
     function keydownListener(ev) {
       if (ev.which === Constant.KEY_CODE.LEFT_ARROW) {
@@ -443,14 +442,27 @@ function materialRadioGroupDirective() {
         rgCtrl.selectNext(element);
       }
     }
+  }
+}
+function materialRadioButtonDirective($expectAria) {
+  return {
+    restrict: 'E',
+    require: '^materialRadioGroup',
+    link: link
+  };
+  function link(scope, element, attr, rgCtrl) {
+    var lastChecked;
+    attr.$observe('value', render);
 
-    rgCtrl.init(ngModelCtrl);
+    element.attr('role', 'radio');
+    $expectAria(element, 'aria-label', element.text());
 
-    element.attr({
-      'role': 'radiogroup',
-      'tabIndex': '0'
-    })
-    .on('keydown', keydownListener);
+    function render() {
+      var checked = (rgCtrl.getViewValue() === attr.value);
+      if (checked === lastChecked) { return; }
+      lastChecked = checked;
+      element.attr('aria-checked', checked);
+    }
   }
 }
 					</code></pre>
