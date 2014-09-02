@@ -323,6 +323,11 @@ body {
       font-size: 1.15em;
     }
   }
+  .big-stat {
+    @extend .big-italic;
+    display: block;
+    font-size: 300%;
+  }
   .large-tag {
     font-family: $codeFont;
     font-size: 2.5em;

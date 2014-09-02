@@ -47,6 +47,9 @@
 				<section>
 					<h2 class="h3-style">Welcome to our Homepage</h2>
 					<iframe width="960" height="720" src="//www.youtube-nocookie.com/embed/vIWJpXvQmHQ?rel=0" frameborder="0" allowfullscreen></iframe>
+					<aside class="notes">
+						Pause video halfway through to explain mouse vs. screen reader interaction
+					</aside>
 				</section>
 
 				<section>
@@ -58,6 +61,32 @@
 					<p>Web accessibility also benefits people without disabilities.</p>
 					<p>Refer to slide #2 about the kinds of apps we build.</p>
 					</aside>
+				</section>
+
+				<section>
+					<h2 class="offscreen">Stats</h2>
+					<div class="inset-width">
+						<h3><span class="big-stat">285 million</span> visually impaired worldwide</h3>
+						<h3 style="margin-top: 1em;"><span class="big-stat">360 million</span> people worldwide with disabling hearing loss</h3>
+					</div>
+					<aside class="notes">
+						WHO: blindness http://www.who.int/mediacentre/factsheets/fs282/en/
+						285 million visually impaired worldwide: 39 million are blind, 246 have low vision
+
+						WHO: deafness http://www.who.int/mediacentre/factsheets/fs300/en/
+						360 million is 5% of the world's population
+					</aside>
+				</section>
+
+				<section>
+					<h2><span class="big-stat">80 million</span> Europeans with disabilities</h2>
+					<aside class="notes">
+						Source: <a href="http://www.edf-feph.org/Page_Generale.asp?DocID=12534">http://www.edf-feph.org/Page_Generale.asp?DocID=12534</a>
+					</aside>
+				</section>
+
+				<section>
+					<h2><span class="big-stat">15%</span> of the European population</h2>
 				</section>
 
 				<section>
@@ -84,12 +113,6 @@
 				<section>
 					<h2 class="h1-style">Best framework?</h2>
 				</section>
-<!-- 
-				<section>
-					<div class="image-headline" id="lemur">
-						<h2>Calm down.</h2>
-					</div>
-				</section> -->
 
 				<section>
 					<h2 class="h3-style">Take your pick</h2>
@@ -124,26 +147,106 @@
 				</section>
 
 				<section>
-					<h2 style="margin-bottom:0.5em;">Accessibility challenges <br>in single-page apps</h2>
+					<h2 style="margin-bottom:0.5em;">Accessibility <br>in single-page apps</h2>
 					<div class="separator inset-width"></div>
 					<ul>
-						<li class="fragment">Focus &amp; interactivity</li>
-						<li class="fragment">Managing <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="ARIA documentation opens in a new window">ARIA</a> attributes</li>
-						<li class="fragment">Semantics</li>
-						<li class="fragment">*Graceful degradation</li>
+						<li>Enable the keyboard</li>
+						<li>Manage <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="ARIA documentation opens in a new window">ARIA</a> attributes</li>
+						<li>Write meaninful HTML</li>
+						<li>*Gracefully degrade</li>
 					</ul>
 					<aside class="notes">
 					*Graceful degradation is worth mentioning but it is outside the scope of this talk.
 					</aside>
 				</section>
-
+				
 				<section>
-					<h2>Dance Break</h2>
-					<img src="img/flamingo-dancing.gif" alt="Flamingo dance break" style="min-width: 700px;">
+					<h2 class="h1-style">Accessible Rich Internet Applications (ARIA)</h2>
+					<div class="inset-width">
+						<div class="separator"></div>
+					</div>
+					<p style="margin: 0.5em 0;" class="big-italic">Bridges the gap to future versions of HTML<p>
+					<p class="big-italic">Expands HTML's semantic vocabulary</p>
+				</section>
+
+        <section>
+        	<div class="inset-width">
+	     			<h2 class="h1-style">States</h2>
+	     			<p>The current condition of this particular thing</p>
+	     			<div style="margin: 1em 0;">
+	         		<pre><code class="html">   &lt;input aria-disabled="true" type="text"&gt;</code></pre>
+         		</div>
+         		<pre><code class="html">   &lt;i aria-hidden="true"&gt;&lt;/i&gt;</code></pre>
+       		</div>
+     		</section>
+
+     		<section>
+     			<div class="inset-width">
+	     			<h2 class="h1-style">Properties</h2>
+	     			<p>The nature of the current object</p>
+	     			<div style="margin: 1em 0;">
+	          	<pre><code class="html">   &lt;input aria-required="true" type="text"&gt;</code></pre>
+          	</div>
+          	<pre><code class="html">   &lt;input aria-label="Unsubscribe" type="checkbox"&gt;</code></pre>
+        	</div>
 				</section>
 
 				<section>
-					<h2 class="h1-style">Focus &amp; interactivity</h2>
+					<div class="inset-width">
+	     			<h2 class="h1-style">Roles</h2>
+	     			<p>What does this thing do?</p>
+	     			<div style="margin: 1em 0;">
+		          <pre><code class="html">   &lt;form role="search"&gt;</code></pre>
+	          </div>
+	          <pre><code class="html">   &lt;div role="img" style="background-image...</code></pre>
+          </div>
+        </section>
+
+				<section>
+					<h2>Using Roles</h2>
+					<div class="separator inset-width"></div>
+					<ul>
+						<li class="fragment">They're element types</li>
+						<li class="fragment">They're landmarks</li>
+		     		<li class="fragment">Start with native HTML tags</li>
+						<li class="fragment">Read the <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="Link opens in a new window">documentation</a></li>
+						<li class="fragment">Don't overdo it</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Application Role</h2>
+					<p class="big-italic">Disables a screen reader&rsquo;s &ldquo;virtual cursor&rdquo;</p>
+					<div class="definition inset-width">
+						<pre><code class="html">
+    &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
+						</code></pre>
+					</div>
+
+					<aside class="notes">
+					<p><a href="http://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/" target="_blank" title="Link opens in a new window">Marco Zehe's post about using Application Mode</a></p>
+					<p>Virtual Cursor/Browse mode:<br>
+					 Several keys are captured by the assistive technology and are not processed by the browser. These allow navigation by headings, lists, links, tables, form elements and others. Usually, these are done via single letters. The visual focus may or may not follow the virtual cursor onto focusable items, depending on the assistive technology in use and its settings</p>
+					 <p>Forms mode/focus mode:<br>
+					 All keys are passed through to the browser. The challenge is that you may be creating widgets that require you to force the user into direct interaction with the browser. You know that your widget can best be used via the keyboard if the user is not in virtual mode. It is under your control whether the user is being thrown into focus mode once your widget gains keyboard focus.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Don't Do This</h2>
+					<div class="inset-width">
+						<pre><code class="html">
+	    &lt;body role="application"&gt;
+						</code></pre>
+					</div>
+					<img src="img/body-roll.gif" style="min-height: 400px;" alt="Body roll away from your responsibilities">
+					<aside class="notes">
+	 Only want to use role="application" if the content you're providing consists of only interactive controls, and of those, mostly advanced widgets, that emulate a real desktop application.
+					</aside>
+				</section>
+
+				<section>
+					<h2 class="h1-style">Enabling the keyboard</h2>
 					<aside class="notes">
 					Challenge the concept of "interactive". It doesn't have to be visually interactive. Appeal to all the senses. PERCEIVABLE and OPERABLE. And robust. And understandable.
 					</aside>
@@ -236,23 +339,8 @@
 				</section>
 
 				<section>
-					<h2>ARIA Core Components</h2>
-					<div class="inset-width">
-	     			<div class="definition">
-		     			<h3>Roles</h3>
-		     			<p>What does this thing do</p>
-		          <pre><code class="html">   &lt;form role="search"&gt;</code></pre>
-	          </div>
-	     			<div class="definition">
-		     			<h3>States</h3>
-		     			<p>The current condition of this particular thing</p>
-	         		<pre><code class="html">   &lt;input aria-disabled="true"&gt;</code></pre>
-	       		</div>
-	     			<div class="definition">
-		     			<h3>Properties</h3>
-	          	<pre><code class="html">   &lt;input aria-required="true"&gt;</code></pre>
-	        	</div>
-        	</div>
+					<h2>Dance Break</h2>
+					<img src="img/flamingo-dancing.gif" alt="Flamingo dance break" style="min-width: 700px;">
 				</section>
 
 				<section>
@@ -285,48 +373,6 @@
 					</code></pre>
 				</section>
 
-				<section>
-					<h2>Using Roles</h2>
-					<div class="separator inset-width"></div>
-					<ul>
-						<li class="fragment">They're element types</li>
-						<li class="fragment">They're landmarks</li>
-		     		<li class="fragment">Start with native HTML tags</li>
-						<li class="fragment">Read the <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="Link opens in a new window">documentation</a></li>
-						<li class="fragment">Don't overdo it</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Application Role</h2>
-					<p class="big-italic">Disables a screen reader&rsquo;s &ldquo;virtual cursor&rdquo;</p>
-					<div class="definition inset-width">
-						<pre><code class="html">
-    &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
-						</code></pre>
-					</div>
-
-					<aside class="notes">
-					<p><a href="http://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/" target="_blank" title="Link opens in a new window">Marco Zehe's post about using Application Mode</a></p>
-					<p>Virtual Cursor/Browse mode:<br>
-					 Several keys are captured by the assistive technology and are not processed by the browser. These allow navigation by headings, lists, links, tables, form elements and others. Usually, these are done via single letters. The visual focus may or may not follow the virtual cursor onto focusable items, depending on the assistive technology in use and its settings</p>
-					 <p>Forms mode/focus mode:<br>
-					 All keys are passed through to the browser. The challenge is that you may be creating widgets that require you to force the user into direct interaction with the browser. You know that your widget can best be used via the keyboard if the user is not in virtual mode. It is under your control whether the user is being thrown into focus mode once your widget gains keyboard focus.</p>
-					</aside>
-				</section>
-
-				<section>
-					<h2>Don't Do This</h2>
-					<div class="inset-width">
-						<pre><code class="html">
-	    &lt;body role="application"&gt;
-						</code></pre>
-					</div>
-					<img src="img/body-roll.gif" style="min-height: 400px;" alt="Body roll away from your responsibilities">
-					<aside class="notes">
-	 Only want to use role="application" if the content you're providing consists of only interactive controls, and of those, mostly advanced widgets, that emulate a real desktop application.
-					</aside>
-				</section>
 
 				<section>
 					<h2 class="offscreen">German Sparkle Party</h2>
