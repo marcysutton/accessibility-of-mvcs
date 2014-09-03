@@ -146,7 +146,7 @@ body {
     padding-bottom: 0.25em;
     text-align: left;
     width: 100%;
-    z-index: 1;
+    z-index: 11;
 
     .copyright {
       display: inline-block;
@@ -212,8 +212,14 @@ body {
   p.h3-style {
     font-size: 1.75em;
   }
-  h4, h3.h4-style {
-    font-size: 1.5em;
+  h4, h3.h4-style,
+  p.h4-style {
+    font-size: 1.45em;
+    font-weight: bold;
+  }
+  h2 strong,
+  h3 strong {
+    color: $linkColor;
   }
   .larger {
     font-size: 120%;
@@ -251,6 +257,16 @@ body {
       font-weight: normal;
       font-size: 115%;
     }
+  }
+  .left-align strong {
+    display: inline-block;
+    min-width: 0.75em;
+    text-align: center;
+  }
+  .top-negative-header {
+    position: absolute; 
+    top: -2em; 
+    width: 100%;
   }
   section {
     dl {
@@ -592,6 +608,7 @@ body {
   }
   .inset-width {
     margin: 1em auto 0;
+    position: relative;
     width: 70%;
   }
   .inset-width-smaller {

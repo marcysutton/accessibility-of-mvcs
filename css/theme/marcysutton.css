@@ -127,7 +127,7 @@ body {
     padding-bottom: 0.25em;
     text-align: left;
     width: 100%;
-    z-index: 1; }
+    z-index: 11; }
     .reveal footer .copyright {
       display: inline-block;
       color: #ccc;
@@ -181,8 +181,13 @@ body {
 .reveal h2.h3-style,
 .reveal p.h3-style {
   font-size: 1.75em; }
-.reveal h4, .reveal h3.h4-style {
-  font-size: 1.5em; }
+.reveal h4, .reveal h3.h4-style,
+.reveal p.h4-style {
+  font-size: 1.45em;
+  font-weight: bold; }
+.reveal h2 strong,
+.reveal h3 strong {
+  color: #cff110; }
 .reveal .larger {
   font-size: 120%; }
 .reveal .smaller {
@@ -210,6 +215,14 @@ body {
   .reveal blockquote strong {
     font-weight: normal;
     font-size: 115%; }
+.reveal .left-align strong {
+  display: inline-block;
+  min-width: 0.75em;
+  text-align: center; }
+.reveal .top-negative-header {
+  position: absolute;
+  top: -2em;
+  width: 100%; }
 .reveal section dl {
   font-size: 0.85em;
   max-height: 17em;
@@ -464,6 +477,7 @@ body {
   margin: 1em auto 0; }
 .reveal .inset-width {
   margin: 1em auto 0;
+  position: relative;
   width: 70%; }
 .reveal .inset-width-smaller {
   margin: 1em auto 0;
