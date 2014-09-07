@@ -60,7 +60,7 @@
         nTimes: 1.0
       };
       var audio = document.querySelector('audio');
-      $http.get('demos/x-gif/cc_audio/encom_part_ii.json').then(function (response) {
+      $http.get('demos/x-gif/get_down_on_it.json').then(function (response) {
         $scope.gif.metadata = response.data;
         setupAudioSynching(audio,
           document.querySelectorAll('.x-gif-synced-demo'),
