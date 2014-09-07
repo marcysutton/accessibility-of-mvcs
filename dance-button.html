@@ -18,6 +18,11 @@
   <link rel="stylesheet" href="css/reveal.min.css">
   <link rel="stylesheet" href="css/theme/marcysutton.css">
   <style>
+    html, body {
+      height: 100%;
+      min-height: 100%;
+      overflow: visible;
+    }
     audio {
       position: absolute;
       left: -500000px;
@@ -60,7 +65,7 @@
     </div>
   </div>
 </div>
-<div ng-show="gif.metadata">
+<div ng-show="gif.metadata" class="offscreen" style="overflow: hidden;">
   <audio controls preload>
     <source src="demos/x-gif/get_down_on_it.ogg" type="audio/ogg">
     <source src="demos/x-gif/get_down_on_it.mp3" type="audio/mpeg">

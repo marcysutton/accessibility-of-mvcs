@@ -90,7 +90,8 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: black url("backgrounds/space.jpg") repeat center top; }
+  background: black url("backgrounds/space.jpg") repeat center top;
+  background-size: cover; }
 
 .reveal {
   background-color: rgba(0, 0, 0, 0.65);
