@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>x-gif demo</title>
+  <script>
+    if ('registerElement' in document
+      && 'createShadowRoot' in HTMLElement.prototype
+      && 'import' in document.createElement('link')
+      && 'content' in document.createElement('template')) {
+      // We're using a browser with native WC support!
+    } else {
+      document.write('<script src="https:\/\/cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"><\/script>')
+    }
+  </script>
+  <script src="demos/shared/js/lib/angular.min.js"></script>
+  <script src="lib/js/jquery-1.11.1.min.js"></script>
+  <link rel="import" href="demos/x-gif/x-gif.html">
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/marcysutton.css">
+  <style>
+    html, body {
+      height: 100%;
+      min-height: 100%;
+      overflow: visible;
+    }
+    audio {
+      position: absolute;
+      left: -500000px;
+    }
+    .reveal {
+      z-index: 2;
+      text-align: center;
+    }
+    x-gif {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    x-gif #frames {
+      height: 100%;
+      width: 100%;
+    }
+    x-gif img {
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+</head>
+<body ng-app="x-gif-demo" ng-controller="DemoCtrl">
+<div class="reveal" ng-init="buttonPressed = false">
+  <div class="inset-width text-background" style="margin-top: 0;">
+    <h2>Everybody dance!</h2>
+    <pre><code class="html">
+  &lt;div role="button" tabIndex="0"
+  ng-click="oneTwoThree(go)"
+  ng-keypress="oneTwoThree(go)"&gt;
+  DANCE!
+  &lt;/div&gt;
+    </code></pre>
+    <button class="themed-button image-show" ng-click="danceClick()" aria-label="Dance">DANCE!</button>
+    <div>
+      <button class="reset disabled" ng-click="resetClick()" aria-label="Rest" ng-show="buttonPressed == true">Rest</button>
+    </div>
+  </div>
+</div>
+<div ng-show="gif.metadata" class="offscreen" style="overflow: hidden;">
+  <audio controls preload>
+    <source src="demos/x-gif/get_down_on_it.ogg" type="audio/ogg">
+    <source src="demos/x-gif/get_down_on_it.mp3" type="audio/mpeg">
+  </audio>
+</div>
+<div ng-hide="gif.metadata">Loading beat data...</div>
+<x-gif ng-show="buttonPressed == true" class="x-gif-synced-demo" ng-src="{{ trustedUrl() }}" sync loop></x-gif>
+<script src="demos/x-gif/synched_playback.js"></script>
+<script charset="utf-8">
+  angular.module('x-gif-demo', [])
+    .controller('DemoCtrl', function ($scope, $sce, $location, $http, $timeout) {
+      $scope.gifs = [
+        "http://i.imgur.com/KhQ4THw.gif"
+      ];
+      $scope.gif = {
+        url: $scope.gifs[0],
+        speed: 2,
+        bpm: 60,
+        playbackRate: 1,
+        nTimes: 1.0
+      };
+      var audio = document.querySelector('audio');
+      $http.get('demos/x-gif/get_down_on_it.json').then(function (response) {
+        $scope.gif.metadata = response.data;
+        setupAudioSynching(audio,
+          document.querySelectorAll('.x-gif-synced-demo'),
+          $scope.gif.metadata)
+      })
+      $scope.trustedUrl = function () {
+        return $sce.trustAsResourceUrl($scope.gif.url);
+      }
+      $scope.loc = $location;
+      $scope.$watch('loc.path()', function (e) {
+        if (e) $scope.gif.url = e.slice(1);
+      })
+      $scope.$watch('gif.url', function (e) {
+        if (e) $scope.loc.path(e);
+      })
+
+      var resetButton = $('button.reset');
+      var showButton = $('button.image-show');
+
+      $scope.danceClick = function(){
+        console.log('DANCE!!!!');
+        $scope.buttonPressed = true;
+        audio.play();
+        resetButton.attr({'tabIndex':'0', 'aria-hidden':'false'}).removeClass('disabled')
+        $timeout(function(){
+          resetButton.focus();
+        }, 100);
+      }
+      $scope.resetClick = function(e){
+        console.log('reset');
+        $scope.buttonPressed = false;
+        audio.pause();
+        $(this).attr({'tabIndex':'-1', 'aria-hidden':'true'}).addClass('disabled');
+        showButton.focus();
+      }
+    });
+</script>
+</body>
+</html>
