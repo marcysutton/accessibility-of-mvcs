@@ -72,7 +72,7 @@
   </audio>
 </div>
 <div ng-hide="gif.metadata">Loading beat data...</div>
-<x-gif ng-show="buttonPressed" class="x-gif-synced-demo" ng-src="{{ trustedUrl() }}" sync loop></x-gif>
+<x-gif ng-show="buttonPressed == true" class="x-gif-synced-demo" ng-src="{{ trustedUrl() }}" sync loop></x-gif>
 <script src="demos/x-gif/synched_playback.js"></script>
 <script charset="utf-8">
   angular.module('x-gif-demo', [])
@@ -107,11 +107,11 @@
 
       var resetButton = $('button.reset');
       var showButton = $('button.image-show');
-      var audioControls = document.querySelector('audio');
+
       $scope.danceClick = function(){
         console.log('DANCE!!!!');
         $scope.buttonPressed = true;
-        audioControls.play();
+        audio.play();
         resetButton.attr({'tabIndex':'0', 'aria-hidden':'false'}).removeClass('disabled')
         $timeout(function(){
           resetButton.focus();
@@ -120,7 +120,7 @@
       $scope.resetClick = function(e){
         console.log('reset');
         $scope.buttonPressed = false;
-        audioControls.pause();
+        audio.pause();
         $(this).attr({'tabIndex':'-1', 'aria-hidden':'true'}).addClass('disabled');
         showButton.focus();
       }
