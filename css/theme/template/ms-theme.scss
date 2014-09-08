@@ -69,10 +69,13 @@
     }
   }
   .letter-icon {
-    // display: inline-block;
     font-size: 150%;
-    // vertical-align: middle;
   }
+}
+.reveal video,
+.reveal iframe {
+  max-width: 100% !important;
+  max-height: 100% !important;
 }
 .strike {
   text-decoration: line-through;
