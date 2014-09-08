@@ -74,24 +74,6 @@
 				</section>
 
 				<section>
-					<h2 class="offscreen">Stats</h2>
-					<div class="inset-width">
-						<h3 style="margin-bottom: 1em;"><span class="big-stat">285 million</span> visually impaired worldwide</h3>
-						<div class="inset-width">
-							<div class="separator"></div>
-						</div>
-						<h3 style="margin-top: 0.5em;"><span class="big-stat">360 million</span> with disabling hearing loss</h3>
-					</div>
-					<aside class="notes">
-						WHO: blindness http://www.who.int/mediacentre/factsheets/fs282/en/
-						285 million visually impaired worldwide: 39 million are blind, 246 have low vision
-
-						WHO: deafness http://www.who.int/mediacentre/factsheets/fs300/en/
-						360 million is 5% of the world's population
-					</aside>
-				</section>
-
-				<section>
 					<h2><span class="big-stat">80 million</span> Europeans with disabilities</h2>
 					<aside class="notes">
 						Source: <a href="http://www.edf-feph.org/Page_Generale.asp?DocID=12534">European Disability Forum</a>
@@ -156,8 +138,7 @@
 					<ul>
             <li>Manage <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="ARIA documentation opens in a new window">ARIA</a> attributes</li>
 						<li>Enable the keyboard</li>
-						<li>Write meaninful HTML</li>
-						<li>*Gracefully degrade</li>
+						<li>Write meaningful HTML</li>
 					</ul>
 					<aside class="notes">
 					*Graceful degradation is worth mentioning but it is outside the scope of this talk.
@@ -180,49 +161,25 @@
 				</section>
 
         <section>
-        	<div class="inset-width">
-			    	<p class="h4-style top-negative-header">ARIA Core Components <span class="offscreen">1 of 3</span></p>
-						<div class="separator"></div>
-	     			<h2 class="h1-style" style="margin: 0.25em 0;">States</h2>
-     			</div>
-     			<p><em>The current condition of this particular thing</em></p>
-     			<div class="inset-width">
-	     			<div style="margin: 1.75em 0;">
-	         		<pre><code class="html">   &lt;input aria-disabled="true" type="text"&gt;</code></pre>
-         		</div>
-         		<pre><code class="html">   &lt;i aria-hidden="true"&gt;&lt;/i&gt;</code></pre>
-       		</div>
-     		</section>
-
-     		<section>
-     			<div class="inset-width">
-			    	<p class="h4-style top-negative-header">ARIA Core Components <span class="offscreen">2 of 3</span></p>
-						<div class="separator"></div>
-	     			<h2 class="h1-style" style="margin: 0.25em 0;">Properties</h2>
-     			</div>
-     			<p><em>The nature of the current object</em></p>
-     			<div class="inset-width">
-	     			<div style="margin: 1.75em 0;">
-	          	<pre><code class="html">   &lt;input aria-required="true" type="text"&gt;</code></pre>
-          	</div>
-          	<pre><code class="html">   &lt;input aria-label="Unsubscribe" type="checkbox"&gt;</code></pre>
-        	</div>
-				</section>
-
-				<section>
-					<div class="inset-width">
-			    	<p class="h4-style top-negative-header">ARIA Core Components <span class="offscreen">3 of 3</span></p>
-						<div class="separator"></div>
-	     			<h2 class="h1-style" style="margin: 0.25em 0;">Roles</h2>
-     			</div>
-     			<p><em>What does this thing do?</em></p>
-     			<div class="inset-width">
-	     			<div style="margin: 1.75em 0;">
-		          <pre><code class="html">   &lt;form role="search"&gt;</code></pre>
-	          </div>
-	          <pre><code class="html">   &lt;div role="img" style="background-image...</code></pre>
+          <p class="h4-style offscreen">ARIA Core Components</p>
+        	<div class="inset-width-wider">
+            <div class="definition">
+              <h3>Roles</h3>
+              <p><em><small>What does this thing do</small></em></p>
+              <pre><code class="html">  &lt;div role="img" style="background-image..."&gt;</code></pre>
+            </div>
+            <div class="definition">
+              <h3>States</h3>
+              <p><em><small>The current condition of this particular thing</small></em></p>
+              <pre><code class="html"> &lt;material-input aria-disabled="true"&gt;&lt;/material-input&gt;</code></pre>
+            </div>
+            <div class="definition">
+              <h3>Properties</h3>
+              <p><em><small>The nature of the current object</small></em></p>
+              <pre><code class="html">  &lt;taco-button aria-required="true"&gt;&lt;/taco-button&gt;</code></pre>
+            </div>
           </div>
-        </section>
+     		</section>
 
 				<section>
 					<h2>Using Roles</h2>
@@ -242,9 +199,9 @@
 				<section>
 					<h2>Application Role</h2>
 					<p class="big-italic">Disables a screen reader&rsquo;s &ldquo;virtual cursor&rdquo;</p>
-					<div class="definition inset-width">
+					<div class="definition inset-width-wider">
 						<pre><code class="html">
-    &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
+  &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
 						</code></pre>
 					</div>
 
@@ -256,6 +213,19 @@
 					 All keys are passed through to the browser. The challenge is that you may be creating widgets that require you to force the user into direct interaction with the browser. You know that your widget can best be used via the keyboard if the user is not in virtual mode. It is under your control whether the user is being thrown into focus mode once your widget gains keyboard focus.</p>
 					</aside>
 				</section>
+
+        <section>
+          <h2>Don't Do This</h2>
+          <div class="inset-width">
+            <pre><code class="html">
+            &lt;body role="application"&gt;
+            </code></pre>
+          </div>
+          <img src="img/body-roll.gif" style="min-height: 400px;" alt="Body roll away from your responsibilities">
+          <aside class="notes">
+   Only want to use role="application" if the content you're providing consists of only interactive controls, and of those, mostly advanced widgets, that emulate a real desktop application.
+          </aside>
+        </section>
 
 				<section>
 					<h2>Document or Application?</h2>
@@ -272,19 +242,6 @@
 					</code></pre>
 					<aside class="notes">
 						Client-side apps often blur the lines between application and document. Because accessibility works best with a document structure, it's best to selectively use the application role on a per-widget basis. Care must also be taken for the correct roles, states and properties for non-native elements or interactions.
-					</aside>
-				</section>
-
-				<section>
-					<h2>Don't Do This</h2>
-					<div class="inset-width">
-						<pre><code class="html">
-	    &lt;body role="application"&gt;
-						</code></pre>
-					</div>
-					<img src="img/body-roll.gif" style="min-height: 400px;" alt="Body roll away from your responsibilities">
-					<aside class="notes">
-	 Only want to use role="application" if the content you're providing consists of only interactive controls, and of those, mostly advanced widgets, that emulate a real desktop application.
 					</aside>
 				</section>
 
@@ -322,35 +279,17 @@
 					</aside>
 				</section>
 
-				<section>
-					<h2>What To Do</h2>
-					<div class="hamburger-menu">
-						<button class="hamburger-button" title="Button is accessible" aria-label="Menu"></button>
-						<ul aria-disabled="true">
-							<li><a href="javascript: return false;" tabIndex="-1">Lettuce</a></li>
-							<li><a href="javascript: return false;" tabIndex="-1">Tomato</a></li>
-							<li><a href="javascript: return false;" tabIndex="-1">E. coli</a></li>
-						</ul>
-					</div>
-					<pre><code class="html">
-   &lt;button aria-label="Menu"&gt;&lt;button&gt;
-					</code></pre>
-					<pre><code class="html">
-   &lt;div role="button" tabIndex="0" aria-label="Menu"&gt;&lt;/div&gt;
-					</code></pre>
-				</section>
-
 				<section data-click-background="img/dancing-dog.gif">
 					<div class="text-background">
 						<h2>Close, but no keypress.</h2>
 						<pre><code class="html">
-  	&lt;div ng-click="oneTwoThree(go);" tabIndex="0"&gt;
+  	&lt;dance-button ng-click="oneTwoThree(go);" tabIndex="0"&gt;
   	     DANCE!
-  	&lt;/div&gt;
+  	&lt;/dance-button&gt;
 						</code></pre>
 						<div class="themed-button image-show boring-button" tabIndex="0" title="Div requires clicking to activate" aria-label="Gif button only works with mouse">DANCE!</div>
 						<div>
-							<button class="reset disabled" aria-label="Reset dog dancing image">Reset</button>
+							<button class="reset disabled" aria-label="Reset dog dancing image">Rest</button>
 						</div>
 					</div>
 				</section>
@@ -402,60 +341,6 @@
 				</section>
 
 				<section>
-					<h2>Make your framework do the heavy lifting <span class="offscreen">1 of 3</span></h2>
-					<pre><code class="html">
-  // AngularUI Bootstrap
-  &lt;accordion-group
-  	is-open="status.open"
-  	is-disabled="status.isDisabled"&gt;
-  &lt;/accordion-group&gt;
-
-
-          </code></pre>
-				</section>
-
-				<section data-transition="none">
-					<h2>Make your framework do the heavy lifting <span class="offscreen">2 of 3</span></h2>
-					<pre><code class="html">
-  // AngularUI Bootstrap
-  &lt;accordion-group
-  	aria-expanded="true"
-  	is-open="status.open"
-  	aria-disabled="false"
-  	is-disabled="status.isDisabled"&gt;
-  &lt;/accordion-group&gt;
-					</code></pre>
-					<aside class="notes">
-	 Angular properties alongside aria properties get verbose.
-					</aside>
-				</section>
-
-				<section data-transition="none">
-					<h2>Make your framework do the heavy lifting <span class="offscreen">3 of 3</span></h2>
-					<h3 class="offscreen">Example where ARIA attributes are the default</h3>
-					<pre><code class="html">
-  // AngularUI Bootstrap
-  &lt;accordion-group
-  	ng-expanded="status.open"
-  	ng-disabled="status.isDisabled"&gt;
-  &lt;/accordion-group&gt;
-
-
-					</code></pre>
-				</section>
-
-				<section>
-					<h2 class="offscreen">Dance Break</h2>
-					<div class="sparkle-party">
-						<button>
-							<span class="offscreen">Play German Sparkle Party Video</span>
-						</button>
-						<!--https://www.youtube.com/watch?v=ArM-aD_zrFE#t=87 -->
-						<!--<iframe width="1280" height="720" src="//www.youtube.com/embed/f-jN3vH26NQ?autoplay=1&start=148" frameborder="0" allowfullscreen></iframe>-->
-					</div>
-				</section>
-
-				<section>
 					<h2 class="h3-style"><small>Tom Dale, Co-Creator of Ember.js <br>and Wearer of Party Pants</small></h2>
 					<p style="font-size: 0.65em;">Photo by Matthew Bergman</p>
 					<img src="img/tom-zahra-jsconf.jpg" alt="Tom Dale in his gold shorts with Zahra Jabini at JSConf 2014. Photo by Matthew Bergman" style="max-height: 650px;">
@@ -486,6 +371,49 @@
 					<h2 class="offscreen">Ember Custom Component demo</h2>
 					<a href="demos/ember/gold-hotpants.html" target="_blank" title="Link opens in a new window"><img src="img/gold-hotpants.png" alt="Ember Gold Hotpants Demo"></a>
 				</section>
+
+        <section>
+          <h2>Make your framework do the heavy lifting <span class="offscreen">1 of 3</span></h2>
+          <pre><code class="html">
+  // AngularUI Bootstrap
+  &lt;accordion-group
+    is-open="status.open"
+    is-disabled="status.isDisabled"&gt;
+  &lt;/accordion-group&gt;
+
+
+          </code></pre>
+        </section>
+
+        <section data-transition="none">
+          <h2>Make your framework do the heavy lifting <span class="offscreen">2 of 3</span></h2>
+          <pre><code class="html">
+  // AngularUI Bootstrap
+  &lt;accordion-group
+    aria-expanded="true"
+    is-open="status.open"
+    aria-disabled="false"
+    is-disabled="status.isDisabled"&gt;
+  &lt;/accordion-group&gt;
+          </code></pre>
+          <aside class="notes">
+   Angular properties alongside aria properties get verbose.
+          </aside>
+        </section>
+
+        <section data-transition="none">
+          <h2>Make your framework do the heavy lifting <span class="offscreen">3 of 3</span></h2>
+          <h3 class="offscreen">Example where ARIA attributes are the default</h3>
+          <pre><code class="html">
+  // AngularUI Bootstrap
+  &lt;accordion-group
+    ng-expanded="status.open"
+    ng-disabled="status.isDisabled"&gt;
+  &lt;/accordion-group&gt;
+
+
+          </code></pre>
+        </section>
 
 				<section>
 					<h2 class="h3-style">Angular.js Material Design</h2>
@@ -569,11 +497,17 @@ function materialRadioButtonDirective($expectAria) {
 					</code></pre>
 				</section>
 
-				<section>
-					<h2 class="h1-style">Make it sparkle.</h2>
-					<h3>Thanks, JSConf EU!</h3>
-					<p><a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a></p></section>
-				</section>
+        <section>
+          <h2 class="h3-style">Make it sparkle.</h2>
+          <div class="sparkle-party">
+            <button>
+              <span class="offscreen">Play German Sparkle Party Video</span>
+            </button>
+            <!--https://www.youtube.com/watch?v=ArM-aD_zrFE#t=87 -->
+            <!--<iframe width="1280" height="720" src="//www.youtube.com/embed/f-jN3vH26NQ?autoplay=1&start=148" frameborder="0" allowfullscreen></iframe>-->
+          </div>
+          <p style="margin-top: 0.5em;">Thanks, JSConf EU! -<a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a></p>
+        </section>
 			</div>
 
 			<footer>

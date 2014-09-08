@@ -477,7 +477,6 @@ body {
  * Slide Styles
  *********************************************/
 .reveal .definition {
-  font-size: 0.85em;
   margin: 1em auto 0;
   padding-bottom: 1em; }
 .reveal .separator {
@@ -486,6 +485,10 @@ body {
   height: 3px;
   line-height: 3px;
   margin: 1em auto 0; }
+.reveal .inset-width-wider {
+  margin: 1em auto 0;
+  position: relative;
+  width: 75%; }
 .reveal .inset-width {
   margin: 1em auto 0;
   position: relative;
