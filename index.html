@@ -109,19 +109,6 @@
 				</section>
 
 				<section>
-		    	<h2 class="h3-style align-left"><em>We build apps:</em></h2>
-					<div class="separator"></div>
-			    <div id="wordCloud" style="min-width: 1024px; width: 1440px; min-height: 600px; height: 601px;" class="jqcloud">
-			    	<span class="w6" style="position: absolute; left: 400px; top: 450px;">Banking</span>
-			    	<span class="w7" style="position: absolute; left: 355px; top: 35px;">Education</span>
-			    	<span class="w3" style="position: absolute; left: 20px; top: 100px;">Project <br>Tracking</span>
-			    	<span class="w5" style="position: absolute; left: 435px; top: 237px;">Payments</span>
-			    	<span class="w6" style="position: absolute; left: 0; top: 300px;">Travel</span>
-			    	<span class="w5" style="position: absolute; left: 1000px; top: 340px;">Fitness Tracking</span>
-			    	<span class="w3" style="position: absolute; left: 1100px; top: 170px;">Drinking</span></div>
-				</section>
-
-				<section>
 					<h2 class="h3-style">Best framework?</h2>
 					<a href="http://todomvc.com/" target="_blank" title="TodoMVC opens in a new window"><img src="img/todo-mvc.png" alt="TodoMVC" style="max-height: 740px;"></a>
 				</section>
@@ -300,8 +287,9 @@
 
         <section>
           <h2 class="offscreen">Tab Index</h2>
-          <p class="large-tag">&lt;div tabIndex="0"&gt;&lt;/div&gt;</p>
-          <p class="large-tag">&lt;div tabIndex="-1"&gt;&lt;/div&gt;</p>
+          <div class="tabIndex-example large-tag-wrap" tabIndex="0" contenteditable>
+            <p class="large-tag">&lt;div tabIndex="0"&gt;&lt;/div&gt;</p>
+          </div>
         </section>
 
 				<section>
@@ -414,9 +402,9 @@
 					<pre><code class="html">
   // AngularUI Bootstrap
   &lt;accordion-group
-  	aria-expanded="status.open"
+  	aria-expanded="true"
   	is-open="status.open"
-  	aria-disabled="status.isDisabled"
+  	aria-disabled="false"
   	is-disabled="status.isDisabled"&gt;
   &lt;/accordion-group&gt;
 					</code></pre>

@@ -50,7 +50,7 @@
   padding: 5px 10px;
   position: fixed;
   white-space: nowrap;
-  text-shadow: 1px 3px 3px #000; }
+  text-shadow: 1px 3px 3px black; }
 .reveal ul#table-of-contents {
   display: block;
   list-style: none;
@@ -98,12 +98,12 @@ body {
   font-family: "Aleo Regular", sans-serif;
   font-size: 36px;
   font-weight: 200;
-  color: #eee; }
+  color: #eeeeee; }
   .reveal pre {
     background-color: black; }
     .reveal pre code {
       background-color: black;
-      color: #ccc;
+      color: #cccccc;
       font-size: 1.45em;
       line-height: 1.45em;
       max-height: 500px; }
@@ -131,7 +131,7 @@ body {
     z-index: 11; }
     .reveal footer .copyright {
       display: inline-block;
-      color: #ccc;
+      color: #cccccc;
       padding: 5px 15px;
       vertical-align: middle; }
     .reveal footer .footer-link {
@@ -141,11 +141,11 @@ body {
       position: relative;
       z-index: 1; }
     .reveal footer [aria-hidden=true] {
-      color: #999;
+      color: #999999;
       margin: 0 4px; }
 
 ::selection {
-  color: #fff;
+  color: white;
   background: #97948f;
   text-shadow: none; }
 
@@ -162,15 +162,15 @@ body {
  * HEADERS
  *********************************************/
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-  color: #eee;
+  color: #eeeeee;
   font-family: "Aleo Bold", Impact, sans-serif;
   line-height: 1em;
   letter-spacing: 0.02em;
   margin: 0 0 20px 0;
   text-transform: none;
-  text-shadow: 2px 2px 6px #000; }
+  text-shadow: 2px 2px 6px black; }
 .reveal p, .reveal small, .reveal ul, .reveal ol, .reveal div.large-tag, .reveal figcaption, .reveal blockquote, .reveal dd, .reveal dt {
-  text-shadow: 1px 3px 3px #000; }
+  text-shadow: 1px 3px 3px black; }
 .reveal h1, .reveal h2.h1-style, .reveal h3.h1-style {
   font-size: 3.25em; }
 .reveal h2,
@@ -251,13 +251,13 @@ body {
   .reveal section figure img {
     margin: 0; }
   .reveal section figure .note {
-    background-color: #000;
-    color: #fff;
+    background-color: black;
+    color: white;
     font-style: italic;
     padding: 3px 5px;
     position: absolute; }
   .reveal section figure figcaption {
-    color: #ccc;
+    color: #cccccc;
     font-size: 0.65em;
     line-height: 1em;
     margin: 0;
@@ -280,12 +280,15 @@ body {
 .reveal .big-stat {
   display: block;
   font-size: 300%; }
+.reveal .large-tag-wrap {
+  background-color: black;
+  padding: 1em; }
 .reveal .large-tag {
   font-family: Menlo, monospace;
   font-size: 2.5em;
   margin-top: 0.5em; }
 .reveal .muted {
-  color: #999; }
+  color: #999999; }
 .reveal ul {
   font-size: 1.5em;
   line-height: 1.25em;
@@ -335,9 +338,9 @@ body {
   -o-transition: color .5s;
   transition: color .5s; }
 .reveal a:not(.image):hover {
-  color: #fff; }
+  color: white; }
 .reveal .roll span:after {
-  color: #fff;
+  color: white;
   background: #92ab0a; }
 
 /*********************************************
@@ -346,7 +349,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #eee;
+  border: 4px solid #eeeeee;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
@@ -394,16 +397,16 @@ body {
   border-top-color: #cff110; }
 
 .reveal .controls div.navigate-left.enabled:hover {
-  border-right-color: #fff; }
+  border-right-color: white; }
 
 .reveal .controls div.navigate-right.enabled:hover {
-  border-left-color: #fff; }
+  border-left-color: white; }
 
 .reveal .controls div.navigate-up.enabled:hover {
-  border-bottom-color: #fff; }
+  border-bottom-color: white; }
 
 .reveal .controls div.navigate-down.enabled:hover {
-  border-top-color: #fff; }
+  border-top-color: white; }
 
 /*********************************************
  * PROGRESS BAR
@@ -486,7 +489,7 @@ body {
 .reveal .left-align {
   text-align: left; }
 .reveal .notes p {
-  color: #ccc;
+  color: #cccccc;
   font-size: 2em;
   position: absolute; }
 .reveal .drop-caps {
@@ -512,7 +515,7 @@ body {
   padding-top: 61%;
   position: relative;
   width: 120px;
-  text-shadow: 1px 3px 3px #000;
+  text-shadow: 1px 3px 3px black;
   transition: border-color 0.25s; }
   .reveal .hamburger-button:before {
     background: transparent url(../../img/hamburger.svg) no-repeat;
@@ -545,8 +548,8 @@ body {
     -o-transition: all .5s;
     transition: all .5s; }
     .reveal .hamburger-menu li a:hover, .reveal .hamburger-menu li a:focus {
-      color: #fff;
-      border-bottom: 1px solid #fff; }
+      color: white;
+      border-bottom: 1px solid white; }
 .reveal #hamburgerTextDiv {
   position: relative;
   z-index: 1; }
@@ -554,7 +557,7 @@ body {
     display: inline-block;
     padding: 0 0.25em; }
   .reveal #hamburgerTextDiv.initialized h2 {
-    color: #000;
+    color: black;
     text-shadow: none; }
 .reveal #hamburgerImgDiv {
   background-repeat: repeat;
@@ -568,7 +571,7 @@ body {
   background-color: #cff110;
   border-radius: 10px;
   border-width: 0;
-  color: #000;
+  color: black;
   cursor: pointer;
   display: inline-block;
   font-family: "Aleo Regular", sans-serif;
@@ -579,17 +582,17 @@ body {
   -webkit-transition: 0.5s;
   transition: 0.5s; }
   .reveal .themed-button:hover, .reveal button.reset:hover, .reveal .themed-button:focus, .reveal button.reset:focus {
-    background-color: #000;
-    color: #fff; }
+    background-color: black;
+    color: white; }
 .reveal button.reset {
-  background-color: #fff;
-  color: #000;
+  background-color: white;
+  color: black;
   display: inline-block;
   font-size: 0.65em;
   margin-top: 0; }
   .reveal button.reset:hover, .reveal button.reset:focus {
-    background-color: #000;
-    color: #fff; }
+    background-color: black;
+    color: white; }
   .reveal button.reset.disabled {
     display: none; }
 .reveal .inline-icon-block .text {
@@ -643,7 +646,7 @@ body {
   font-size: 1.25em;
   margin-bottom: 4%; }
   .reveal p.byline a {
-    color: #fff; }
+    color: white; }
 .reveal a.substantial-logo {
   color: #cff110;
   font-size: 0.85em;
@@ -653,10 +656,10 @@ body {
   position: relative;
   text-shadow: none; }
   .reveal a.substantial-logo:hover, .reveal a.substantial-logo:focus {
-    color: #fff;
+    color: white;
     text-decoration: none; }
 .reveal .image-headline {
-  border: 4px solid #eee;
+  border: 4px solid #eeeeee;
   margin-bottom: 10px; }
   .reveal .image-headline#lemur {
     background: transparent url(../../img/lemur.jpg) no-repeat center top;
@@ -674,5 +677,3 @@ body {
     position: absolute;
     text-align: center;
     width: 100%; }
-
-/*# sourceMappingURL=marcysutton.css.map */

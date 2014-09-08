@@ -265,8 +265,8 @@ body {
     text-align: center;
   }
   .top-negative-header {
-    position: absolute; 
-    top: -2em; 
+    position: absolute;
+    top: -2em;
     width: 100%;
   }
   section {
@@ -344,6 +344,10 @@ body {
     @extend .big-italic;
     display: block;
     font-size: 300%;
+  }
+  .large-tag-wrap {
+    background-color: $darkColor;
+    padding: 1em;
   }
   .large-tag {
     font-family: $codeFont;
@@ -597,7 +601,7 @@ body {
   .definition {
     font-size: 0.85em;
     margin: 1em auto 0;
-    padding-bottom: 1em;  
+    padding-bottom: 1em;
   }
   $separator_width: 3px;
   .separator {
@@ -657,7 +661,7 @@ body {
     width: 120px;
     text-shadow: $paragraphTextShadow;
     transition: border-color 0.25s;
-    
+
     &:before {
       background: transparent url(../../img/hamburger.svg) no-repeat;
       background-size: 100%;
@@ -683,7 +687,7 @@ body {
     -o-transition: 1s;
     -webkit-transition: 1s;
     transition: 1s;
-    
+
     &.active {
       max-height: 500px;
     }
@@ -737,7 +741,7 @@ body {
     font-size: 1em;
     padding: 0.25em 0.5em;
     margin: 1em;
-    
+
     -moz-transition: 0.5s;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -765,12 +769,12 @@ body {
   }
   .inline-icon-block {
     .text {
-      display:inline-block; 
+      display:inline-block;
       vertical-align:middle;
     }
     .icon {
       display:inline-block;
-      margin-left: 10px;  
+      margin-left: 10px;
       vertical-align:middle;
     }
   }
@@ -802,7 +806,7 @@ body {
       display: none;
     }
     button {
-      background: black url(../../img/sparkle-party.jpg) no-repeat; 
+      background: black url(../../img/sparkle-party.jpg) no-repeat;
       background-size: cover;
       border: 0;
       border-radius: none;
@@ -812,7 +816,7 @@ body {
       height: 100%;
       width: 100%;
       position: absolute;
-      z-index: 1; 
+      z-index: 1;
     }
     object {
       height: 100%;
