@@ -16,6 +16,8 @@
  *********************************************/
 .reveal {
   .slides {
+    z-index: 12;
+
     &>section {
       &>.accessibilityWrapper,
       &>section>.accessibilityWrapper {
@@ -729,7 +731,6 @@ body {
     top: 0;
     width: 100%;
   }
-
   .themed-button {
     background-color: $linkColor;
     border-radius: 10px;
@@ -870,4 +871,19 @@ body {
       width: 100%;
     }
   }
+}
+x-gif {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+x-gif #frames {
+  height: 100%;
+  width: 100%;
+}
+x-gif img {
+  height: 100vh;
+  width: 100vw;
 }

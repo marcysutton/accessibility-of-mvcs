@@ -22,6 +22,17 @@
 		<link rel="stylesheet" href="lib/css/jqcloud.css">
 
 		<script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script>
+    if ('registerElement' in document
+      && 'createShadowRoot' in HTMLElement.prototype
+      && 'import' in document.createElement('link')
+      && 'content' in document.createElement('template')) {
+      // We're using a browser with native WC support!
+    } else {
+      document.write('<script src="https:\/\/cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"><\/script>')
+    }
+    </script>
+    <link rel="import" href="demos/x-gif/x-gif.html">
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -338,14 +349,14 @@
   	     DANCE!
   	&lt;/div&gt;
 						</code></pre>
-						<div class="themed-button image-show" tabIndex="0" title="Div requires clicking to activate" aria-label="This element is purposefully inaccessible, but clicking shows an image of a dog dancing">DANCE!</div>
+						<div class="themed-button image-show boring-button" tabIndex="0" title="Div requires clicking to activate" aria-label="Gif button only works with mouse">DANCE!</div>
 						<div>
 							<button class="reset disabled" aria-label="Reset dog dancing image">Reset</button>
 						</div>
 					</div>
 				</section>
 
-				<section data-click-background="img/eggsactly.gif">
+				<section>
 					<div class="inset-width text-background">
 						<h2>Everybody dance!</h2>
 						<pre><code class="html">
@@ -355,10 +366,17 @@
     DANCE!
   &lt;/div&gt;
 						</code></pre>
-						<button class="themed-button image-show" aria-label="Show image of ostrich and man dancing together while he is holding an egg">DANCE!</button>
+						<button class="themed-button image-show" aria-label="Dance">DANCE!</button>
 						<div>
-							<button class="reset disabled" aria-label="Reset ostrich dancing image">Reset</button>
+							<button class="x-gif-reset reset disabled" aria-label="Rest">Rest</button>
 						</div>
+            <div class="offscreen" style="overflow: hidden;">
+            <audio controls preload>
+              <source src="demos/x-gif/get_down_on_it.ogg" type="audio/ogg">
+              <source src="demos/x-gif/get_down_on_it.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="offscreen">Loading beat data...</div>
 					</div>
 				</section>
 
@@ -565,9 +583,11 @@ function materialRadioButtonDirective($expectAria) {
       </footer>
 		</div>
 
+    <x-gif class="x-gif-synced-demo" src="http://i.imgur.com/KhQ4THw.gif" sync loop aria-hidden="true"></x-gif>
+
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
-		<script src="lib/js/randomImg.js"></script>
+    <script src="demos/x-gif/synched_playback.js"></script>
 		<script>
 
 			// Full list of configuration options available here:
