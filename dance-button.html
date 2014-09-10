@@ -16,6 +16,7 @@
   <link rel="import" href="demos/x-gif/x-gif.html">
   <link rel="stylesheet" href="css/reveal.min.css">
   <link rel="stylesheet" href="css/theme/marcysutton.css">
+
   <style>
     html, body {
       height: 100%;
@@ -29,6 +30,12 @@
     .reveal {
       z-index: 2;
       text-align: center;
+    }
+    .reveal pre {
+      font-size: .4em;
+    }
+    .reveal h2 {
+      padding-top: 1.5em;
     }
     x-gif {
       bottom: 0;
@@ -49,20 +56,22 @@
 </head>
 <body>
 <div class="reveal">
-  <div class="inset-width text-background" style="margin-top: 0;">
-    <h2>Everybody dance!</h2>
-    <pre><code class="html">
-  &lt;div role="button" tabIndex="0"
-  ng-click="oneTwoThree(go)"
-  ng-keypress="oneTwoThree(go)"&gt;
-  DANCE!
-  &lt;/div&gt;
-    </code></pre>
-    <button class="themed-button image-show" aria-label="Dance">DANCE!</button>
-    <div>
-      <button class="reset disabled" aria-label="Rest">Rest</button>
+  <section>
+    <div class="inset-width" style="margin-top: 0;">
+      <h2 class="h3-style">Everybody dance!</h2>
+      <pre><code class="html">
+    &lt;div role="button" tabIndex="0"
+    ng-click="oneTwoThree(go)"
+    ng-keypress="oneTwoThree(go)"&gt;
+    DANCE!
+    &lt;/div&gt;
+      </code></pre>
+      <button class="themed-button image-show" aria-label="Dance">DANCE!</button>
+      <div>
+        <button class="reset disabled" aria-label="Rest">Rest</button>
+      </div>
     </div>
-  </div>
+  </section>
 </div>
 <div class="offscreen" style="overflow: hidden;">
   <audio controls preload>
@@ -71,7 +80,7 @@
   </audio>
 </div>
 <div class="offscreen">Loading beat data...</div>
-<x-gif class="x-gif-synced-demo" src="http://i.imgur.com/KhQ4THw.gif" sync loop></x-gif>
+<x-gif class="x-gif-synced-demo" src="img/eggsactly.gif" sync loop></x-gif>
 <script src="demos/x-gif/synched_playback.js"></script>
 <script charset="utf-8">
   $(document).ready(function(){
@@ -94,7 +103,8 @@
     };
     var audio = document.querySelector('audio'),
         resetButton = $('button.reset'),
-        showButton = $('button.image-show');
+        showButton = $('button.image-show'),
+        reveal = $('.reveal');
 
     $.get('demos/x-gif/get_down_on_it.json').then(function (response) {
       gif.metadata = response;
@@ -107,6 +117,7 @@
       console.log('DANCE!!!!');
       audio.play();
       xGif.show();
+      reveal.css('background-color', 'transparent');
       resetButton.attr({'tabIndex':'0', 'aria-hidden':'false'}).removeClass('disabled')
       window.setTimeout(function(){
         resetButton.focus();
@@ -116,6 +127,7 @@
       console.log('reset');
       xGif.hide();
       audio.pause();
+      reveal.css('background-color', 'rgba(0, 0, 0, 0.5)');
       $(this).attr({'tabIndex':'-1', 'aria-hidden':'true'}).addClass('disabled');
       showButton.focus();
     });
