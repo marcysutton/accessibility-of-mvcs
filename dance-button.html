@@ -56,15 +56,16 @@
 </head>
 <body>
 <div class="reveal">
+  <div class="slides staticPage">
   <section>
     <div class="inset-width" style="margin-top: 0;">
       <h2 class="h3-style">Everybody dance!</h2>
       <pre><code class="html">
-    &lt;div role="button" tabIndex="0"
-    ng-click="oneTwoThree(go)"
-    ng-keypress="oneTwoThree(go)"&gt;
-    DANCE!
-    &lt;/div&gt;
+    &lt;dance-button tabIndex="0" role="button"
+      ng-click="letsGetDown(toThat)"
+      ng-keypress="letsGetDown(toThat)"&gt;
+        DANCE!
+    &lt;/dance-button&gt;
       </code></pre>
       <button class="themed-button image-show" aria-label="Dance">DANCE!</button>
       <div>
@@ -72,6 +73,7 @@
       </div>
     </div>
   </section>
+  </div>
 </div>
 <div class="offscreen" style="overflow: hidden;">
   <audio controls preload>
