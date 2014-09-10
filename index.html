@@ -270,22 +270,23 @@
 								<li><a href="javascript: return false;" tabIndex="-1">E. coli</a></li>
 							</ul>
 						</div>
-						<pre><code contenteditable class="html">
-   &lt;div class="hamburger-button"&gt;&lt;/div&gt;
-						</code></pre>
 					</div>
+          <pre><code contenteditable class="html">
+          &lt;div class="menu" ng-click="toggleMenu()"&gt;&lt;/div&gt;
+          </code></pre>
 					<aside class="notes">
 						Hamburger button is a div with no tabIndex, role or keypress event
 					</aside>
 				</section>
 
 				<section data-click-background="img/dancing-dog.gif">
-					<div class="text-background">
+					<div class="inset-width text-background">
 						<h2>Close, but no keypress.</h2>
 						<pre><code class="html">
-  	&lt;dance-button ng-click="oneTwoThree(go);" tabIndex="0"&gt;
-  	     DANCE!
-  	&lt;/dance-button&gt;
+  &lt;dance-button tabIndex="0"
+    ng-click="spicy123(go);"&gt;
+    DANCE!
+  &lt;/dance-button&gt;
 						</code></pre>
 						<div class="themed-button image-show boring-button" tabIndex="0" title="Div requires clicking to activate" aria-label="Gif button only works with mouse">DANCE!</div>
 						<div>
@@ -298,11 +299,11 @@
 					<div class="inset-width text-background">
 						<h2>Everybody dance!</h2>
 						<pre><code class="html">
-  &lt;div role="button" tabIndex="0"
-    ng-click="oneTwoThree(go)"
-    ng-keypress="oneTwoThree(go)"&gt;
+  &lt;dance-button tabIndex="0" role="button"
+    ng-click="letsGetDown(toThat)"
+    ng-keypress="letsGetDown(toThat)"&gt;
     DANCE!
-  &lt;/div&gt;
+  &lt;/dance-button&gt;
 						</code></pre>
 						<button class="themed-button image-show" aria-label="Dance">DANCE!</button>
 						<div>
