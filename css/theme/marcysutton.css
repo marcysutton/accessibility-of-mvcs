@@ -101,7 +101,7 @@ body {
   background-size: cover; }
 
 .reveal {
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.5);
   font-family: "Aleo Regular", sans-serif;
   font-size: 36px;
   font-weight: 200;
