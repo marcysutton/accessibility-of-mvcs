@@ -114,6 +114,10 @@
 						<span style="margin-top: 0.25em; display: inline-block;">*</span><br>
 						<span style="display: block; margin-top: -.25em;">WHATEVER</span>
 					</h2>
+          <aside class="notes">
+            Characteristics of single page, client-rendered apps:
+            MV*W code patterns; async;
+          </aside>
 				</section>
 
 				<section>
@@ -133,14 +137,17 @@
 				</section>
 
 				<section>
-					<h2 style="margin-bottom:0.5em;">Accessibility <br>in single-page apps</h2>
+					<h2 style="margin-bottom:0.5em;">#a11y in single-page apps</h2>
 					<div class="separator inset-width"></div>
 					<ul>
             <li>Manage <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="ARIA documentation opens in a new window">ARIA</a> attributes</li>
 						<li>Enable the keyboard</li>
+            <li>Handle focus</li>
 						<li>Write meaningful HTML</li>
 					</ul>
 					<aside class="notes">
+          Handling focus: tabIndex, replacing part of the DOM causes focus mgmt probz
+
 					*Graceful degradation is worth mentioning but it is outside the scope of this talk.
 					</aside>
 				</section>
