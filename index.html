@@ -161,23 +161,44 @@
 				</section>
 
         <section>
-          <p class="h4-style offscreen">ARIA Core Components</p>
-        	<div class="inset-width-wider">
-            <div class="definition">
-              <h3>Roles</h3>
-              <p><em><small>What does this thing do</small></em></p>
-              <pre><code class="html">  &lt;div role="img" style="background-image..."&gt;</code></pre>
-            </div>
-            <div class="definition">
-              <h3>States</h3>
-              <p><em><small>The current condition of this particular thing</small></em></p>
-              <pre><code class="html"> &lt;material-input aria-disabled="true"&gt;&lt;/material-input&gt;</code></pre>
-            </div>
-            <div class="definition">
-              <h3>Properties</h3>
-              <p><em><small>The nature of the current object</small></em></p>
-              <pre><code class="html">  &lt;taco-button aria-required="true"&gt;&lt;/taco-button&gt;</code></pre>
-            </div>
+          <h2 class="h4-style">ARIA Core Components<span class="offscreen"> 1 of 3</span></h2>
+          <div class="inset-width-wider">
+            <div class="separator"></div>
+          </div>
+          <div class="definition">
+            <h3 class="h1-style">Roles</h3>
+            <p class="big-italic">What does this thing do?</p>
+            <pre><code class="html">
+      &lt;div role="img" style="background-image..."&gt;&lt;/div&gt;
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="h4-style">ARIA Core Components<span class="offscreen"> 2 of 3</span></h2>
+          <div class="inset-width-wider">
+            <div class="separator"></div>
+          </div>
+          <div class="definition">
+            <h3 class="h1-style">States</h3>
+            <p class="big-italic">The current condition of this particular thing</p>
+            <pre><code class="html">
+    &lt;material-input aria-disabled="true"&gt;&lt;/material-input&gt;
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="h4-style">ARIA Core Components<span class="offscreen"> 3 of 3</span></h2>
+          <div class="inset-width-wider">
+            <div class="separator"></div>
+          </div>
+          <div class="definition">
+            <h3 class="h1-style">Properties</h3>
+            <p class="big-italic">The nature of the current object</p>
+            <pre><code class="html">
+        &lt;taco-button aria-required="true"&gt;&lt;/taco-button&gt;
+            </code></pre>
           </div>
      		</section>
 
@@ -199,9 +220,9 @@
 				<section>
 					<h2>Application Role</h2>
 					<p class="big-italic">Disables a screen reader&rsquo;s &ldquo;virtual cursor&rdquo;</p>
-					<div class="definition inset-width-wider">
+					<div class="definition">
 						<pre><code class="html">
-  &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
+     &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
 						</code></pre>
 					</div>
 
@@ -218,7 +239,7 @@
           <h2>Don't Do This</h2>
           <div class="inset-width">
             <pre><code class="html">
-            &lt;body role="application"&gt;
+         &lt;body role="application"&gt;
             </code></pre>
           </div>
           <img src="img/body-roll.gif" style="min-height: 400px;" alt="Body roll away from your responsibilities">
@@ -230,15 +251,15 @@
 				<section>
 					<h2>Document or Application?</h2>
 					<pre><code class="html">
-   &lt;sparkle-party&gt;
-     &lt;h2&gt;Do you like to dance?&lt;/h2&gt;
-     &lt;button class="lets-dance"&gt;I wore my party pants&lt;/button&gt;
+  &lt;sparkle-party&gt;
+    &lt;h2&gt;Do you like to dance?&lt;/h2&gt;
+    &lt;button class="lets-dance"&gt;I wore my party pants&lt;/button&gt;
 
-     &lt;disco-ball&gt;
-       &lt;canvas&gt;&lt;/canvas&gt;
-       &lt;p aria-live="polite" class="disco-transcript"&gt;&lt;/p&gt;
-     &lt;/disco-ball&gt;
-   &lt;/sparkle-party&gt;
+    &lt;disco-ball&gt;
+      &lt;canvas&gt;&lt;/canvas&gt;
+      &lt;p aria-live="polite" class="disco-transcript"&gt;&lt;/p&gt;
+    &lt;/disco-ball&gt;
+  &lt;/sparkle-party&gt;
 					</code></pre>
 					<aside class="notes">
 						Client-side apps often blur the lines between application and document. Because accessibility works best with a document structure, it's best to selectively use the application role on a per-widget basis. Care must also be taken for the correct roles, states and properties for non-native elements or interactions.
@@ -272,7 +293,7 @@
 						</div>
 					</div>
           <pre><code contenteditable class="html">
-          &lt;div class="menu" ng-click="toggleMenu()"&gt;&lt;/div&gt;
+        &lt;div class="menu" ng-click="toggleMenu()"&gt;&lt;/div&gt;
           </code></pre>
 					<aside class="notes">
 						Hamburger button is a div with no tabIndex, role or keypress event
@@ -355,12 +376,9 @@
 					</code></pre>
 					<pre><code contenteditable class="javascript">
     App.PartyPantsComponent = Ember.Component.extend({
-      attributeBindings: [
-        'tabIndex'
-      ],
+      attributeBindings: ['tabIndex'],
       tagName: 'party-pants',
       ariaRole: 'article',
-
       tabIndex: function() {
         return this.get('active') ? 0 : -1;
       }.property('active')
