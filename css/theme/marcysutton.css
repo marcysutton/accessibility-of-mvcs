@@ -450,13 +450,13 @@ body {
 
 .reveal .wideCol {
   vertical-align: top;
-  width: 58%; }
+  width: 60%; }
   .reveal .wideCol.twoThirdsCol {
     float: left; }
 
 .reveal .skinnyCol {
   vertical-align: top;
-  width: 40%; }
+  width: 38%; }
   .reveal .skinnyCol.twoThirdsCol {
     float: left;
     margin-right: 2%; }
