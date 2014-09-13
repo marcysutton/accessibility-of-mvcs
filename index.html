@@ -195,6 +195,9 @@
     &lt;material-input aria-disabled="true"&gt;&lt;/material-input&gt;
             </code></pre>
           </div>
+          <aside class="notes">
+          Explain redundancy: an aria-disabled attribute versus a regular disabled attribute: the latter only works on certain elements. For custom components, this extends the vocabulary. Try keying off of the ARIA attribute or make the framework inject ARIA keying off 'disabled'
+          </aside>
         </section>
 
         <section>
@@ -206,7 +209,7 @@
             <h3 class="h1-style">Properties</h3>
             <p class="big-italic">The nature of the current object</p>
             <pre><code class="html">
-     &lt;taco-textarea aria-required="true"&gt;&lt;/taco-textarea&gt;
+     &lt;doner-kebab aria-label="Lunch courtesy @AngelinaMagnum"&gt;
             </code></pre>
           </div>
      		</section>
@@ -231,7 +234,7 @@
 					<p class="big-italic">Disables a screen reader&rsquo;s &ldquo;virtual cursor&rdquo;</p>
 					<div class="definition">
 						<pre><code class="html">
-     &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
+       &lt;sparkle-party role="application"&gt;&lt;/sparkle-party&gt;
 						</code></pre>
 					</div>
 
@@ -366,10 +369,10 @@
 					</div>
 				</section>
 
-				<section>
+				<!--<section>
 					<h2>Dance Break</h2>
 					<img src="img/flamingo-dancing.gif" alt="Flamingo dance break" style="min-width: 700px;">
-				</section>
+				</section>-->
 
 				<section>
 					<h2 class="h3-style"><small>Tom Dale, Co-Creator of Ember.js <br>and Wearer of Party Pants</small></h2>
