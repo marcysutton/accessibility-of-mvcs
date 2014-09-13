@@ -114,6 +114,10 @@
 						<span style="margin-top: 0.25em; display: inline-block;">*</span><br>
 						<span style="display: block; margin-top: -.25em;">WHATEVER</span>
 					</h2>
+          <aside class="notes">
+            Characteristics of single page, client-rendered apps:
+            MV*W code patterns; async;
+          </aside>
 				</section>
 
 				<section>
@@ -133,14 +137,19 @@
 				</section>
 
 				<section>
-					<h2 style="margin-bottom:0.5em;">Accessibility <br>in single-page apps</h2>
+					<h2 style="margin-bottom:0.5em;">#a11y in single-page apps</h2>
 					<div class="separator inset-width"></div>
 					<ul>
             <li>Manage <a href="http://www.w3.org/TR/wai-aria/" target="_blank" title="ARIA documentation opens in a new window">ARIA</a> attributes</li>
 						<li>Enable the keyboard</li>
+            <li>Handle focus</li>
 						<li>Write meaningful HTML</li>
 					</ul>
 					<aside class="notes">
+            Alert the user*
+            Graceful degradation*
+          Handling focus: tabIndex, replacing part of the DOM causes focus mgmt probz
+
 					*Graceful degradation is worth mentioning but it is outside the scope of this talk.
 					</aside>
 				</section>
@@ -161,23 +170,44 @@
 				</section>
 
         <section>
-          <p class="h4-style offscreen">ARIA Core Components</p>
-        	<div class="inset-width-wider">
-            <div class="definition">
-              <h3>Roles</h3>
-              <p><em><small>What does this thing do</small></em></p>
-              <pre><code class="html">  &lt;div role="img" style="background-image..."&gt;</code></pre>
-            </div>
-            <div class="definition">
-              <h3>States</h3>
-              <p><em><small>The current condition of this particular thing</small></em></p>
-              <pre><code class="html"> &lt;material-input aria-disabled="true"&gt;&lt;/material-input&gt;</code></pre>
-            </div>
-            <div class="definition">
-              <h3>Properties</h3>
-              <p><em><small>The nature of the current object</small></em></p>
-              <pre><code class="html">  &lt;taco-button aria-required="true"&gt;&lt;/taco-button&gt;</code></pre>
-            </div>
+          <h2 class="h4-style">ARIA Core Components<span class="offscreen"> 1 of 3</span></h2>
+          <div class="inset-width-wider">
+            <div class="separator"></div>
+          </div>
+          <div class="definition">
+            <h3 class="h1-style">Roles</h3>
+            <p class="big-italic">What does this thing do?</p>
+            <pre><code class="html">
+      &lt;div role="img" style="background-image..."&gt;&lt;/div&gt;
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="h4-style">ARIA Core Components<span class="offscreen"> 2 of 3</span></h2>
+          <div class="inset-width-wider">
+            <div class="separator"></div>
+          </div>
+          <div class="definition">
+            <h3 class="h1-style">States</h3>
+            <p class="big-italic">The current condition of this particular thing</p>
+            <pre><code class="html">
+    &lt;material-input aria-disabled="true"&gt;&lt;/material-input&gt;
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="h4-style">ARIA Core Components<span class="offscreen"> 3 of 3</span></h2>
+          <div class="inset-width-wider">
+            <div class="separator"></div>
+          </div>
+          <div class="definition">
+            <h3 class="h1-style">Properties</h3>
+            <p class="big-italic">The nature of the current object</p>
+            <pre><code class="html">
+     &lt;taco-textarea aria-required="true"&gt;&lt;/taco-textarea&gt;
+            </code></pre>
           </div>
      		</section>
 
@@ -199,9 +229,9 @@
 				<section>
 					<h2>Application Role</h2>
 					<p class="big-italic">Disables a screen reader&rsquo;s &ldquo;virtual cursor&rdquo;</p>
-					<div class="definition inset-width-wider">
+					<div class="definition">
 						<pre><code class="html">
-  &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
+     &lt;dance-detector role="application"&gt;&lt;/dance-detector&gt;
 						</code></pre>
 					</div>
 
@@ -218,7 +248,7 @@
           <h2>Don't Do This</h2>
           <div class="inset-width">
             <pre><code class="html">
-            &lt;body role="application"&gt;
+         &lt;body role="application"&gt;
             </code></pre>
           </div>
           <img src="img/body-roll.gif" style="min-height: 400px;" alt="Body roll away from your responsibilities">
@@ -230,15 +260,15 @@
 				<section>
 					<h2>Document or Application?</h2>
 					<pre><code class="html">
-   &lt;sparkle-party&gt;
-     &lt;h2&gt;Do you like to dance?&lt;/h2&gt;
-     &lt;button class="lets-dance"&gt;I wore my party pants&lt;/button&gt;
+  &lt;sparkle-party&gt;
+    &lt;h2&gt;Do you like to dance?&lt;/h2&gt;
+    &lt;button class="lets-dance"&gt;I wore my party pants&lt;/button&gt;
 
-     &lt;disco-ball&gt;
-       &lt;canvas&gt;&lt;/canvas&gt;
-       &lt;p aria-live="polite" class="disco-transcript"&gt;&lt;/p&gt;
-     &lt;/disco-ball&gt;
-   &lt;/sparkle-party&gt;
+    &lt;disco-ball&gt;
+      &lt;canvas&gt;&lt;/canvas&gt;
+      &lt;p aria-live="polite" class="disco-transcript"&gt;&lt;/p&gt;
+    &lt;/disco-ball&gt;
+  &lt;/sparkle-party&gt;
 					</code></pre>
 					<aside class="notes">
 						Client-side apps often blur the lines between application and document. Because accessibility works best with a document structure, it's best to selectively use the application role on a per-widget basis. Care must also be taken for the correct roles, states and properties for non-native elements or interactions.
@@ -272,7 +302,7 @@
 						</div>
 					</div>
           <pre><code contenteditable class="html">
-          &lt;div class="menu" ng-click="toggleMenu()"&gt;&lt;/div&gt;
+        &lt;div class="menu" ng-click="toggleMenu()"&gt;&lt;/div&gt;
           </code></pre>
 					<aside class="notes">
 						Hamburger button is a div with no tabIndex, role or keypress event
@@ -290,7 +320,7 @@
 						</code></pre>
 						<div class="themed-button image-show boring-button" tabIndex="0" title="Div requires clicking to activate" aria-label="Gif button only works with mouse">DANCE!</div>
 						<div>
-							<button class="reset disabled" aria-label="Reset dog dancing image">Rest</button>
+							<button class="boring-reset reset disabled" aria-label="Reset dog dancing image">Rest</button>
 						</div>
 					</div>
 				</section>
@@ -355,12 +385,9 @@
 					</code></pre>
 					<pre><code contenteditable class="javascript">
     App.PartyPantsComponent = Ember.Component.extend({
-      attributeBindings: [
-        'tabIndex'
-      ],
+      attributeBindings: ['tabIndex'],
       tagName: 'party-pants',
       ariaRole: 'article',
-
       tabIndex: function() {
         return this.get('active') ? 0 : -1;
       }.property('active')
@@ -447,52 +474,32 @@
 					<h2 class="h3-style">Angular Material Radio Buttons (cont'd)</h2>
 					<pre><code class="javascript" style="max-height: 615px;">
 function materialRadioGroupDirective() {
-  RadioGroupController.prototype = createRadioGroupControllerProto();
-  return {
-    restrict: 'E',
-    controller: RadioGroupController,
-    require: ['materialRadioGroup', '?ngModel'],
-    link: link
-  };
+  element.attr({
+    'role': 'radiogroup',
+    'tabIndex': '0'
+  })
+  .on('keydown', keydownListener);
 
-  function link(scope, element, attr, ctrls) {
-    element.attr({
-      'role': 'radiogroup',
-      'tabIndex': '0'
-    })
-    .on('keydown', keydownListener);
-
-    function keydownListener(ev) {
-      if (ev.which === Constant.KEY_CODE.LEFT_ARROW) {
-        ev.preventDefault();
-        rgCtrl.selectPrevious(element);
-      }
-      else if (ev.which === Constant.KEY_CODE.RIGHT_ARROW) {
-        ev.preventDefault();
-        rgCtrl.selectNext(element);
-      }
+  function keydownListener(ev) {
+    if (ev.which === Constant.KEY_CODE.LEFT_ARROW) {
+      rgCtrl.selectPrevious(element);
+    }
+    else if (ev.which === Constant.KEY_CODE.RIGHT_ARROW) {
+      rgCtrl.selectNext(element);
     }
   }
 }
 function materialRadioButtonDirective($expectAria) {
-  return {
-    restrict: 'E',
-    require: '^materialRadioGroup',
-    link: link
-  };
-  function link(scope, element, attr, rgCtrl) {
-    var lastChecked;
-    attr.$observe('value', render);
+  element.attr('role', 'radio');
+  $expectAria(element, 'aria-label', element.text());
 
-    element.attr('role', 'radio');
-    $expectAria(element, 'aria-label', element.text());
-
-    function render() {
-      var checked = (rgCtrl.getViewValue() === attr.value);
-      if (checked === lastChecked) { return; }
-      lastChecked = checked;
-      element.attr('aria-checked', checked);
-    }
+  var lastChecked;
+  attr.observe('value', render);
+  function render() {
+    var checked = (rgCtrl.getViewValue() === attr.value);
+    if(checked === lastChecked){ return; }
+    lastChecked = checked;
+    element.attr('aria-checked', checked);
   }
 }
 					</code></pre>

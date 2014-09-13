@@ -111,9 +111,9 @@ body {
     .reveal pre code {
       background-color: black;
       color: #cccccc;
-      font-size: 1.45em;
+      font-size: 1.75em;
       line-height: 1.45em;
-      max-height: 500px; }
+      max-height: 540px; }
   .reveal .full-screen-code pre {
     width: 100%; }
     .reveal .full-screen-code pre code {
@@ -189,7 +189,8 @@ body {
 .reveal h2.h3-style,
 .reveal p.h3-style {
   font-size: 1.75em; }
-.reveal h4, .reveal h3.h4-style,
+.reveal h4, .reveal h2.h4-style,
+.reveal h3.h4-style,
 .reveal p.h4-style {
   font-size: 1.45em;
   font-weight: bold; }
@@ -449,13 +450,13 @@ body {
 
 .reveal .wideCol {
   vertical-align: top;
-  width: 58%; }
+  width: 60%; }
   .reveal .wideCol.twoThirdsCol {
     float: left; }
 
 .reveal .skinnyCol {
   vertical-align: top;
-  width: 40%; }
+  width: 38%; }
   .reveal .skinnyCol.twoThirdsCol {
     float: left;
     margin-right: 2%; }
