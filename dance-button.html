@@ -108,6 +108,10 @@
         showButton = $('button.image-show'),
         reveal = $('.reveal');
 
+    audio.addEventListener("playing", function() {
+      console.log('playing');
+    }, true);
+
     $.get('demos/x-gif/get_down_on_it.json').then(function (response) {
       gif.metadata = response;
       setupAudioSynching(audio,
