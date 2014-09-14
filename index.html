@@ -144,10 +144,9 @@
 						<li>Enable the keyboard</li>
             <li>Handle focus</li>
 						<li>Write meaningful HTML</li>
+            <li>Alert the user</li>
 					</ul>
 					<aside class="notes">
-            Alert the user*
-            Graceful degradation*
           Handling focus: tabIndex, replacing part of the DOM causes focus mgmt probz
 
 					*Graceful degradation is worth mentioning but it is outside the scope of this talk.
@@ -209,7 +208,7 @@
             <h3 class="h1-style">Properties</h3>
             <p class="big-italic">The nature of the current object</p>
             <pre><code class="html">
-     &lt;doner-kebab aria-label="Lunch courtesy @AngelinaMagnum"&gt;
+     &lt;doner-kebab aria-label="Lunch courtesy AngelinaMagnum"&gt;
             </code></pre>
           </div>
      		</section>
@@ -350,6 +349,9 @@
           </div>
           <div class="offscreen">Loading beat data...</div>
 					</div>
+          <aside class="notes">
+            You can test for a11y by mocking &amp; expecting keyboard events, could be hooked up to continuous integration process
+          </aside>
 				</section>
 
 				<section>
