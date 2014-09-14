@@ -380,6 +380,11 @@
 					<img src="img/tom-zahra-jsconf.jpg" alt="Tom Dale in his gold shorts with Zahra Jabini at JSConf 2014. Photo by Matthew Bergman" style="max-height: 650px;">
 				</section>
 
+        <section>
+          <h2 class="offscreen">Ember Custom Component demo</h2>
+          <a href="demos/ember/gold-hotpants.html" target="_blank" title="Link opens in a new window"><img src="img/gold-hotpants.png" alt="Ember Gold Hotpants Demo"></a>
+        </section>
+
 				<section>
 					<h2>Custom Elements</h2>
 					<h3 class="h4-style">Ember.js</h3>
@@ -388,19 +393,14 @@
 					</code></pre>
 					<pre><code contenteditable class="javascript">
     App.PartyPantsComponent = Ember.Component.extend({
-      attributeBindings: ['tabIndex'],
       tagName: 'party-pants',
       ariaRole: 'article',
+      attributeBindings: ['tabIndex'],
       tabIndex: function() {
         return this.get('active') ? 0 : -1;
       }.property('active')
     });
 					</code></pre>
-				</section>
-
-				<section>
-					<h2 class="offscreen">Ember Custom Component demo</h2>
-					<a href="demos/ember/gold-hotpants.html" target="_blank" title="Link opens in a new window"><img src="img/gold-hotpants.png" alt="Ember Gold Hotpants Demo"></a>
 				</section>
 
         <section>
